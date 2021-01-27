@@ -1,24 +1,73 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# テーブル設計
 
-Things you may want to cover:
+## users テーブル
 
-* Ruby version
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| nickname           | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| first_name         | string | null: false               |
+| last_name          | string | null: false               |
+| first_name_kana    | string | null: false               |
+| last_nama_kana     | string | null: false               |
+| birth_data         | data   | null: false               |
 
-* System dependencies
 
-* Configuration
+### Association
 
-* Database creation
+- has_many :signs
+- hsa_many :favorites
+- has_many :spots
+- has_one_attached :image
 
-* Database initialization
 
-* How to run the test suite
+## signs テーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+| Column            | Type       | Options                        |
+| ----------------- | ---------- | ------------------------------ |
+| first_name        | string     | null: false                    |
+| last_name         | string     | null: false                    |
+| first_name_kana   | string     | null: false                    |
+| last_name_kana    | string     | null: false                    |
+| state_id          | integer    | null: false                    |
+| city              | string     | null: false                    |
+| spot_type_id      | integer    | null: false                    |
+| position_id       | integer    | null: false                    |
+| characteristic_id | integer    | null: false                    |
+| content_id        | integer    | null: false                    |
+| user              | references | null: false, foreign_key: true |
 
-* Deployment instructions
 
-* ...
+### Association
+
+- belongs_to :uer
+- has_many :favorites
+
+## favorites テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| sign   | references | null: false, foreign_key: true |
+
+
+### Association
+
+- belongs_to :user
+- belongs_to :sign
+
+## spots テーブル
+
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| state_id     | integer    | null: false                    |
+| city         | integer    | null: false                    |
+| spot_type_id | integer    | null: false                    |
+| user         | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
