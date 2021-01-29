@@ -1,0 +1,40 @@
+.top-page-header {
+  height: 80px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid gray
+}
+
+.logo {
+  padding: 10px 20px;
+  margin-left: 50px;
+  font-size: 20px;
+  border: 1px solid gray;
+}
+
+.header-right {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+
+  .sign-up-btn {
+    margin-right: 30px;
+    cursor: pointer;
+
+    &:hover {
+      color: darkgray;
+    }
+  }
+
+  .login-btn {
+    margin-right: 30px;
+    padding: 10px 30px;
+    border: 1px solid gray;
+    cursor: pointer;
+    &:hover {
+      background-color: darkgray;
+    }
+  }
+}
