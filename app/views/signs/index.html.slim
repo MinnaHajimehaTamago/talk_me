@@ -1,13 +1,8 @@
 = render 'shared/header'
-.bg
-.main
-  .app-explanation
-    h1 アプリの説明文
 
-/ signup modal
-.sign-up-modal
-  .container
-    h1 Talk me
-    = form_with model: @user
-
-/ login modal
+.main-container
+  .sign-actions
+    = link_to 'サインを送る', '#', class: 'sign-send-btn sign-btn'
+    = link_to 'サインを検索する', '#', class: 'sign-search-btn sign-btn'
+    = link_to '送信したサインを確認する', '#', class: 'sign-confirmation-btn sign-btn'
+    

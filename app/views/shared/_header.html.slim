@@ -1,9 +1,16 @@
 header.top-page-header
   .header-left
     .logo
-      p ロゴ
+      = link_to image_tag("header_logo.png", class:"logo", alt:"Talk me"), "#"
   .header-right
+    /view作業用コメントアウト
     .sign-up-btn
       p sign up
     .login-btn
       p login
+
+    / .user-name
+    /     p user-name
+    / .user-icon-btns
+    /   = image_tag("header_icon_sample.png", class:"user-icon", alt:"user icon")
+    /   = image_tag("header_icon_btn.png", class:"user-icon-btn",)

@@ -1,0 +1,100 @@
+.bg {
+  height: calc(100vh - 80px);
+  width: 100vw;
+  background-image: image-url("kumao1.jpg");
+  background-size: cover;
+  opacity: 0.3;
+  position: absolute;
+  top: 80px;
+  left: 0;
+}
+
+.top-main {
+  height: calc(100vh - 80px);
+  width: 100vw;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .app-explanation {
+    font-size: 50px;
+    font-weight: bold;
+  }
+}
+
+// ログインモーダル
+.modal-bg {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  background-color: #202020;
+  opacity: 0;
+}
+
+.login-modal-main {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.login-form {
+  height: 450px;
+  width: 400px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+
+
+.form-title {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin: 50px 0 50px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.input-default {
+  height: 35px;
+  width: 280px;
+  padding-left: 5px;
+}
+
+.login-submit-btn {
+  height: 50px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.sign-up-text {
+  width: 70px;
+  margin: 0 auto;
+}
+
+.sign-up-link {
+  text-decoration: none;
+  font-size: 16px;
+  color: gray;
+  text-align: center;
+  margin: 0 auto;
+}
+
+// モーダル表示操作用
+
+.none {
+  display: none;
+}

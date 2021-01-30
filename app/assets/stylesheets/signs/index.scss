@@ -1,0 +1,23 @@
+.main-container {
+  height: calc(100vh - 80px);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-btn {
+  line-height: 140px;
+  width: 500px;
+  margin-top: 30px;
+  font-size: 25px;
+  color: gray;
+  text-align: center;
+  border: 1px solid gray;
+  text-decoration: none;
+}

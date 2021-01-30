@@ -1,0 +1,25 @@
+= render 'shared/header'
+.bg
+.top-main
+  .app-explanation
+    h1 アプリの説明文
+  
+
+/ login modal
+.modal-bg.none
+.login-modal-main.none
+  .login-form
+    = form_with model: @hoge, url: user_session_path, class:'login-main', local: true do |f|
+      .form-title
+        h1 Talk me
+      .login-flash-message
+        = flash[:notice]
+        = flash[:alert]
+      .form-group
+        = f.email_field :email, class:'input-default', id:'email', placeholder:'Email', autofocus: true
+      .form-group
+        = f.password_field :password, class:'input-default', id:'password', placeholder: 'Password'
+      .login-btn
+        = f.submit 'Login', class:'login-submit-btn'
+      .sign-up-text
+        = link_to 'Sign up', '#', class:'sign-up-link' 
