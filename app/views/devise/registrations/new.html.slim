@@ -1,0 +1,30 @@
+= render 'shared/header'
+.bg
+.top-main
+  .app-explanation
+    h1 アプリの説明文
+  
+
+/ login modal
+.modal-bg
+.login-modal-main
+  .sign-up-form
+    = form_for(@user, url: user_registration_path, class:'sign-up-main') do |f|
+      .form-title
+        h1 新規登録
+      .sigin-up-flash-message
+        = flash[:notice]
+        = flash[:alert]
+      
+      .form-group
+        = f.text_field :nickname, class:'input-default', id:'nickname', placeholder:'Nickname', autofocus: true
+      .form-group
+        = f.email_field :email, class:'input-default', id:'email', placeholder:'Email'
+      .form-group
+        = f.password_field :password, class:'input-default', id:'password', placeholder: 'Password'
+      .form-group
+        = f.password_field :password_confirmation, class:'input-default', id:'password-confirmation', placeholder: 'Password confirmation'
+      .login-btn
+        = f.submit 'Next', class:'sign-up-next-btn'
+      .login-text
+        = link_to 'login', new_user_session_path, class:'login-link' 

@@ -1,0 +1,45 @@
+.sign-up-form {
+  height: 580px;
+  width: 400px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  
+  .form-title {
+    margin: 40px 0 30px;
+  }
+}
+
+
+.birth-date-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: gray;
+
+  select {
+    height: 35px;
+    padding-left: 5px;
+    color: gray;
+  }
+}
+
+.sign-up-next-btn {
+  height: 50px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.login-text {
+  width: 40px;
+  margin: 0 auto;
+}
+
+.login-link {
+  text-decoration: none;
+  font-size: 16px;
+  color: gray;
+  text-align: center;
+  margin: 0 auto;
+}

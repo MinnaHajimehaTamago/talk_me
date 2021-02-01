@@ -6,10 +6,10 @@
   
 
 / login modal
-.modal-bg.none
-.login-modal-main.none
+.modal-bg
+.login-modal-main
   .login-form
-    = form_with model: @hoge, url: user_session_path, class:'login-main', local: true do |f|
+    = form_with model: @user, url: user_session_path, class:'login-main', local: true do |f|
       .form-title
         h1 Talk me
       .login-flash-message
@@ -22,4 +22,4 @@
       .login-btn
         = f.submit 'Login', class:'login-submit-btn'
       .sign-up-text
-        = link_to 'Sign up', '#', class:'sign-up-link' 
+        = link_to 'Sign up', new_user_registration_path, class:'sign-up-link' 

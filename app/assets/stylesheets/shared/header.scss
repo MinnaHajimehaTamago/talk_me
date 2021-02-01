@@ -22,6 +22,7 @@
   .sign-up-btn {
     margin-right: 30px;
     cursor: pointer;
+    color: gray;
 
     &:hover {
       color: darkgray;
@@ -33,12 +34,20 @@
     padding: 10px 30px;
     border: 1px solid gray;
     cursor: pointer;
+    color: gray;
+
     &:hover {
       background-color: darkgray;
     }
   }
 
-  .user-name {
+.btn {
+  text-decoration: none;
+}
+
+  .user-nickname {
+    color: gray;
+    text-decoration: none;
     margin-right: 10px;
   }
 

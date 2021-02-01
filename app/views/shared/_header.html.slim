@@ -2,15 +2,15 @@ header.top-page-header
   .header-left
     .logo
       = link_to image_tag("header_logo.png", class:"logo", alt:"Talk me"), "#"
-  .header-right
-    /view作業用コメントアウト
-    .sign-up-btn
-      p sign up
-    .login-btn
-      p login
-
-    / .user-name
-    /     p user-name
-    / .user-icon-btns
-    /   = image_tag("header_icon_sample.png", class:"user-icon", alt:"user icon")
-    /   = image_tag("header_icon_btn.png", class:"user-icon-btn",)
+  ul.header-right
+    - if user_signed_in?
+      li
+          = link_to current_user.nickname, '#', class:"user-nickname"
+      li.user-icon-btns
+        = image_tag("header_icon_sample.png", class:"user-icon", alt:"user icon")
+        = image_tag("header_icon_btn.png", class:"user-icon-btn",)
+    - else user_signed_in?
+      .sign
+        = link_to 'sign up', new_user_registration_path, class: "sign-up-btn btn"
+      .login
+        = link_to 'login', new_user_session_path, class: "login-btn btn"
