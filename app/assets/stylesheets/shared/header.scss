@@ -19,55 +19,87 @@
   display: flex;
   align-items: center;
 
-  .sign-up-btn {
-    margin-right: 30px;
-    cursor: pointer;
-    color: gray;
+.sign-up-btn {
+  margin-right: 30px;
+  cursor: pointer;
+  color: gray;
 
-    &:hover {
-      color: darkgray;
-    }
+  &:hover {
+    color: darkgray;
   }
-
-  .login-btn {
-    margin-right: 100px;
-    padding: 10px 30px;
-    border: 1px solid gray;
-    cursor: pointer;
-    color: gray;
-
-    &:hover {
-      background-color: darkgray;
-    }
-  }
-
-.btn {
-  text-decoration: none;
 }
 
-  .user-nickname {
-    color: gray;
-    text-decoration: none;
-    margin-right: 10px;
+.login-btn {
+  margin-right: 100px;
+  padding: 10px 30px;
+  border: 1px solid gray;
+  cursor: pointer;
+  color: gray;
+
+  &:hover {
+    background-color: darkgray;
+  }
+}
+}
+
+.btn {
+text-decoration: none;
+}
+
+.user-nickname {
+  color: gray;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.user-icon-btns {
+  height: 60px;
+  margin-right: 100px; 
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+}
+.user-icon {
+  height: 60px;
+  width: 60px;
+  margin-right: 5px;
+}
+
+.user-icon-btn {
+  height: 10px;
+  width: 12px;
+}
+
+.user-menu {
+  
+  border: 1px solid gray;
+  position: absolute;
+  top: 60px;
+  left: -75px;
+  font-size: 15px;
+  background-color: #fff;
+
+  li {
+    border-bottom: 1px solid lightgray;
   }
 
-  .user-icon-btns {
-    height: 60px;
-    margin-right: 100px; 
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-
-      .user-icon {
-        height: 60px;
-        width: 60px;
-        margin-right: 5px;
-      }
-      
-      .user-icon-btn {
-        height: 10px;
-        width: 12px;
-      }
+  li:nth-last-child(1) {
+    border-bottom: none;
   }
+}
+
+.user-menu-list {
+  width: 150px;
+  padding: 5px;
+  color: black;
+  text-decoration: none;
+  display: block;
+
+  &:hover {
+    background-color: lightgray;
+  }
+
   
 }
