@@ -2,9 +2,12 @@
   height: 80px;
   width: 100vw;
   display: flex;
+  background-color: #fff;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid gray
+  border-bottom: 1px solid lightgray;
+  position: fixed;
+  
 }
 
 .logo {

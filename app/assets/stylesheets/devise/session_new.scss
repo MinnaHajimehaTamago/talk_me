@@ -35,7 +35,7 @@
   opacity: 0.8;
 }
 
-.login-modal-main {
+.modal-main {
   height: 100vh;
   width: 100vw;
   position: absolute;
@@ -45,13 +45,10 @@
   align-items: center;
 }
 
-.login-form {
-  height: 450px;
-  width: 400px;
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
+.form-wrap {
+  width: 40%;
   border-radius: 15px;
+  background-color: #fff;
 }
 
 
@@ -60,17 +57,20 @@
   font-size: 30px;
   font-weight: bold;
   text-align: center;
+  background-color: #fff;
   margin: 50px 0 50px;
+  
 }
 
 .form-group {
-  color: gray;
-  margin-bottom: 20px;
+  width: 80%;
+  background-color: #fff;
+  margin: 0 auto 20px;
 }
 
 .input-default {
   height: 35px;
-  width: 280px;
+  width: calc(100% - 5px);
   padding-left: 5px;
 }
 
@@ -82,7 +82,7 @@
 
 .sign-up-text {
   width: 70px;
-  margin: 0 auto;
+  margin: 0 auto 50px;
 }
 
 .sign-up-link {
@@ -90,7 +90,7 @@
   font-size: 16px;
   color: gray;
   text-align: center;
-  margin: 0 auto;
+  
 }
 
 // モーダル表示操作用
