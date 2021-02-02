@@ -6,5 +6,7 @@ Rails.application.routes.draw do
     get 'personal_information', to: 'users/registrations#new_personal_information'
     post 'personal_information', to: 'users/registrations#create_personal_information'
   end
+
+  resources :signs
   root to: 'signs#index'
 end
