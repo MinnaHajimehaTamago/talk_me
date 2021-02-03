@@ -1,0 +1,32 @@
+= render 'shared/header'
+.main-container
+  .form-wrap-big
+    = form_with model: @huge, url: search_index_signs_path, local: true do |f|
+      .form-title
+        h1 サインを検索する
+      .form-sub-title
+        h2 気になる人の名前
+      .form-group-split
+        .form-left
+          p 姓
+          = f.text_field :hoge, class:"input-default", placeholder: "姓"
+        .form-right
+          p 名
+          = f.text_field :first_name, id:"first-name", class:"input-default", placeholder: "名"
+      .form-group-split
+        .form-left
+          p 姓（フリガナ）
+          = f.text_field :last_name_kana, id:"last-name-kana", class:"input-default", placeholder: "姓（フリガナ）"
+        .form-right
+          p 名（フリガナ）
+          = f.text_field :first_name_kana, id:"first-name-kana", class:"input-default", placeholder: "名（フリガナ）"
+      .form-sub-title
+        h2 その人と会う場所
+      .form-group
+        p 都道府県
+        = f.collection_select(:state_id, State.all, :id, :name, {}, {class:"form-select-box-l", id:"state"})
+      .form-group
+        p 市区町村
+        = f.text_field :city, id:"city", class:"input-default", placeholder: "市区町村"
+      .form-group
+        = f.submit '検索', class:"sign-submit-btn"

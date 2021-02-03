@@ -8,6 +8,11 @@ Rails.application.routes.draw do
     post 'personal_information', to: 'users/registrations#create_personal_information'
   end
 
-  resources :signs
+  resources :signs do
+    collection do
+      get 'search_index'
+      get 'search_result'
+    end
+  end
   resources :users, only: [:show, :update]
 end
