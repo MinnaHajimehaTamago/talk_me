@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'signs#index'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -8,5 +9,5 @@ Rails.application.routes.draw do
   end
 
   resources :signs
-  root to: 'signs#index'
+  resources :users, only: [:show, :update]
 end
