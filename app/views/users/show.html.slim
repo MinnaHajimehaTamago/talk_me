@@ -23,7 +23,7 @@
         h1 サイン一覧
       .signs-wrap
         - @signs.each do |sign|
-          .sign-wrap
+          = link_to sign_path(sign.id), class:"sign-wrap"
             .sign-user-nickname
               = image_tag("header_icon_sample.png", class:"user-icon-small", alt:"user icon")
               p #{sign.user.nickname}

@@ -1,0 +1,27 @@
+= render 'shared/header'
+.main-container
+  .form-wrap-big
+    .sign-show-top
+      .sign-show-user-nickname
+        = image_tag("header_icon_sample.png", class:"user-icon")
+        p user nickname
+      .sign-show-send-time
+        p 2021/01/01 00:00
+    .form-group
+      h3  〇〇県〇〇市
+      h3 学校
+    .form-sub-title
+      h2 どこに
+    .form-title
+      p どこにどこにどこにどこに
+    .form-sub-title
+      h2 何を
+    .form-title
+      p 何を何を何を何を何を何を
+    .form-sub-title
+      h2 サインの内容
+    .form-title
+      p サインの内容サインの内容
+    .form-group
+      = link_to '閉じる', "#", class:"sign-show-close-btn"
+

@@ -1,0 +1,27 @@
+.sign-show-top {
+  width: 90%;
+  margin: 40px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sign-show-user-nickname {
+  display: flex;
+  align-items: center;
+}
+
+.sign-show-close-btn {
+  line-height: 50px;
+  width: 20vw;
+  display: block;
+  margin: 0 auto 50px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid gray;
+  color: gray;
+  
+  &:hover {
+    background-color: lightgray;
+  }
+}
