@@ -24,7 +24,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create_personal_information
     @user = User.new(session["devise.regist_data"]["user"])
     @personal_information = PersonalInformation.new(personal_information_params)
-    binding.pry
       unless @personal_information.valid?
         render :new_personal_information and return
       end
