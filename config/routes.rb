@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'signs#index'
+  root to: 'tops#index'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -15,4 +15,5 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:show, :update]
+  resources :tops, only: [:index]
 end

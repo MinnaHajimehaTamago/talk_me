@@ -1,7 +1,11 @@
 header.top-page-header
   .header-left
-    .logo
-      = link_to image_tag("header_logo.png", class:"logo", alt:"Talk me"), root_path
+    - if user_signed_in?
+      .logo
+        = link_to image_tag("header_logo.png", class:"logo", alt:"Talk me"), signs_path
+    - else
+      .logo
+        = link_to image_tag("header_logo.png", class:"logo", alt:"Talk me"), root_path
   ul.header-right
     - if user_signed_in?
       li
