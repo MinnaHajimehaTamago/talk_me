@@ -12,7 +12,7 @@ class SignsController < ApplicationController
     @sign = Sign.new(sign_params)
     if @sign.valid?
       @sign.save
-      redirect_to root_path
+      redirect_to signs_path
     else
       render :new
     end

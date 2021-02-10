@@ -21,13 +21,13 @@
             li= message
       
       .form-group
-        = f.text_field :first_name, class:'input-default', id:'first-name', placeholder:'First name', autofocus: true
+        = f.text_field :last_name, class:'input-default', id:'last-name', placeholder:'姓', autofocus: true
       .form-group
-        = f.text_field :last_name, class:'input-default', id:'last-name', placeholder:'Last name'
+        = f.text_field :first_name, class:'input-default', id:'first-name', placeholder:'名'
       .form-group
-        = f.text_field :first_name_kana, class:'input-default', id:'first-name-kana', placeholder: 'First name (kana)'
+        = f.text_field :last_name_kana, class:'input-default', id:'last-name-kana', placeholder: '姓（カナ）'
       .form-group
-        = f.text_field :last_name_kana, class:'input-default', id:'last-name-kana', placeholder: 'Last name (kana)'
+        = f.text_field :first_name_kana, class:'input-default', id:'first-name-kana', placeholder: '名（カナ）'
       .form-group
         p 生年月日
         .birth-date-form

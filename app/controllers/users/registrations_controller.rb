@@ -30,8 +30,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.build_personal_information(@personal_information.attributes)
     @user.save
     session["devise.regist_data"]["user"].clear
-    sigin_in(:user, @user)
-    redirect_to 'signs#index'
+    sign_in(:user, @user)
+    redirect_to signs_path
   end
 
   # GET /resource/edit
