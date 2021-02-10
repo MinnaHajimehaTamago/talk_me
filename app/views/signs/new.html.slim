@@ -5,7 +5,13 @@
     = form_with model: @sign, url: signs_path,local: true do |f|
       .form-title
         h1 サインを送る
+      - if @sign.errors.present?
+      ul#erros_explanation
+        - @sign.errors.full_messages.each do |message|
+          li= message
       .form-sub-title
+      
+
         h2 気づいてほしい人の名前
       .form-group-split
         .form-left

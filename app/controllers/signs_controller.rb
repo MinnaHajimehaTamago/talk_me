@@ -8,7 +8,6 @@ class SignsController < ApplicationController
 
   def create
     @sign = Sign.new(sign_params)
-    binding.pry
     if @sign.valid?
       @sign.save
       redirect_to root_path

@@ -19,8 +19,6 @@
         ul#error_explanation
           - @personal_information.errors.full_messages.each do |message|
             li= message
-      - else
-        p false!
       
       .form-group
         = f.text_field :first_name, class:'input-default', id:'first-name', placeholder:'First name', autofocus: true

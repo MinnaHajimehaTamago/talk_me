@@ -13,7 +13,7 @@ describe PersonalInformation, type: :model do
     end
 
     context '本人情報新規登録ができない時' do
-      it 'first_nameが空の時' do
+      it 'first_nameが空では登録できないこと' do
         @personal_information.first_name = nil
         @personal_information.valid?
         expect(@personal_information.errors.full_messages).to include('姓（全角）を入力してください')
@@ -41,7 +41,7 @@ describe PersonalInformation, type: :model do
       it 'first_name_kanaがカタカナ以外では登録できない' do
         @personal_information.first_name_kana = 'name'
         @personal_information.valid?
-        expect(@personal_information.errors.full_messages).to include('姓（全角カナ）はカタカナで入力して下さい。')
+        expect(@personal_information.errors.full_messages).to include('姓（全角カナ）はカタカナで入力してください')
       end
       it 'last_name_kanaが空では登録できない' do
         @personal_information.last_name_kana = nil
@@ -51,7 +51,7 @@ describe PersonalInformation, type: :model do
       it 'last_name_kanaがカタカナ以外では登録できない' do
         @personal_information.last_name_kana = 'name'
         @personal_information.valid?
-        expect(@personal_information.errors.full_messages).to include('名（全角カナ）はカタカナで入力して下さい。')
+        expect(@personal_information.errors.full_messages).to include('名（全角カナ）はカタカナで入力してください')
       end
       it 'birth_dateが空では登録できない' do
         @personal_information.birth_date = nil
