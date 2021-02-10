@@ -15,6 +15,11 @@
       .sigin-up-flash-message
         = flash[:notice]
         = flash[:alert]
+      - if @user.errors.present?
+        ul#error_explanation
+          - @user.errors.full_messages.each do |message|
+            li= message
+            
       .form-group
         = f.text_field :nickname, class:'input-default', id:'nickname', placeholder:'Nickname', autofocus: true
       .form-group

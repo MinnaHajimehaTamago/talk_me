@@ -18,6 +18,17 @@ describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('ニックネームを入力してください')
       end
+      it 'emailが空だと登録できないこと' do
+        @user.email = nil
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Eメールを入力してください')
+      end
+      it '入力したemailがすでに存在していると登録できないこと' do
+        @user.save
+        another_user = FactoryBot.build(:user, email: @user.email)
+        another_user.valid?
+        expect(another_user.errors.full_messages).to include('Eメールはすでに存在します')
+      end
       it 'passwordが空だと登録できないこと' do
         @user.password = nil
         @user.valid?

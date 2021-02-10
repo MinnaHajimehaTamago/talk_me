@@ -9,12 +9,18 @@
 .modal-bg
 .modal-main
   .form-wrap
-    = form_with model: @personal_information, url: personal_information_path, class:'sign-up-main' do |f|
+    = form_with model: @personal_information, url: personal_information_path, local: true  do |f|
       .form-title
         h1 新規登録
       .sigin-up-flash-message
         = flash[:notice]
         = flash[:alert]
+      - if @personal_information.errors.present?
+        ul#error_explanation
+          - @personal_information.errors.full_messages.each do |message|
+            li= message
+      - else
+        p false!
       
       .form-group
         = f.text_field :first_name, class:'input-default', id:'first-name', placeholder:'First name', autofocus: true
