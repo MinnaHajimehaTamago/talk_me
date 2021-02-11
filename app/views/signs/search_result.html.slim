@@ -11,7 +11,7 @@
             p= sign.user.nickname
           .sign-send-time
             p= sign.created_at.strftime("%Y/%m/%d %H:%M")
-          = link_to '', sign_path(sign.id, @q), class: 'result-sign-wrap-link'
+          = link_to '', sign_path(sign.id, @keywords), class: 'result-sign-wrap-link'
     - else
       h1 該当するサインはありません
     = link_to '戻る', search_index_signs_path, class:"back-btn"

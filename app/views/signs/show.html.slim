@@ -23,8 +23,10 @@
     .form-title
       p= Content.data[@sign.content_id-1][:name]
     .form-group
-      -if @sign.id == current_user.id
-        = link_to '閉じる', user_path(current_user.id), class:"sign-show-close-btn"
+      -if @sign.user.id == current_user.id
+        = link_to '編集する', "#", class:"sign-show-close-btn"
+        = link_to '削除する', "#", class:"sign-show-close-btn"
+        = link_to '戻る', user_path(current_user.id), class:"sign-show-close-btn"
       -else
-        = link_to '閉じる', search_result_signs_path(@q), class:"sign-show-close-btn"
+        = link_to '閉じる', search_result_signs_path(@keywords), class:"sign-show-close-btn"
 
