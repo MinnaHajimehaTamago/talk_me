@@ -3,14 +3,15 @@
   .form-wrap-big
     .form-title
       h1 検索結果
-    / 検索機能用
-    / - if @signs != nil
-    /   - @signs.each do |sign|
-
-    .result-sign-wrap
-      .sign-user-nickname
-        = image_tag("header_icon_sample.png", class:"user-icon-small")
-        p user nickname
-      .sign-send-time
-        p 2020/01/01 00:00
-    = link_to '戻る', "#", class:"back-btn"
+    - if @results.length != 0
+      - @results.each do |sign|
+        .result-sign-wrap
+          .sign-user-nickname
+            = image_tag("header_icon_sample.png", class:"user-icon-small")
+            p= sign.user.nickname
+          .sign-send-time
+            p= sign.created_at.strftime("%Y/%m/%d %H:%M")
+          = link_to '', sign_path(sign.id, @q), class: 'result-sign-wrap-link'
+    - else
+      h1 該当するサインはありません
+    = link_to '戻る', search_index_signs_path, class:"back-btn"
