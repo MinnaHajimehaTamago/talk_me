@@ -1,6 +1,6 @@
 class SignsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_params, only: [:show, :edit, :update, :destroy]
+  before_action :set_sign_params, only: [:show, :edit, :update, :destroy]
   before_action :set_keywords, only: [:search_result, :show]
   # before_action :search_sign, only: [:search_index ,:search_result]
 
@@ -23,6 +23,9 @@ class SignsController < ApplicationController
 
   def show
     show_check_peep
+    @favorite = Favorite.new
+    @favorites = @sign.favorites.includes(:user)
+    @viewer_favorite = @favorites.find { |f| f[:user_id] == current_user.id }
   end
 
   def edit
@@ -60,7 +63,7 @@ class SignsController < ApplicationController
     params.require(:sign).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :state_id, :city, :spot_type_id, :position_id, :characteristic_id, :content_id).merge(user_id: current_user.id)
   end
 
-  def set_params
+  def set_sign_params
     @sign = Sign.find(params[:id])
   end
 

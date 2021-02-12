@@ -1,12 +1,13 @@
 class Sign < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
+  has_many :favorites
+  belongs_to :user
+
   belongs_to :state
   belongs_to :spot_type
   belongs_to :position
   belongs_to :characteristic
   belongs_to :content
-
-  belongs_to :user
 
   with_options presence: true do
     validates :first_name, format: { with: /\A[ぁ-んァ-ン一-龥]/, message: 'は全角（漢字・ひらがな・カタカナ）で入力してください' }
@@ -28,6 +29,7 @@ class Sign < ApplicationRecord
     user = current_user.personal_information
     Sign.where(first_name: user.first_name, last_name: user.last_name).or(Sign.where(first_name_kana: user.first_name_kana, last_name_kana: user.last_name_kana))
   end
+
   def self.search(keywords, current_user)
     results = []
     user = current_user.personal_information
@@ -43,4 +45,11 @@ class Sign < ApplicationRecord
     end
     return results
   end
+
+  def self.favorite_signs(favorites)
+    ids = []
+    favorites.each { |f| ids << f[:sign_id] }
+    favorite_signs = Sign.where(id: ids)
+  end
+
 end

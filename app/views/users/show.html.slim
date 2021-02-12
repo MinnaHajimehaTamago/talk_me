@@ -16,6 +16,8 @@
       .user-info
         h2 生年月日
         p #{current_user.personal_information.birth_date.strftime("%Y年 %m月 %d日")}
+      .user-info
+        = link_to '編集する', edit_user_path(current_user.id)
 
   .user-signs-container
     .user-show-wrap
@@ -29,4 +31,11 @@
               p #{sign.user.nickname}
             .sign-send-time
               p #{sign.created_at.strftime("%Y/%m/%d %H:%M")}
+        - @favorite_signs.each do |favo_sign|
+          = link_to sign_path(favo_sign.id), class:"sign-wrap"
+            .sign-user-nickname
+              = image_tag("header_icon_sample.png", class:"user-icon-small", alt:"user icon")
+              p #{favo_sign.user.nickname}
+            .sign-send-time
+              p #{favo_sign.created_at.strftime("%Y/%m/%d %H:%M")}
 

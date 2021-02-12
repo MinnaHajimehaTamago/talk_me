@@ -9,11 +9,12 @@ Rails.application.routes.draw do
   end
 
   resources :signs do
+    resources :favorites, only: [:create, :destroy]
     collection do
       get 'search_index'
       get 'search_result'
     end
   end
-  resources :users, only: [:show, :update]
-  resources :tops, only: [:index]
+  resources :users, only: [:show, :edit, :update]
+  resources :tops, only: :index
 end
