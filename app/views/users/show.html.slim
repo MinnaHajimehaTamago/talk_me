@@ -8,6 +8,7 @@
       .user-nickname
         = image_tag("header_icon_sample.png", class:"user-icon-profile", alt: "user icon")
         p #{current_user.nickname}
+        = link_to '編集する', edit_user_path(current_user.id)
       .user-info
         h2 名前
         p #{current_user.personal_information.first_name} #{current_user.personal_information.last_name}
@@ -16,8 +17,6 @@
       .user-info
         h2 生年月日
         p #{current_user.personal_information.birth_date.strftime("%Y年 %m月 %d日")}
-      .user-info
-        = link_to '編集する', edit_user_path(current_user.id)
 
   .user-signs-container
     .user-show-wrap

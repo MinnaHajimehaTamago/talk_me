@@ -1,0 +1,11 @@
+= render 'shared/header'
+
+.main-container
+  .form-wrap-big
+    = form_with model: @user, local: true do |f|
+      .form-title
+        h1 ニックネーム編集
+      .form-group
+        = f.text_field :nickname, class:"input-default", placeholder: "ニックネーム"
+      .form-group
+        = f.submit '編集', class:"sign-submit-btn"

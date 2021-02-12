@@ -1,6 +1,30 @@
 class UsersController < ApplicationController
+before_action :set_user_params
+
   def show
-    @user = User.find(params[:id])
     @signs = @user.signs
+    favorites = @user.favorites
+    @favorite_signs = Sign.favorite_signs(favorites)
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update(user_params)
+      redirect_to aciton: :show
+    else
+      render :edit
+    end
+  end
+
+  private
+
+  def set_user_params
+    @user = User.find(current_user.id)
+  end
+
+  def user_params
+    params.require(:user).permit(:nickname, email: current_user.email, password: current_user.password, password_confirmation: current_user.password_confirmation)
   end
 end
