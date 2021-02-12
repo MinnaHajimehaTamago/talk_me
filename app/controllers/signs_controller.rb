@@ -1,5 +1,6 @@
 class SignsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_params, only: [:show, :edit, :update, :destroy]
   before_action :set_keywords, only: [:search_result, :show]
   # before_action :search_sign, only: [:search_index ,:search_result]
 
@@ -21,17 +22,26 @@ class SignsController < ApplicationController
   end
 
   def show
-    @sign = Sign.find(params[:id])
     show_check_peep
   end
 
   def edit
+    unless current_user.id == @sign.user_id
+      redirect_to signs_path
+    end
   end
 
   def update
+    if @sign.update(sign_params)
+      redirect_to sign_path(@sign.id)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @sign.destroy if current_user.id == @sign.user_id
+    redirect_to user_path(current_user.id)
   end
 
   def search_index
@@ -48,6 +58,10 @@ class SignsController < ApplicationController
 
   def sign_params
     params.require(:sign).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :state_id, :city, :spot_type_id, :position_id, :characteristic_id, :content_id).merge(user_id: current_user.id)
+  end
+
+  def set_params
+    @sign = Sign.find(params[:id])
   end
 
   def set_keywords

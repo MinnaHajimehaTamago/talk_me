@@ -24,8 +24,8 @@
       p= Content.data[@sign.content_id-1][:name]
     .form-group
       -if @sign.user.id == current_user.id
-        = link_to '編集する', "#", class:"sign-show-close-btn"
-        = link_to '削除する', "#", class:"sign-show-close-btn"
+        = link_to '編集する', edit_sign_path(@sign.id), class:"sign-show-close-btn"
+        = link_to '削除する', sign_path(@sign.id), method: :delete, class:"sign-show-close-btn"
         = link_to '戻る', user_path(current_user.id), class:"sign-show-close-btn"
       -else
         = link_to '閉じる', search_result_signs_path(@keywords), class:"sign-show-close-btn"
