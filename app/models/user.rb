@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_one :personal_information
   has_many :signs
   has_many :favorites
+  has_one_attached :image
 
   validates :nickname, presence: true
 

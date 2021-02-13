@@ -7,7 +7,10 @@
       - @results.each do |sign|
         .result-sign-wrap
           .sign-user-nickname
-            = image_tag("header_icon_sample.png", class:"user-icon-small")
+            - if sign.user.image.attached?
+              = image_tag(sign.user.image, class:"user-icon-image-small")
+            - else
+              = image_tag("header_icon_sample.png", class:"user-icon-small")
             p= sign.user.nickname
           .sign-send-time
             p= sign.created_at.strftime("%Y/%m/%d %H:%M")

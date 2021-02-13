@@ -3,7 +3,10 @@
   .form-wrap-big
     .sign-show-top
       .sign-show-user-nickname
-        = image_tag("header_icon_sample.png", class:"user-icon")
+        - if @sign.user.image.attached?
+          = image_tag(@sign.user.image, class:"user-icon-image")
+        - else
+          = image_tag("header_icon_sample.png", class:"user-icon-default")
         p= @sign.user.nickname
       .sign-show-send-time
         p= @sign.created_at.strftime("%Y/%m/%d %H:%M")

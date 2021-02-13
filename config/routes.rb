@@ -15,6 +15,11 @@ Rails.application.routes.draw do
       get 'search_result'
     end
   end
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update] do
+    member do
+      get 'edit_icon'
+      patch 'update_icon'
+    end
+  end
   resources :tops, only: :index
 end
