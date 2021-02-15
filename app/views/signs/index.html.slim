@@ -4,4 +4,4 @@
   .sign-actions
     = link_to 'サインを送る', new_sign_path, class: 'sign-send-btn sign-btn'
     = link_to 'サインを検索する', search_index_signs_path, class: 'sign-search-btn sign-btn'
-    = link_to '送信したサインを確認する', '#', class: 'sign-confirmation-btn sign-btn'
+    = link_to '送信したサインを確認する', user_path(current_user.id), class: 'sign-confirmation-btn sign-btn'

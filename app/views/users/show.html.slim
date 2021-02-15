@@ -13,9 +13,9 @@
         p #{current_user.nickname}
       .user-info
         h2 名前
-        p #{current_user.personal_information.first_name} #{current_user.personal_information.last_name}
+        p #{current_user.personal_information.last_name} #{current_user.personal_information.first_name}
         h2 フリガナ
-        p #{current_user.personal_information.first_name_kana} #{current_user.personal_information.last_name_kana}
+        p #{current_user.personal_information.last_name_kana} #{current_user.personal_information.first_name_kana}
       .user-info
         h2 生年月日
         p #{current_user.personal_information.birth_date.strftime("%Y年 %m月 %d日")}

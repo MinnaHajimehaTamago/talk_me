@@ -8,7 +8,8 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require('jquery')
-require("../user_menu")
+require("./user_menu")
+require("./icon_preview")
 
 
 
