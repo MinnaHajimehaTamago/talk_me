@@ -1,15 +1,19 @@
 .user-icon-default {
-  height: 100px;
-  width: 100px;
+  height: 10vw;
+  max-height: 100px;
+  width: 10vw;
+  max-width: 100px;
   margin-right: 20px;
 }
 
 .user-icon-image {
-  height: 100px;
-  width: 100px;
+  height: 10vw;
+  max-height: 100px;
+  width: 10vw;
+  max-width: 100px;
   border-radius: 50px;
   object-fit: cover;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .user-icon-image-small {
@@ -17,7 +21,7 @@
   width: 40px;
   margin: 0 10px;
   font-size: 18px;
-  border-radius: 20px;
+  border-radius: 10px;
   object-fit: cover;
 }
 

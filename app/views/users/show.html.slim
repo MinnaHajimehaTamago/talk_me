@@ -1,51 +1,50 @@
 = render 'shared/header'
 
-.user-show-container
-  .user-info-container
-    .user-show-wrap
-      .wrap-title
-        h1 ユーザー情報
-      .user-nickname
-        - if current_user.image.attached?
-          = image_tag current_user.image, class:"user-icon-image"
-        - else
-          = image_tag("header_icon_sample.png", class:"user-icon-default", alt: "user icon")
-        p #{current_user.nickname}
-      .user-info
-        h2 名前
-        p #{current_user.personal_information.last_name} #{current_user.personal_information.first_name}
-        h2 フリガナ
-        p #{current_user.personal_information.last_name_kana} #{current_user.personal_information.first_name_kana}
-      .user-info
-        h2 生年月日
-        p #{current_user.personal_information.birth_date.strftime("%Y年 %m月 %d日")}
-        = link_to 'ニックネームを編集する', edit_user_path(current_user.id)
-        br
-        = link_to 'アイコン画像を変更する', edit_icon_user_path(current_user.id)
-
-  .user-signs-container
-    .user-show-wrap
-      .wrap-title
-        h1 サイン一覧
-      .signs-wrap
-        - @signs.each do |sign|
-          = link_to sign_path(sign.id), class:"sign-wrap"
-            .sign-user-nickname
-              - if sign.user.image.attached?
-                = image_tag( sign.user.image, class:"user-icon-image-small")
-              - else
-                = image_tag("header_icon_sample.png", class:"user-icon-small", alt:"user icon")
-              p #{sign.user.nickname}
-            .sign-send-time
-              p #{sign.created_at.strftime("%Y/%m/%d %H:%M")}
-        - @favorite_signs.each do |favo_sign|
-          = link_to sign_path(favo_sign.id), class:"sign-wrap"
-            .sign-user-nickname
-              - if favo_sign.user.image.attached?
-                = image_tag(favo_sign.user.image, class:"user-icon-image-small")
-              - else
-                = image_tag("header_icon_sample.png", class:"user-icon-small", alt:"user icon")
-              p #{favo_sign.user.nickname}
-            .sign-send-time
-              p #{favo_sign.created_at.strftime("%Y/%m/%d %H:%M")}
+.main-container
+  .user-info-wrap
+    .wrap-title
+      h1 ユーザー情報
+    .user-nickname
+      - if current_user.image.attached?
+        = image_tag current_user.image, class:"user-icon-image"
+        = link_to '', edit_icon_user_path(current_user.id), class:"user-icon-edit user-icon-image"
+      - else
+        = image_tag("header_icon_sample.png", class:"user-icon-default", alt: "user icon")
+        = link_to '', edit_icon_user_path(current_user.id), class:"user-icon-edit user-icon-image"
+      p #{current_user.nickname}
+    .user-info
+      h2 名前
+      p #{current_user.personal_information.last_name} #{current_user.personal_information.first_name}
+      h2 フリガナ
+      p #{current_user.personal_information.last_name_kana} #{current_user.personal_information.first_name_kana}
+    .user-info
+      h2 生年月日
+      p #{current_user.personal_information.birth_date.strftime("%Y年 %m月 %d日")}
+      = link_to 'ニックネームを編集する', edit_user_path(current_user.id)
+      br
+      = link_to 'アイコン画像を変更する', edit_icon_user_path(current_user.id)
+  .user-signs-wrap
+    .wrap-title
+      h1 サイン一覧
+    .signs-wrap
+      - @signs.each do |sign|
+        = link_to sign_path(sign.id), class:"sign-wrap"
+          .sign-user-nickname
+            - if sign.user.image.attached?
+              = image_tag( sign.user.image, class:"user-icon-image-small")
+            - else
+              = image_tag("header_icon_sample.png", class:"user-icon-small", alt:"user icon")
+            p #{sign.user.nickname}
+          .sign-send-time
+            p #{sign.created_at.strftime("%Y/%m/%d %H:%M")}
+      - @favorite_signs.each do |favo_sign|
+        = link_to sign_path(favo_sign.id), class:"sign-wrap"
+          .sign-user-nickname
+            - if favo_sign.user.image.attached?
+              = image_tag(favo_sign.user.image, class:"user-icon-image-small")
+            - else
+              = image_tag("header_icon_sample.png", class:"user-icon-small", alt:"user icon")
+            p #{favo_sign.user.nickname}
+          .sign-send-time
+            p #{favo_sign.created_at.strftime("%Y/%m/%d %H:%M")}
 

@@ -5,6 +5,7 @@
     = form_with model: @user, url: update_icon_user_path(current_user.id), local: true do |f|
       .form-title
         h1 アイコン画像の変更
+      - if 
       .icon-preview#icon-preview
         = image_tag(current_user.image, class:"user-icon-image-preview", id: "current-preview-image")
       .form-group
