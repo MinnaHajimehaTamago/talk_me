@@ -3,10 +3,6 @@
   justify-content: center;
 }
 
-.form-title {
-  margin: 40px 0 30px;
-}
-
 .birth-date-form {
   display: flex;
   justify-content: space-between;
@@ -26,15 +22,14 @@ select {
   margin: 20px 0;
 }
 
-.login-text {
-  width: 40px;
-  margin: 0 auto 50px;
-}
-
-.login-link {
+.sign-up-link {
   text-decoration: none;
   font-size: 16px;
   color: gray;
   text-align: center;
-  margin: 0 auto;
+}
+
+.sign-up-text {
+  width: 70px;
+  margin: 0 auto 50px;
 }

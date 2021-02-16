@@ -1,0 +1,15 @@
+.top-main {
+  height: calc(100vh - 80px);
+  width: 100vw;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .app-explanation {
+    font-size: 50px;
+    font-weight: bold;
+  }
+}

@@ -1,8 +1,10 @@
+@import "./variables";
+
 .top-page-header {
   height: 80px;
   width: 100vw;
   display: flex;
-  background-color: #fff;
+  background-color: $theme-color;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid lightgray;
@@ -21,6 +23,7 @@
   font-size: 18px;
   display: flex;
   align-items: center;
+}
 
 .sign-up-btn {
   margin-right: 30px;
@@ -43,13 +46,8 @@
     background-color: darkgray;
   }
 }
-}
 
-.btn {
-text-decoration: none;
-}
-
-.header-user-nickname {
+.user-nickname-header {
   color: gray;
   text-decoration: none;
   margin-right: 10px;
@@ -64,7 +62,7 @@ text-decoration: none;
   position: relative;
 
 }
-.user-icon {
+.user-icon-header {
   height: 60px;
   width: 60px;
   margin-right: 5px;

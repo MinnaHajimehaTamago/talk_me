@@ -1,0 +1,60 @@
+.user-icon-default {
+  height: 100px;
+  width: 100px;
+  margin-right: 20px;
+}
+
+.user-icon-image {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.user-icon-image-small {
+  height: 40px;
+  width: 40px;
+  margin: 0 10px;
+  font-size: 18px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.user-icon-small {
+  height: 40px;
+  width: 40px;
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+
+.sign-wrap {
+  height: 50px;
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid gray;
+  text-decoration: none;
+  color: gray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: lightgray;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.sign-user-nickname {
+  display: flex;
+  align-items: center;
+}
+
+.sign-send-time {
+  margin-right: 10px;
+}

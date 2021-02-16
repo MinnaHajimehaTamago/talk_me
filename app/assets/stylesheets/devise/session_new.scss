@@ -1,30 +1,3 @@
-.bg {
-  height: calc(100vh - 80px);
-  width: 100vw;
-  background-image: image-url("kumao1.jpg");
-  background-size: cover;
-  opacity: 0.3;
-  position: absolute;
-  top: 80px;
-  left: 0;
-}
-
-.top-main {
-  height: calc(100vh - 80px);
-  width: 100vw;
-  position: absolute;
-  top: 80px;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .app-explanation {
-    font-size: 50px;
-    font-weight: bold;
-  }
-}
-
 // ログインモーダル
 .modal-bg {
   height: 100vh;
@@ -45,56 +18,21 @@
   align-items: center;
 }
 
-.form-wrap {
-  width: 40%;
-  border-radius: 15px;
-  background-color: #fff;
-}
-
-
-
-.form-title {
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
-  background-color: #fff;
-  margin: 50px 0 50px;
-  
-}
-
-.form-group {
-  width: 80%;
-  background-color: #fff;
-  margin: 0 auto 20px;
-}
-
-.input-default {
-  height: 35px;
-  width: calc(100% - 5px);
-  padding-left: 5px;
-}
-
 .login-submit-btn {
   height: 50px;
   width: 100%;
   margin: 20px 0;
 }
 
-.sign-up-text {
-  width: 70px;
+.login-text {
+  width: 40px;
   margin: 0 auto 50px;
 }
 
-.sign-up-link {
+.login-link {
   text-decoration: none;
   font-size: 16px;
   color: gray;
   text-align: center;
-  
-}
-
-// モーダル表示操作用
-
-.hide {
-  display: none;
+  margin: 0 auto;
 }

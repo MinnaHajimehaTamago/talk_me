@@ -9,12 +9,12 @@ header.top-page-header
   ul.header-right
     - if user_signed_in?
       li
-          = link_to "#{current_user.nickname}さん", user_path(current_user.id), class:"header-user-nickname"
+          = link_to "#{current_user.nickname}さん", user_path(current_user.id), class:"user-nickname-header"
       li.user-icon-btns
         - if current_user.image.attached?
           = image_tag(current_user.image, class:"user-icon-image-header")
         - else
-          = image_tag("header_icon_sample.png", class:"user-icon", alt:"user icon")
+          = image_tag("header_icon_sample.png", class:"user-icon-header", alt:"user icon")
         = image_tag("header_icon_btn.png", class:"user-icon-btn",)
         ul.user-menu.hide
           li
