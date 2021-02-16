@@ -1,6 +1,6 @@
 class Characteristic < ActiveHash::Base
   self.data = [
-    { id: 1, name: '---' },
+    { id: 1, name: '目印の特徴を選択したください' },
     { id: 2, name: '赤いアクセサリー' },
     { id: 3, name: '黄色いアクセサリー' },
     { id: 4, name: '青いアクセサリー' },

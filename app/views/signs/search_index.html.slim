@@ -4,30 +4,32 @@
     = form_with(url: search_result_signs_path, local: true, method: :get) do |f|
       .form-title
         h1 サインを検索する
-        p= @signs.length
       .form-sub-title
         h2 気になる人の名前
       .form-group-split
         .form-left
           p 姓
-          = f.text_field :last_name, class:"input-default", placeholder: "姓"
+          = f.text_field :last_name, class:"input-default", placeholder: "例）田中"
         .form-right
           p 名
-          = f.text_field :first_name, class:"input-default", placeholder: "名"
+          = f.text_field :first_name, class:"input-default", placeholder: "例）一郎"
       .form-group-split
         .form-left
-          p 姓（フリガナ）
-          = f.text_field :last_name_kana, class:"input-default", placeholder: "姓（フリガナ）"
+          p セイ
+          = f.text_field :last_name_kana, class:"input-default", placeholder: "例）タナカ"
         .form-right
-          p 名（フリガナ）
-          = f.text_field :first_name_kana, class:"input-default", placeholder: "名（フリガナ）"
+          p メイ
+          = f.text_field :first_name_kana, class:"input-default", placeholder: "例）イチロウ"
       .form-sub-title
-        h2 その人と会う場所
+        h2 その人とよく会う場所
       .form-group
         p 都道府県
-        = f.collection_select(:state_id, State.all, :id, :name, {}, {class:"form-select-box-l", id:"state"})
+        = f.collection_select(:state_id, State.all, :id, :name, {}, {class:"form-select-box-m", id:"state"})
+      .form-group-split
+        .form-left
+          p 市区町村
+          = f.text_field(:city, id:"city", class:"input-default", placeholder: "例）大阪")
+        .city-class
+          p 市/区/町/村
       .form-group
-        p 市区町村
-        = f.text_field :city, class:"input-default", placeholder: "市区町村"
-      .form-group
-        = f.submit '検索', class:"sign-submit-btn"
+        = f.submit '検索', class:"sign-search-btn btn"

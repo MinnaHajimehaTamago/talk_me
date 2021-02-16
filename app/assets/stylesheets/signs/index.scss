@@ -34,10 +34,18 @@
   font-weight: bold;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  background-color: lightgray;
+  background-color: goldenrod;
   
-  &:hover {
-    background-color: #adceff;
+  &.send:hover {
+    background-color: #4176e0;
+  }
+
+  &.search:hover {
+    background-color: #c34aff;
+  }
+
+  &.confirm:hover {
+    background-color: #20b2aa;
   }
 }
 

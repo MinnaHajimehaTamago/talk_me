@@ -10,31 +10,32 @@
         - @sign.errors.full_messages.each do |message|
           li= message
       .form-sub-title
-      
-
-        h2 気づいてほしい人の名前
+        h1 気づいてほしい人の名前
       .form-group-split
         .form-left
           p 姓
-          = f.text_field :last_name, id:"last-name", class:"input-default", placeholder: "姓"
+          = f.text_field :last_name, id:"last-name", class:"input-default", placeholder: "例）田中"
         .form-right
           p 名
-          = f.text_field :first_name, id:"first-name", class:"input-default", placeholder: "名"
+          = f.text_field :first_name, id:"first-name", class:"input-default", placeholder: "例）一郎"
       .form-group-split
         .form-left
-          p 姓（フリガナ）
-          = f.text_field :last_name_kana, id:"last-name-kana", class:"input-default", placeholder: "姓（フリガナ）"
+          p セイ
+          = f.text_field :last_name_kana, id:"last-name-kana", class:"input-default", placeholder: "例）タナカ"
         .form-right
-          p 名（フリガナ）
-          = f.text_field :first_name_kana, id:"first-name-kana", class:"input-default", placeholder: "名（フリガナ）"
+          p メイ
+          = f.text_field :first_name_kana, id:"first-name-kana", class:"input-default", placeholder: "例）イチロウ"
       .form-sub-title
-        h2 その人と会う場所
+        h2 その人とよく会う場所
       .form-group
         p 都道府県
         = f.collection_select(:state_id, State.all, :id, :name, {}, {class:"form-select-box-m", id:"state"})
-      .form-group
-        p 市区町村
-        = f.text_field :city, id:"city", class:"input-default-mini", placeholder: "市区町村"
+      .form-group-split
+        .form-left
+          p 市区町村
+          = f.text_field(:city, id:"city", class:"input-default", placeholder: "例）大阪")
+        .city-class
+          p 市/区/町/村
       .form-group
         p 場所の特徴
         = f.collection_select(:spot_type_id, SpotType.all, :id, :name, {}, {class:"form-select-box-l", id:"spot-type"})
