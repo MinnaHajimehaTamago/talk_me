@@ -1,10 +1,10 @@
 @import "./variables";
 
 .top-page-header {
-  height: 80px;
+  height: 10vh;
   width: 100vw;
   display: flex;
-  background-color: $theme-color;
+  background-color: #fff;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid lightgray;
@@ -13,10 +13,10 @@
 }
 
 .logo {
-  height: 30px;
+  height: 5vh;
   width: 100px;
-  font-size: 20px;
   margin-left: 20px;
+  object-fit: contain;
 }
 
 .header-right {
@@ -48,7 +48,7 @@
 }
 
 .user-nickname-header {
-  color: gray;
+  color: $black;
   text-decoration: none;
   margin-right: 10px;
 }
@@ -69,16 +69,16 @@
 }
 
 .user-icon-image-header {
-  height: 60px;
-  width: 60px;
+  height: 9vh;
+  width: 9vh;
   margin-right: 5px;
-  border-radius: 30px;
+  border-radius: 4.5vh;
   object-fit: cover;
 }
 
 .user-icon-btn {
-  height: 10px;
-  width: 12px;
+  height: 1vh;
+  width: 1.5vh;
 }
 
 .user-menu {
