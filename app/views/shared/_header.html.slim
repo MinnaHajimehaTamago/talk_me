@@ -18,7 +18,7 @@ header.top-page-header
         = image_tag("header_icon_btn.png", class:"user-icon-btn",)
         ul.user-menu.hide
           li
-            = link_to 'ユーザー詳細画面', user_path(current_user.id), class:'user-menu-list'
+            = link_to 'プロフィール', user_path(current_user.id), class:'user-menu-list'
           li
             = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "user-menu-list"
     - else user_signed_in?

@@ -3,17 +3,20 @@
 .main-container
   .user-info-wrap
     .wrap-title
-      h1 ユーザー情報
-    .user-nickname
-      - if current_user.image.attached?
-        = image_tag current_user.image, class:"user-icon-image"
-        = link_to '', edit_icon_user_path(current_user.id), class:"user-icon-edit user-icon-image"
-      - else
-        = image_tag("header_icon_sample.png", class:"user-icon-default", alt: "user icon")
-        = link_to '', edit_icon_user_path(current_user.id), class:"user-icon-edit user-icon-image"
-      p #{current_user.nickname}
-    .user-edit-btn
-      = link_to '編集する', edit_user_path(current_user.id), class:"user-edit-link btn"
+      h1 プロフィール情報
+    = form_with model: @user, url: user_path(current_user.id), local: true do |f|
+      .user-icon
+        .icon-box
+          - if current_user.image.attached?
+            = image_tag current_user.image, class:"user-icon-image-large", id:"user-icon-image"
+          - else
+            = image_tag("header_icon_sample.png", class:"user-icon-default-large", id:"user-icon-default")
+          = image_tag("edit_image.png",class:"hide", id:"edit-effect")
+          = f.file_field :image, class:"user-icon-file", id:"user-icon-file"
+      .user-nickname
+        = f.text_field :nickname, class:"input-default-mini"
+      .user-edit-btn
+        = f.submit '変更する', class:"user-edit-link btn"
     .user-info
       h2 名前
       p #{current_user.personal_information.last_name} #{current_user.personal_information.first_name}
@@ -22,28 +25,4 @@
     .user-info
       h2 生年月日
       p #{current_user.personal_information.birth_date.strftime("%Y年 %m月 %d日")}
-  .user-signs-wrap
-    .wrap-title
-      h1 サイン一覧
-    .signs-wrap
-      - @signs.each do |sign|
-        = link_to sign_path(sign.id), class:"sign-wrap"
-          .sign-user-nickname
-            - if sign.user.image.attached?
-              = image_tag( sign.user.image, class:"user-icon-image-small")
-            - else
-              = image_tag("header_icon_sample.png", class:"user-icon-small", alt:"user icon")
-            p #{sign.user.nickname}
-          .sign-send-time
-            p #{sign.created_at.strftime("%Y/%m/%d %H:%M")}
-      - @favorite_signs.each do |favo_sign|
-        = link_to sign_path(favo_sign.id), class:"sign-wrap"
-          .sign-user-nickname
-            - if favo_sign.user.image.attached?
-              = image_tag(favo_sign.user.image, class:"user-icon-image-small")
-            - else
-              = image_tag("header_icon_sample.png", class:"user-icon-small", alt:"user icon")
-            p #{favo_sign.user.nickname}
-          .sign-send-time
-            p #{favo_sign.created_at.strftime("%Y/%m/%d %H:%M")}
 

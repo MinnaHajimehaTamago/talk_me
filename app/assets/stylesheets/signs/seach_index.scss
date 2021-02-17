@@ -1,14 +1,18 @@
+@import "./variables.scss";
+
 .sign-search-btn {
   height: 50px;
   width: 40%;
   margin: 50px auto 50px;display: block;
-  background-color: #c34aff;
+  background-color: $sub-theme-color;
   border: none;
   border-radius: 10px;
+  font-size: 20px;
   color: #fff;
   cursor: pointer;
   
   &:hover {
-    background-color: #9c3bcc;
+    color: lightgray;
+    background-color: $theme-color;
   }
 }

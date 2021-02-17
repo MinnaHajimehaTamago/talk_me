@@ -1,7 +1,7 @@
 @import "./variables";
 
 .top-page-header {
-  height: 10vh;
+  height: 60px;
   width: 100vw;
   display: flex;
   background-color: #fff;
@@ -13,7 +13,7 @@
 }
 
 .logo {
-  height: 5vh;
+  height: 35px;
   width: 100px;
   margin-left: 20px;
   object-fit: contain;
@@ -69,10 +69,10 @@
 }
 
 .user-icon-image-header {
-  height: 9vh;
-  width: 9vh;
+  height: 50px;
+  width: 50px;
   margin-right: 5px;
-  border-radius: 4.5vh;
+  border-radius: 25px;
   object-fit: cover;
 }
 

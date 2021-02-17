@@ -1,16 +1,14 @@
 = render 'shared/header'
 
-.main-container
-  .form-wrap-big
+.container
+  .content-wrap
     = form_with model: @sign, url: signs_path,local: true do |f|
-      .form-title
-        h1 サインを送る
       - if @sign.errors.present?
       ul#erros_explanation
         - @sign.errors.full_messages.each do |message|
           li= message
-      .form-sub-title
-        h1 気づいてほしい人の名前
+      .form-explanation
+        h2 気づいてほしい人の名前をフルネームで入力
       .form-group-split
         .form-left
           p 姓
@@ -25,8 +23,8 @@
         .form-right
           p メイ
           = f.text_field :first_name_kana, id:"first-name-kana", class:"input-default", placeholder: "例）イチロウ"
-      .form-sub-title
-        h2 その人とよく会う場所
+      .form-explanation
+        h2 その人とよく会う場所を入力
       .form-group
         p 都道府県
         = f.collection_select(:state_id, State.all, :id, :name, {}, {class:"form-select-box-m", id:"state"})
@@ -39,16 +37,16 @@
       .form-group
         p 場所の特徴
         = f.collection_select(:spot_type_id, SpotType.all, :id, :name, {}, {class:"form-select-box-l", id:"spot-type"})
-      .form-sub-title
-        h2 サインの特徴
+      .form-explanation
+        h2 サインの特徴を選択
       .form-group
         p どこに
         = f.collection_select(:position_id, Position.all, :id, :name, {}, {class:"form-select-box-l", id:"position"})
       .form-group
         p 何を
         = f.collection_select(:characteristic_id, Characteristic.all, :id, :name, {}, {class:"form-select-box-l", id:"characteristic"})
-      .form-sub-title
-        h2 サインの内容
+      .form-explanation
+        h2 サインの内容を選択
       .form-group
         = f.collection_select(:content_id, Content.all, :id, :name, {}, {class:"form-select-box-l", id:"content"})
       .form-group

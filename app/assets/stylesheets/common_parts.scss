@@ -6,6 +6,12 @@
   margin-right: 20px;
 }
 
+.user-icon-default-large {
+  height: 20vw;
+  width: 20vw;
+  border-radius: 10vw;
+}
+
 .user-icon-image {
   height: 10vw;
   max-height: 100px;
@@ -16,6 +22,7 @@
   margin-right: 10px;
 }
 
+
 .user-icon-image-small {
   height: 40px;
   width: 40px;
@@ -23,6 +30,12 @@
   font-size: 18px;
   border-radius: 10px;
   object-fit: cover;
+}
+
+.user-icon-image-large {
+  height: 20vw;
+  width: 20vw;
+  border-radius: 10vw;
 }
 
 .user-icon-small {

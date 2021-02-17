@@ -1,13 +1,42 @@
 = render 'shared/header'
 
-.main-container
-  .sign-actions
-    .sign-action-wrap
-      .sign-action-info
-      = link_to 'サインを送信する', new_sign_path, class: 'sign-btn send btn'
-    .sign-action-wrap
-      .sign-action-info
-      = link_to 'サインを検索する', search_index_signs_path, class: 'sign-btn search btn'
-    .sign-action-wrap
-      .sign-action-info
-      = link_to 'サインを確認する', user_path(current_user.id), class: 'sign-btn confirm btn'
+.container
+  .content-wrap
+    .content-group
+      .match-signs
+        .match-signs-count
+          p 
+            | 100
+            span
+              | 通
+        .match-signs-title
+          h1 あなたの名前宛のサイン
+      .match-signs
+        .match-signs-count
+          p 
+            | 5
+            span
+              | 通
+        .match-signs-title
+          h1 場所も一致したサイン
+      .match-signs
+        = link_to "検索する", search_index_signs_path, class:"sign-action-btn btn"
+    .content-group
+      .match-signs
+        .match-signs-count
+          p 
+            | 8
+            span
+              | 通
+        .match-signs-title
+          h1 送信したサイン
+      .match-signs
+        .match-signs-count
+          p 
+            | 3
+            span
+              | 通
+        .match-signs-title
+          h1 確認されたサイン
+      .match-signs 
+        = link_to "送信する", new_sign_path, class:"sign-action-btn btn"
