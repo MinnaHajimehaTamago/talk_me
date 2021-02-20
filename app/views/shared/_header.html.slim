@@ -1,4 +1,4 @@
-header.top-page-header
+header.header-main
   .header-left
     - if user_signed_in?
       .logo
@@ -9,7 +9,7 @@ header.top-page-header
   ul.header-right
     - if user_signed_in?
       li
-          = link_to "#{current_user.nickname}さん", user_path(current_user.id), class:"user-nickname-header"
+          = link_to "#{current_user.nickname}さん", edit_user_path(current_user.id), class:"user-nickname-header"
       li.user-icon-btns
         - if current_user.image.attached?
           = image_tag(current_user.image, class:"user-icon-image-header")
@@ -18,7 +18,7 @@ header.top-page-header
         = image_tag("header_icon_btn.png", class:"user-icon-btn",)
         ul.user-menu.hide
           li
-            = link_to 'プロフィール', user_path(current_user.id), class:'user-menu-list'
+            = link_to 'プロフィール', edit_user_path(current_user.id), class:'user-menu-list'
           li
             = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "user-menu-list"
     - else user_signed_in?

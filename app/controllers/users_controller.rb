@@ -12,7 +12,7 @@ before_action :set_user_params
 
   def update
     if @user.update(user_params)
-      redirect_to aciton: :show
+      redirect_to edit_user_path(current_user.id)
     else
       render action: :edit
     end

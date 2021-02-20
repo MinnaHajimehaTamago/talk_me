@@ -1,5 +1,3 @@
-const { get } = require("jquery")
-
 if (document.URL.match(/users/)) {
   document.addEventListener('DOMContentLoaded', function() {
     const fileField = document.getElementById('user-icon-file');

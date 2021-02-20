@@ -5,6 +5,7 @@ class SignsController < ApplicationController
   # before_action :search_sign, only: [:search_index ,:search_result]
 
   def index
+    @signs_to_myselfs = Sign.to_myself(current_user)
   end
 
   def new

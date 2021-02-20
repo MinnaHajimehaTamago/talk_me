@@ -11,12 +11,20 @@
       .sign-show-send-time
         p= @sign.created_at.strftime("%Y/%m/%d %H:%M")
         - if @favorites.find { |f| f[:user_id] == current_user.id } == nil
-          = link_to 'お気に入りにする ●', sign_favorites_path(@sign, @favorite, @keywords), method: :post
+          = link_to image_tag('magnifying_glass_gray.png', class:"favo-icon"), sign_favorites_path(@sign, @favorite, @keywords), method: :post
         - else
-          = link_to 'お気に入りを解除 ○', sign_favorite_path(@sign, @viewer_favorite, @keywords), method: :delete
+          = link_to image_tag('magnifying_glass_yellow.png', class:"favo-icon"), sign_favorite_path(@sign, @viewer_favorite, @keywords), method: :delete
     .form-group
-      h3=  "#{State.data[@sign.state_id-1][:name]}#{@sign.city}"
-      h3= SpotType.data[@sign.spot_type_id-1][:name]
+      .sign-spot-info
+        .info-title
+          h1 あなたと会う場所の住所：
+        .info-value
+          h1= "#{State.data[@sign.state_id-1][:name]}の#{@sign.city}"
+      .sign-spot-info
+        .info-title
+          h1 あなたと会う場所の種類：
+        .info-value
+          h1= SpotType.data[@sign.spot_type_id-1][:name]
     .form-sub-title
       h2 どこに
     .form-title
@@ -36,4 +44,3 @@
         = link_to '戻る', user_path(current_user.id), class:"sign-show-close-btn"
       -else
         = link_to '閉じる', search_result_signs_path(@keywords), class:"sign-show-close-btn"
-

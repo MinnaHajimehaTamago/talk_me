@@ -9,16 +9,52 @@
 .sign-show-user-nickname {
   display: flex;
   align-items: center;
+  font-size: 22px;
+}
+
+.sign-show-send-time {
+  text-align: center;
+}
+
+.favo-icon {
+  height: 50px;
+  width: 50px;
+}
+
+.sign-spot-info {
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+
+  h1 {
+    font-family: "Hiragino Maru Gothic ProN W4";
+    font-size: 1.5vw;
+  }
+}
+
+.info-title {
+  width: 40%;
+  margin: 0 5% 20px 0;
+  text-align: center;
+}
+
+.info-value {
+  width: 55%;
+  
+  h1 {
+    font-weight: bold;
+  }
 }
 
 .sign-show-close-btn {
   line-height: 50px;
   width: 20vw;
   display: block;
-  margin: 0 auto 50px;
+  margin: 50px auto 50px;
   text-align: center;
   text-decoration: none;
   border: 1px solid gray;
+  border-radius: 10px;
   color: gray;
   
   &:hover {

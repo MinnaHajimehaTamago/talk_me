@@ -51,3 +51,5 @@
         = f.collection_select(:content_id, Content.all, :id, :name, {}, {class:"form-select-box-l", id:"content"})
       .form-group
         = f.submit '送信', class:"sign-submit-btn"
+
+        = render 'shared/footer'

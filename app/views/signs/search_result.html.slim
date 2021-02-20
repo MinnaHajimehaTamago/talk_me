@@ -1,5 +1,5 @@
 = render 'shared/header'
-.main-container
+.container
   .form-wrap-big
     .form-title
       h1 検索結果
@@ -16,5 +16,6 @@
             p= sign.created_at.strftime("%Y/%m/%d %H:%M")
           = link_to '', sign_path(sign.id, @keywords), class: 'result-sign-wrap-link'
     - else
-      h1 該当するサインはありません
-    = link_to '戻る', search_index_signs_path, class:"back-btn" 
+      .result-text
+        h1 該当するサインはありません
+        = link_to '戻る', search_index_signs_path, class:"back-btn" 

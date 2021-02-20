@@ -11,6 +11,7 @@ require('jquery')
 require("./user_menu")
 require("./icon_preview")
 require("./icon_edit_effect")
+require("./match_signs_effect")
 
 
 

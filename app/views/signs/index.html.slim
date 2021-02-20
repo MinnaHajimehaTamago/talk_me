@@ -2,41 +2,83 @@
 
 .container
   .content-wrap
-    .content-group
+    .match-signs-main
       .match-signs
-        .match-signs-count
-          p 
-            | 100
+        .signs-count
+          p
+            span.count-number
+              = @signs_to_myselfs.length
             span
               | 通
         .match-signs-title
           h1 あなたの名前宛のサイン
       .match-signs
-        .match-signs-count
+        .signs-count
           p 
-            | 5
+            span.count-number
+              = rand(1000)
             span
               | 通
         .match-signs-title
-          h1 場所も一致したサイン
+          h1 フリガナと一致したサイン
+      .match-signs
+        .signs-count
+          p 
+            span.count-number
+              = rand(1000)
+            span
+              | 通
+        .match-signs-title
+          h1 都道府県も一致したサイン
+      .match-signs
+        .signs-count
+          p 
+            span.count-number
+              = rand(1000)
+            span
+              | 通
+        .match-signs-title
+          h1 市区町村も一致したサイン
       .match-signs
         = link_to "検索する", search_index_signs_path, class:"sign-action-btn btn"
-    .content-group
+    .match-signs-sub
       .match-signs
-        .match-signs-count
+        .signs-count
           p 
-            | 8
+            span.count-number
+              = current_user.signs.length
             span
               | 通
         .match-signs-title
           h1 送信したサイン
       .match-signs
-        .match-signs-count
-          p 
-            | 3
+        .signs-count
+          p
+            span.count-number
+              = rand(1000)
             span
               | 通
         .match-signs-title
-          h1 確認されたサイン
+          h1 お気に入りされたサイン
+      .match-signs
+        .signs-count
+          p 
+            span.count-number
+              = rand(1000)
+            span
+              | 通
+        .match-signs-title
+          h1 うーむ
+      .match-signs
+        .signs-count
+          p 
+            span.count-number
+              = rand(1000)
+            span
+              | 通
+        .match-signs-title
+          h1 うーむ
       .match-signs 
         = link_to "送信する", new_sign_path, class:"sign-action-btn btn"
+
+= render 'shared/footer'

@@ -33,9 +33,10 @@
 }
 
 .user-icon-image-large {
-  height: 20vw;
-  width: 20vw;
-  border-radius: 10vw;
+  height: 18vw;
+  width: 18vw;
+  border-radius: 9vw;
+  object-fit: cover;
 }
 
 .user-icon-small {
