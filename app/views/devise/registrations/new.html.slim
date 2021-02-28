@@ -1,34 +1,45 @@
 = render 'shared/header'
-.bg
-.top-main
-  .app-explanation
-    h1 アプリの説明文
-  
+.main-container
+  .top-text-wrap
+    .app-slogan
+      h1
+        | 気になるあの人に
+        br
+          | サインを送ろう。
+    .app-explanation-btn
+      h1 Talk meとは？
+  .top-image-wrap
+    = image_tag("kumao2.jpg", class:"top-image")
 
 / login modal
 .modal-bg
 .modal-main
   .form-wrap
     = form_for(@user, url: user_registration_path, class:'sign-up-main') do |f|
+      .modal-close-btn
+        i.far.fa-window-close.modal-close-icon
+        = link_to '', tops_path, class:"modal-close-link"
       .form-title
         h1 新規登録
-      .sigin-up-flash-message
-        = flash[:notice]
-        = flash[:alert]
       - if @user.errors.present?
-        ul#error_explanation
+        ul.devise-error-explanation
           - @user.errors.full_messages.each do |message|
             li= message
             
       .form-group
-        = f.text_field :nickname, class:'input-default', id:'nickname', placeholder:'Nickname', autofocus: true
+        p ニックネームを入力
+        = f.text_field :nickname, class:'input-default', id:'nickname', placeholder:'ニックネーム', autofocus: true
       .form-group
-        = f.email_field :email, class:'input-default', id:'email', placeholder:'Email'
+        p Eメールを入力
+        = f.email_field :email, class:'input-default', id:'email', placeholder:'Eメール'
       .form-group
-        = f.password_field :password, class:'input-default', id:'password', placeholder: 'Password'
+        p パスワードを入力
+        = f.password_field :password, class:'input-default', id:'password', placeholder: 'パスワード'
       .form-group
-        = f.password_field :password_confirmation, class:'input-default', id:'password-confirmation', placeholder: 'Password confirmation'
+        p パスワードをもう一度入力（確認用）
+        = f.password_field :password_confirmation, class:'input-default', id:'password-confirmation', placeholder: 'パスワード（確認用）'
       .form-group
-        = f.submit 'Next', class:'sign-up-next-btn'
+        .devise-submit
+          = f.submit '次へ', class:'devise-submit-btn'
       .login-text
-        = link_to 'login', new_user_session_path, class:'login-link' 
+        = link_to 'ログイン', new_user_session_path, class:'login-link' 

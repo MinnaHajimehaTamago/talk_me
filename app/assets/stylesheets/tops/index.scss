@@ -1,15 +1,143 @@
-.top-main {
-  height: calc(100vh - 80px);
-  width: 100vw;
-  position: absolute;
-  top: 80px;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.top-text-wrap {
+  width: 30%;
+}
 
-  .app-explanation {
-    font-size: 50px;
+
+.app-slogan {
+  margin-bottom: 20px;
+  font-size: 35px;
+  h1 {
     font-weight: bold;
   }
+}
+
+.app-explanation-btn {
+  width: 250px;
+  font-size: 30px;
+  text-align: center;
+  color: #fff;
+  background-color: #a0522d;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 60px;
+  cursor: pointer;
+
+  h1 {
+    font-weight: bold;
+  }
+
+  &:hover {
+    background-color: #804124;
+    color: lightgray;
+  }
+}
+
+.top-image-wrap {
+  width: 40%;
+  display: flex;
+}
+
+.top-image {
+  max-height: 400px;
+  max-width: 400px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.app-explanation-bg {
+  height: 100vh;
+  width: 100vw;
+  background-color: gray;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.app-explanation-container {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-explanation-wrap {
+  width: 50%;
+  background-color: #fff;
+  border-radius: 20px;
+  display: none;
+}
+
+.app-explanation-title {
+  text-align: center;
+}
+
+.app-explanation-group {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.app-explanation-btns {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.app-explanation-back-btn {
+  line-height: 20px;
+  width: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+
+  h1 {
+    text-align: center;
+    font-size: 20px;
+  }
+}
+
+.app-explanation-next-btn {
+  line-height: 20px;
+  width: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 10px;
+
+  h1 {
+    text-align: center;
+    font-size: 20px;
+  }
+}
+
+.app-explanation-back-none {
+  height: 20px;
+  width: 50px;
+  border: 2px solid #fff;
+  margin-right: 10px;
+}
+
+.app-explanation-next-none {
+  height: 20px;
+  width: 50px;
+  border: 2px solid #fff;
+  margin-left: 10px;
+}
+
+.app-explanation-bg.active {
+  display: block;
+}
+
+.app-explanation-container.active {
+  display: flex;
+}
+
+.app-explanation-wrap.active {
+  display: block;
 }

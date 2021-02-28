@@ -1,25 +1,27 @@
 = render 'shared/header'
-.bg
-.top-main
-  .app-explanation
-    h1 アプリの説明文
-  
+= render 'shared/top_main'
 
 / login modal
 .modal-bg
 .modal-main
   .form-wrap
     = form_with model: @user, url: user_session_path, class:'login-main', local: true do |f|
+      .modal-close-btn
+        i.far.fa-window-close.modal-close-icon
+        = link_to '', tops_path, class:"modal-close-link"
       .form-title
-        h1 Talk me
-      .login-flash-message
+        h1 ログイン
+      .form-flash-message
         = flash[:notice]
         = flash[:alert]
       .form-group
-        = f.email_field :email, class:'input-default', id:'email', placeholder:'Email', autofocus: true
+        p Eメールを入力
+        = f.email_field :email, class:'input-default', id:'email', placeholder:'Eメール', autofocus: true
       .form-group
-        = f.password_field :password, class:'input-default', id:'password', placeholder: 'Password'
+        p パスワードを入力
+        = f.password_field :password, class:'input-default', id:'password', placeholder: 'パスワード'
       .form-group
-        = f.submit 'Login', class:'login-submit-btn'
+        .devise-submit
+          = f.submit 'ログインする', class:'devise-submit-btn'
       .sign-up-text
-        = link_to 'Sign up', new_user_registration_path, class:'sign-up-link' 
+        = link_to '新規登録', new_user_registration_path, class:'sign-up-link' 

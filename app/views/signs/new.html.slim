@@ -25,7 +25,7 @@
           = f.text_field :first_name_kana, id:"first-name-kana", class:"input-default", placeholder: "例）イチロウ"
       .form-explanation
         h2 その人とよく会う場所を入力
-      .form-group
+      .form-group-narrow
         p 都道府県
         = f.collection_select(:state_id, State.all, :id, :name, {}, {class:"form-select-box-m", id:"state"})
       .form-group-split
@@ -34,22 +34,20 @@
           = f.text_field(:city, id:"city", class:"input-default", placeholder: "例）大阪")
         .city-class
           p 市/区/町/村
-      .form-group
+      .form-group-narrow
         p 場所の特徴
         = f.collection_select(:spot_type_id, SpotType.all, :id, :name, {}, {class:"form-select-box-l", id:"spot-type"})
       .form-explanation
         h2 サインの特徴を選択
-      .form-group
+      .form-group-narrow
         p どこに
         = f.collection_select(:position_id, Position.all, :id, :name, {}, {class:"form-select-box-l", id:"position"})
-      .form-group
+      .form-group-narrow
         p 何を
         = f.collection_select(:characteristic_id, Characteristic.all, :id, :name, {}, {class:"form-select-box-l", id:"characteristic"})
       .form-explanation
         h2 サインの内容を選択
-      .form-group
+      .form-group-narrow
         = f.collection_select(:content_id, Content.all, :id, :name, {}, {class:"form-select-box-l", id:"content"})
-      .form-group
+      .form-group-narrow
         = f.submit '送信', class:"sign-submit-btn"
-
-        = render 'shared/footer'

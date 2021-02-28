@@ -20,7 +20,7 @@
           = f.text_field :first_name_kana, class:"input-default", placeholder: "例）イチロウ"
       .form-explanation
         h2 その人とよく会う場所を入力
-      .form-group
+      .form-group-narrow
         p 都道府県
         = f.collection_select(:state_id, State.all, :id, :name, {}, {class:"form-select-box-m", id:"state"})
       .form-group-split
@@ -29,5 +29,5 @@
           = f.text_field(:city, id:"city", class:"input-default", placeholder: "例）大阪")
         .city-class
           p 市/区/町/村
-      .form-group
+      .form-group-narrow
         = f.submit '検索', class:"sign-search-btn btn"

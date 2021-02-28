@@ -1,39 +1,38 @@
 = render 'shared/header'
-.bg
-.top-main
-  .app-explanation
-    h1 アプリの説明文
-  
+= render 'shared/top_main'
 
 / login modal
 .modal-bg
 .modal-main
   .form-wrap
     = form_with model: @personal_information, url: personal_information_path, local: true  do |f|
+      .modal-close-btn
+        i.far.fa-window-close.modal-close-icon
+        = link_to '', tops_path, class:"modal-close-link"
       .form-title
         h1 新規登録
-      .sigin-up-flash-message
-        = flash[:notice]
-        = flash[:alert]
       - if @personal_information.errors.present?
-        ul#error_explanation
+        ul.devise-error-explanation
           - @personal_information.errors.full_messages.each do |message|
-            li= message
-      
+            li= "・#{message}"
       .form-group
+        p 姓を入力
         = f.text_field :last_name, class:'input-default', id:'last-name', placeholder:'姓', autofocus: true
       .form-group
+        p 名を入力
         = f.text_field :first_name, class:'input-default', id:'first-name', placeholder:'名'
       .form-group
-        = f.text_field :last_name_kana, class:'input-default', id:'last-name-kana', placeholder: '姓（カナ）'
+        p セイ（全角カナ）を入力
+        = f.text_field :last_name_kana, class:'input-default', id:'last-name-kana', placeholder: 'セイ（全角カナ）'
       .form-group
-        = f.text_field :first_name_kana, class:'input-default', id:'first-name-kana', placeholder: '名（カナ）'
+        p メイ（全角カナ）を入力
+        = f.text_field :first_name_kana, class:'input-default', id:'first-name-kana', placeholder: 'メイ（全角カナ）'
       .form-group
         p 生年月日
         .birth-date-form
           = raw sprintf(f.date_select(:birth_date, class:'select-birth', id:"birth-date", use_month_numbers: true, prompt:'--', start_year: 1930, end_year: (Time.now.year - 5), date_separator: '%s'), "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>"
-        
       .form-group
-        = f.submit 'Sign up', class:'sign-up-next-btn'
+        .devise-submit
+          = f.submit '登録', class:'devise-submit-btn'
       .login-text
-        = link_to 'login', new_user_session_path, class:'login-link' 
+        = link_to 'ログイン', new_user_session_path, class:'login-link' 

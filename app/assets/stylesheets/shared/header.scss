@@ -7,8 +7,6 @@
   background-color: #fff;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid lightgray;
-  position: fixed;
   z-index: 30;
 }
 
@@ -28,7 +26,9 @@
 .sign-up-btn {
   margin-right: 30px;
   cursor: pointer;
-  color: gray;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
 
   &:hover {
     color: darkgray;
@@ -38,13 +38,12 @@
 .login-btn {
   margin-right: 100px;
   padding: 10px 30px;
-  border: 1px solid gray;
+  border: 2px solid black;
+  border-radius: 5px;
   cursor: pointer;
-  color: gray;
-
-  &:hover {
-    background-color: darkgray;
-  }
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
 }
 
 .user-nickname-header {

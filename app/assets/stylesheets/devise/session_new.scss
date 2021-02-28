@@ -4,7 +4,7 @@
   width: 100vw;
   position: absolute;
   top: 0;
-  background-color: #202020;
+  background-color: #e2f2ff;
   opacity: 0.8;
 }
 
@@ -16,12 +16,50 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .form-group {
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
 }
 
-.login-submit-btn {
-  height: 50px;
+.modal-close-btn {
   width: 100%;
-  margin: 20px 0;
+  text-align: right;
+  position: relative;
+}
+
+.modal-close-icon {
+  width: 35px;
+  font-size: 35px;
+  padding: 10px 15px 0 0;
+  cursor: pointer;
+}
+
+.modal-close-link {
+  height: 35px;
+  width:35px;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  display: block;
+}
+
+.devise-submit {
+  width: 100%;
+  display: flex;
+  font-weight: bold;
+}
+
+.devise-submit-btn {
+  height: 50px;
+  width: 150px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  background-color: #4169e1;
+  cursor: pointer;
+  margin: 20px auto 0;
 }
 
 .login-text {

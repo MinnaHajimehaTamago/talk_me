@@ -1,7 +1,7 @@
 @import "./variables.scss";
 
 .bg {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 60px);
   width: 100vw;
   background-image: image-url("kumao1.jpg");
   background-size: cover;
@@ -12,26 +12,26 @@
 }
 
 .main-container {
+  min-height: calc(100vh - 60px);
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $bg-color;
+  background-color: #fff;
 }
 
 .container {
-  min-height: 100vh;
+  min-height: calc(100vh - 60px);
   width: 100vw;
   display: flex;
   justify-content: center;
-  background-color: $bg-color;
+  background-color: #fff;
 }
 
 .content-wrap {
   width: 95%;
   max-width: 1200px;
   background-color: #fff;
-  margin-top: 60px;
 }
 
 .content-group {
@@ -39,6 +39,17 @@
   justify-content: center;
   width: 100%;
   margin: 0 auto;
+}
+
+.form-flash-message {
+  width: 80%;
+  margin: 0 auto 20px;
+}
+
+.devise-error-explanation {
+  width: 80%;
+  color: #a0522d;
+  margin: 0 auto 20px;
 }
 
 .form-title {
@@ -77,16 +88,17 @@
 }
 
 .form-wrap {
+  max-height: calc(100vh - 60px - 100px);
   width: 40%;
   border-radius: 15px;
   background-color: #fff;
+  overflow: scroll;
 }
 
 .form-wrap-big {
-  width: 60%;
+  width: 70%;
   border-radius: 15px;
   background-color: #fff;
-  margin: calc(10vh + 40px) 0 60px;
 }
 
 .form-group {
@@ -98,9 +110,18 @@
   }
 }
 
+.form-group-narrow {
+  width: 50%;
+  margin: 0 auto 10px;
+
+  p {
+    font-weight: bold;
+  }
+}
+
 .form-group-split {
   display: flex;
-  width: 60%;
+  width: 50%;
   margin: 0 auto 10px;
 
   p {
@@ -150,6 +171,18 @@
 
   &:hover {
     border: 2px solid #4176e0;
+  }
+}
+
+.birth-date-form {
+  width: 50%;
+  display: flex;
+
+  .field_with_errors {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: calc(100% - 15px);
   }
 }
 
