@@ -7,6 +7,7 @@
   align-items: center;
   border: 3px solid $black;
   border-radius: 20px;
+  background-color: rgba(255,255,255,0.8);
   margin: 30px auto 0;
 }
 
@@ -56,8 +57,8 @@
   align-items: center;
   border: 3px solid $black;
   border-radius: 20px;
+  background-color: rgba(255,255,255,0.8);
   margin: 20px auto 0;
-
 }
 
 .match-signs-sub .signs-count {
@@ -102,7 +103,7 @@
   text-align: center;
   display: block;
   color: #fff;
-  background-color: #3399ff;
+  background-color: #177ee6;
   border-radius: 20px;
   border: 3px solid $black;
   margin: 0 auto;
