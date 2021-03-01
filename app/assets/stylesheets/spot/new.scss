@@ -1,17 +1,17 @@
-@import "./variables.scss";
 .spot-submit-btn {
   height: 50px;
-  width: 50%;
+  width: 140px;
   margin: 50px auto 50px;
   display: block;
-  background-color: $sub-theme-color;
-  border: none;
+  border: 2px solid black;
   border-radius: 10px;
-  color: #fff;
+  color: black;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
   
   &:hover {
-    color: lightgray;
-    background-color: $theme-color;
+    background-color: lightgray;
   }
 }

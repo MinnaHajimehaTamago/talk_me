@@ -38,7 +38,7 @@
         h2 場所の特徴
         p= SpotType.data[@user.spot.spot_type_id-1][:name]
         .user-edit-btn
-          = link_to '編集する', edit_spot_path(current_user.spot.id), class:"user-edit-link btn"
+          = link_to '変更する', edit_spot_path(current_user.spot.id), class:"user-edit-link btn"
     - else
       .user-info
         .user-info-title

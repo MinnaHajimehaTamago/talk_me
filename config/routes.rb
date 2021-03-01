@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show, :edit, :update]
   resources :tops, only: :index
-  resources :spots, only: [:new, :create, :edit, :update, :destroy]
+  resources :spots, only: [:new, :create, :edit, :update]
 end
