@@ -1,6 +1,32 @@
+.users-signs-box {
+  max-height: 200px;
+  width: 90%;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 0 auto;
+  overflow: scroll;
+}
+
+.users-sign-wrap {
+  height: 50px;
+  width: 100%;
+  border-bottom: 1px solid gray;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
 .sign-favo-icon {
   height: 20px;
   width: 20px;
-  color: #e6e600;
-  margin-left: 5px;
+  color: #e6bf00;
+  margin-left: 10px;
 }
+
+.favo-message {
+  font-size: 12px;
+  color: #e6bf00;
+}
+

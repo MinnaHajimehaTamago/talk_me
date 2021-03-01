@@ -1,7 +1,7 @@
 = render 'shared/header'
 
 .container
-  .content-wrap
+  .content-wrap.signs
     .match-signs-main
       .match-signs
         .signs-count
@@ -50,6 +50,7 @@
               = current_user.signs.length
             span
               | 通
+          = link_to '', user_path(current_user.id), class:"send-signs-link"
         .match-signs-title
           h1 送信したサイン
       .match-signs
@@ -59,6 +60,7 @@
               = @favorited_signs.length
             span
               | 通
+          = link_to '', user_path(current_user.id), class:"send-signs-link"
         .match-signs-title
           h1 お気に入りされたサイン
       / .match-signs
