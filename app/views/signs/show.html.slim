@@ -1,6 +1,6 @@
 = render 'shared/header'
 .main-container
-  .form-wrap-big
+  .content-wrap-mini
     .sign-show-top
       .sign-show-user-nickname
         - if @sign.user.image.attached?
@@ -10,12 +10,13 @@
         p= @sign.user.nickname
       .sign-show-send-time
         p= @sign.created_at.strftime("%Y/%m/%d %H:%M")
-        - if @favorites.find { |f| f[:user_id] == current_user.id } == nil
-          i.fas.fa-flag.favo-icon
-          = link_to '', sign_favorites_path(@sign, @favorite, @keywords), class:"favo-icon", method: :post
-        - else
-          i.fas.fa-flag.favo-icon
-          = link_to '', sign_favorite_path(@sign, @viewer_favorite, @keywords), class:"favo-icon", method: :delete
+        .favo-icon-box
+          - if @favorites.find { |f| f[:user_id] == current_user.id } == nil
+            i.far.fa-heart.fa-2x
+            = link_to '', sign_favorites_path(@sign, @favorite, @keywords), class:"favo-link", method: :post
+          - else
+            i.fas.fa-heart.fa-2x
+            = link_to '', sign_favorite_path(@sign, @viewer_favorite, @keywords), class:"favo-link", method: :delete
     .form-group
       .sign-spot-info
         .info-title
@@ -27,17 +28,17 @@
           h1 あなたと会う場所の種類：
         .info-value
           h1= SpotType.data[@sign.spot_type_id-1][:name]
-    .form-sub-title
+    .sign-title
       h2 どこに
-    .form-title
+    .sign-content
       p= Position.data[@sign.position_id-1][:name]
-    .form-sub-title
+    .sign-title
       h2 何を
-    .form-title
+    .sign-content
       p= Characteristic.data[@sign.characteristic_id-1][:name]
-    .form-sub-title
+    .sign-title
       h2 サインの内容
-    .form-title
+    .sign-content
       p= Content.data[@sign.content_id-1][:name]
     .form-group
       -if @sign.user.id == current_user.id

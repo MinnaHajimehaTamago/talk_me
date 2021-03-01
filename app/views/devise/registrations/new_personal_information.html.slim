@@ -9,8 +9,9 @@
       .modal-close-btn
         i.far.fa-window-close.modal-close-icon
         = link_to '', tops_path, class:"modal-close-link"
-      .form-title
-        h1 新規登録
+      .registration-title
+        h1 新規登録（本人情報）
+        p ※登録後に変更できません！
       - if @personal_information.errors.present?
         ul.devise-error-explanation
           - @personal_information.errors.full_messages.each do |message|

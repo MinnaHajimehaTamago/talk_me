@@ -1,6 +1,6 @@
 .sign-show-top {
   width: 90%;
-  margin: 40px auto;
+  margin: 30px auto 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,46 +16,95 @@
   text-align: center;
 }
 
-.favo-icon {
-  height: 50px;
-  width: 50px;
+.favo-icon-box {
+  height: 2em;
+  width: 100%;
+  position: relative;
+
+  .far.fa-heart {
+    height: 32px;
+    width: 36px;
+    color: gray;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .fas.fa-heart {
+    height: 32px;
+    width: 36px;
+    color: #e6bf00;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .favo-link {
+    height: 32px;
+    width: 36px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 .sign-spot-info {
   width: 100%;
-  padding: 10px 0;
   display: flex;
+  align-items: center;
+  margin-bottom: 5px;
 
   h1 {
-    font-family: "Hiragino Maru Gothic ProN W4";
-    font-size: 1.5vw;
+    font-size: 18px;
   }
 }
 
 .info-title {
-  width: 40%;
-  margin: 0 5% 20px 0;
-  text-align: center;
-}
+  margin-right: 10px;
 
-.info-value {
-  width: 55%;
-  
   h1 {
+    font-size: 14px;
     font-weight: bold;
   }
 }
 
+.info-value h1{
+  font-weight: bold;
+}
+
+
+
+.sign-title {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 20px;
+
+  h2 {
+    padding: 0 20px;
+    background-color: gray;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+  }
+}
+
+.sign-content p{
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .sign-show-close-btn {
   line-height: 50px;
-  width: 20vw;
+  width: 140px;
   display: block;
   margin: 50px auto 50px;
+  font-weight: bold;
   text-align: center;
   text-decoration: none;
-  border: 1px solid gray;
+  border: 2px solid black;
   border-radius: 10px;
-  color: gray;
+  color: black;
   
   &:hover {
     background-color: lightgray;

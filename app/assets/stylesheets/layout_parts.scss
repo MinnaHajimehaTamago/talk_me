@@ -34,6 +34,12 @@
   background-color: #fff;
 }
 
+.content-wrap-mini {
+  width: 60%;
+  max-width: 1200px;
+  background-color: #fff;
+}
+
 .content-group {
   display: flex;
   justify-content: center;
@@ -74,16 +80,19 @@
 }
 
 .form-explanation {
-  line-height: 30px;
-  width: 450px;
-  border-radius: 20px;
-  border: 2px solid $black;
-  text-align: center;
-  margin: 60px auto 40px;
+  width: 100%;
+  margin: 45px 0 20px;
+  display: flex;
+  justify-content: center;
 
   h2 {
-    font-size: 20px;
+    padding: 1px 30px;
+    border-radius: 20px;
+    border: 2px solid $black;
+    text-align: center;
+    font-size: 15px;
     font-weight: bold;
+    display: block;
   }
 }
 
@@ -115,6 +124,7 @@
   margin: 0 auto 10px;
 
   p {
+    font-size: 14px;
     font-weight: bold;
   }
 }
@@ -126,6 +136,7 @@
 
   p {
     margin-bottom: 5px;
+    font-size: 14px;
     font-weight: bold;
   }
 }
@@ -140,6 +151,7 @@
 }
 
 .form-select-box-m {
+  height: 27px;
   width: 50%;
   color: black;
   border: 1px solid $black;
@@ -147,14 +159,17 @@
 }
 
 .form-select-box-l {
+  height: 27px;
   width: 100%;
   color:  $black;
-  
+  color: black;
+  border: 1px solid $black;
+  border-radius: 5px;
 }
 
 .input-default {
   font-size: 16px;
-  height: 35px;
+  height: 25px;
   width: calc(100% - 5px);
   padding-left: 5px;
   border: 1px solid $black;
@@ -192,4 +207,8 @@
 
 .btn {
   text-decoration: none;
+}
+
+input:focus {
+  outline: none;
 }

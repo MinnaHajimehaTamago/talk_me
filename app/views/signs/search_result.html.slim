@@ -1,8 +1,8 @@
 = render 'shared/header'
 .container
-  .form-wrap-big
-    .form-title
-      h1 検索結果
+  .content-wrap-mini
+    .form-explanation
+      h2 検索結果
     - if @results.length != 0
       - @results.each do |sign|
         .result-sign-wrap
@@ -18,4 +18,4 @@
     - else
       .result-text
         h1 該当するサインはありません
-        = link_to '戻る', search_index_signs_path, class:"back-btn" 
+    = link_to '戻る', search_index_signs_path, class:"back-btn" 

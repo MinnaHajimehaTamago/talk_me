@@ -1,25 +1,15 @@
 = render 'shared/header'
-.main-container
-  .top-text-wrap
-    .app-slogan
-      h1
-        | 気になるあの人に
-        br
-          | サインを送ろう。
-    .app-explanation-btn
-      h1 Talk meとは？
-  .top-image-wrap
-    = image_tag("kumao2.jpg", class:"top-image")
+= render 'shared/top_main'
 
 / login modal
 .modal-bg
 .modal-main
   .form-wrap
-    = form_for(@user, url: user_registration_path, class:'sign-up-main') do |f|
+    = form_for(@user, url: user_registration_path) do |f|
       .modal-close-btn
         i.far.fa-window-close.modal-close-icon
         = link_to '', tops_path, class:"modal-close-link"
-      .form-title
+      .registration-title
         h1 新規登録
       - if @user.errors.present?
         ul.devise-error-explanation

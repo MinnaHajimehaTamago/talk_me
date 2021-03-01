@@ -1,3 +1,12 @@
+.top-container {
+  min-height: calc(100vh - 60px);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
 .top-text-wrap {
   width: 30%;
 }

@@ -1,6 +1,6 @@
 = render 'shared/header'
 .container
-  .content-wrap
+  .content-wrap-mini
     = form_with(url: search_result_signs_path, local: true, method: :get) do |f|
       .form-explanation
         h2 気になる人の名前をフルネームで入力
@@ -22,7 +22,7 @@
         h2 その人とよく会う場所を入力
       .form-group-narrow
         p 都道府県
-        = f.collection_select(:state_id, State.all, :id, :name, {}, {class:"form-select-box-m", id:"state"})
+        = f.collection_select(:state_id, State.all, :id, :name, {}, {class:"form-select-box-l", id:"state"})
       .form-group-split
         .form-left
           p 市区町村
