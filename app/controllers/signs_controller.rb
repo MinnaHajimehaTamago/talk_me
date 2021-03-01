@@ -76,6 +76,9 @@ class SignsController < ApplicationController
 
   def set_keywords
     @keywords = {first_name: params[:first_name], last_name: params[:last_name], first_name_kana: params[:first_name_kana], last_name_kana: params[:last_name_kana], state_id: params[:state_id], city: params[:city]}
+    if @keywords ==  {:first_name=>nil, :last_name=>nil, :first_name_kana=>nil, :last_name_kana=>nil, :state_id=>nil, :city=>nil}
+      @keywords = {}
+    end
   end
 
   def show_check_peep

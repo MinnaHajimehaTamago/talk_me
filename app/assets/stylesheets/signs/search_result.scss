@@ -40,13 +40,10 @@
   font-size: 18px;
   font-weight: bold;
   text-decoration: none;
-  color: black;
-  border: 2px solid black;
+  color: #fff;
+  border: none;
+  background-color: #177ee6;
   border-radius: 10px;
   margin: 30px auto;
   display: block;
-
-  &:hover {
-    background-color: lightgray;
-  }
 }

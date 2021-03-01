@@ -14,6 +14,51 @@
 
 .sign-show-send-time {
   text-align: center;
+  
+  p {
+    margin-bottom: 10px;
+  }
+}
+
+.sign-edit-icons {
+  width: 80px;
+  display: flex;
+  margin: 0 0 0 auto;
+}
+
+.edit-icon-box {
+  margin-right: 10px;
+  position: relative;
+
+  .fas.fa-edit {
+    color: gray;
+  }
+}
+
+.sign-edit-link {
+  height: 32px;
+  width: 36px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+
+.delete-icon-box {
+  position: relative;
+
+  .fas.fa-trash-alt {
+    color: gray;
+  }
+}
+
+.sign-delete-link {
+  height: 32px;
+  width: 28px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .favo-icon-box {

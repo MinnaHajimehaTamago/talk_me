@@ -6,17 +6,13 @@
 
 .sign-submit-btn {
   height: 50px;
-  width: 50%;
+  width: 140px;
   margin: 50px auto 50px;
   display: block;
-  background-color: $sub-theme-color;
+  background-color: #177ee6;
   border: none;
   border-radius: 10px;
+  font-weight: bold;
   color: #fff;
   cursor: pointer;
-  
-  &:hover {
-    color: lightgray;
-    background-color: $theme-color;
-  }
 }

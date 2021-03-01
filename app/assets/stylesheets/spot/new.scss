@@ -3,15 +3,12 @@
   width: 140px;
   margin: 50px auto 50px;
   display: block;
-  border: 2px solid black;
+  border: none;
   border-radius: 10px;
-  color: black;
-  background-color: #fff;
+  color: #fff;
+  background-color: #177ee6;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   
-  &:hover {
-    background-color: lightgray;
-  }
 }

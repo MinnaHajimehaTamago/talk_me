@@ -63,24 +63,6 @@
           = link_to '', user_path(current_user.id), class:"send-signs-link"
         .match-signs-title
           h1 お気に入りされたサイン
-      / .match-signs
-      /   .signs-count
-      /     p 
-      /       span.count-number
-      /         = rand(1000)
-      /       span
-      /         | 通
-      /   .match-signs-title
-      /     h1 うーむ
-      / .match-signs
-      /   .signs-count
-      /     p 
-      /       span.count-number
-      /         = rand(1000)
-      /       span
-      /         | 通
-      /   .match-signs-title
-      /     h1 うーむ
       .match-signs 
         = link_to "送信する", new_sign_path, class:"sign-action-btn btn"
 

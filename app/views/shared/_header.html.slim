@@ -18,9 +18,11 @@ header.header-main
         = image_tag("header_icon_btn.png", class:"user-icon-btn",)
         ul.user-menu.hide
           li
-            = link_to 'プロフィール', edit_user_path(current_user.id), class:'user-menu-list'
+            = link_to 'トップページ', signs_path, class:'user-menu-list'
           li
-            = link_to 'My signs', user_path(current_user.id), class:'user-menu-list'
+            = link_to 'マイプロフィール', edit_user_path(current_user.id), class:'user-menu-list'
+          li
+            = link_to 'マイサイン一覧', user_path(current_user.id), class:'user-menu-list'
           li
             = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "user-menu-list"
     - else user_signed_in?

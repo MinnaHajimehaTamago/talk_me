@@ -46,6 +46,19 @@
   font-size: 18px;
 }
 
+.icon-preview {
+  display: flex;
+  justify-content: center;
+}
+
+#current-preview-image {
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  border: 3px solid lightgray;
+  margin-bottom: 30px;
+  object-fit: cover;
+}
 
 .sign-wrap {
   height: 50px;

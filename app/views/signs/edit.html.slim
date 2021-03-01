@@ -1,7 +1,7 @@
 = render 'shared/header'
 
 .main-container
-  .form-wrap-big
+  .content-wrap-mini
     = form_with model: @sign, local: true do |f|
       .form-title
         h1 サインを編集する
@@ -9,7 +9,7 @@
         ul#erros_explanation
           - @sign.errors.full_messages.each do |message|
             li= message
-      .form-sub-title
+      .form-explanation
         h2 気づいてほしい人の名前
       .form-group-split
         .form-left
@@ -25,28 +25,31 @@
         .form-right
           p 名（フリガナ）
           = f.text_field :first_name_kana, id:"first-name-kana", class:"input-default", placeholder: "名（フリガナ）"
-      .form-sub-title
+      .form-explanation
         h2 その人と会う場所
-      .form-group
+      .form-group-narrow
         p 都道府県
-        = f.collection_select(:state_id, State.all, :id, :name, {}, {class:"form-select-box-m", id:"state"})
-      .form-group
-        p 市区町村
-        = f.text_field :city, id:"city", class:"input-default-mini", placeholder: "市区町村"
-      .form-group
+        = f.collection_select(:state_id, State.all, :id, :name, {}, {class:"form-select-box-l", id:"state"})
+      .form-group-split
+        .form-left
+          p 市区町村
+          = f.text_field(:city, id:"city", class:"input-default", placeholder: "例）大阪")
+        .city-class
+          p 市/区/町/村
+      .form-group-narrow
         p 場所の特徴
         = f.collection_select(:spot_type_id, SpotType.all, :id, :name, {}, {class:"form-select-box-l", id:"spot-type"})
-      .form-sub-title
+      .form-explanation
         h2 サインの特徴
-      .form-group
+      .form-group-narrow
         p どこに
         = f.collection_select(:position_id, Position.all, :id, :name, {}, {class:"form-select-box-l", id:"position"})
-      .form-group
+      .form-group-narrow
         p 何を
         = f.collection_select(:characteristic_id, Characteristic.all, :id, :name, {}, {class:"form-select-box-l", id:"characteristic"})
-      .form-sub-title
+      .form-explanation
         h2 サインの内容
-      .form-group
+      .form-group-narrow
         = f.collection_select(:content_id, Content.all, :id, :name, {}, {class:"form-select-box-l", id:"content"})
-      .form-group
+      .form-group-narrow
         = f.submit '編集する', class:"sign-submit-btn"

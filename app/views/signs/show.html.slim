@@ -10,13 +10,22 @@
         p= @sign.user.nickname
       .sign-show-send-time
         p= @sign.created_at.strftime("%Y/%m/%d %H:%M")
-        .favo-icon-box
-          - if @favorites.find { |f| f[:user_id] == current_user.id } == nil
-            i.far.fa-heart.fa-2x
-            = link_to '', sign_favorites_path(@sign, @favorite, @keywords), class:"favo-link", method: :post
-          - else
-            i.fas.fa-heart.fa-2x
-            = link_to '', sign_favorite_path(@sign, @viewer_favorite, @keywords), class:"favo-link", method: :delete
+        - if @sign.user.id == current_user.id
+          .sign-edit-icons
+            .edit-icon-box
+              i.fas.fa-edit.fa-2x
+              = link_to '', edit_sign_path(@sign.id), class:"sign-edit-link"
+            .delete-icon-box
+              i.fas.fa-trash-alt.fa-2x
+              = link_to '', sign_path(@sign.id), method: :delete, class:"sign-delete-link"
+        - else
+          .favo-icon-box
+            - if @favorites.find { |f| f[:user_id] == current_user.id } == nil
+              i.far.fa-heart.fa-2x
+              = link_to '', sign_favorites_path(@sign, @favorite, @keywords), class:"favo-link", method: :post
+            - else
+              i.fas.fa-heart.fa-2x
+              = link_to '', sign_favorite_path(@sign, @viewer_favorite, @keywords), class:"favo-link", method: :delete
     .form-group
       .sign-spot-info
         .info-title
@@ -41,9 +50,8 @@
     .sign-content
       p= Content.data[@sign.content_id-1][:name]
     .form-group
-      -if @sign.user.id == current_user.id
-        = link_to '編集する', edit_sign_path(@sign.id), class:"sign-show-close-btn"
-        = link_to '削除する', sign_path(@sign.id), method: :delete, class:"sign-show-close-btn"
+      -if @sign.user.id == current_user.id || @keywords == {}
         = link_to '戻る', user_path(current_user.id), class:"sign-show-close-btn"
       -else
         = link_to '閉じる', search_result_signs_path(@keywords), class:"sign-show-close-btn"
+= render 'shared/footer'
