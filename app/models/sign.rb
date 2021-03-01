@@ -30,6 +30,32 @@ class Sign < ApplicationRecord
     Sign.where(first_name: user.first_name, last_name: user.last_name).or(Sign.where(first_name_kana: user.first_name_kana, last_name_kana: user.last_name_kana))
   end
 
+  def self.to_myself_kana(current_user)
+    user = current_user.personal_information
+    Sign.where(first_name_kana: user.first_name_kana, last_name_kana: user.last_name_kana)
+  end
+
+  def self.match_state_signs(current_user)
+    user = current_user
+    Sign.where(first_name: user.personal_information.first_name, last_name: user.personal_information.last_name, state_id: user.spot.state_id).or(Sign.where(first_name_kana: user.personal_information.first_name_kana, last_name_kana: user.personal_information.last_name_kana, state_id: user.spot.state_id))
+  end
+
+  def self.match_city_signs(current_user)
+    user = current_user
+    Sign.where(first_name: user.personal_information.first_name, last_name: user.personal_information.last_name, state_id: user.spot.state_id, city: user.spot.city).or(Sign.where(first_name_kana: user.personal_information.first_name_kana, last_name_kana: user.personal_information.last_name_kana, state_id: user.spot.state_id, city: user.spot.city))
+  end
+
+  def self.favorited_signs(current_user)
+    user_signs = Sign.where(user_id: current_user.id)
+    favorited_signs = []
+    user_signs.each do |sign|
+      if Favorite.where(sign_id: sign.id).length >= 1
+        favorited_signs << sign
+      end
+    end
+    return favorited_signs
+  end
+
   def self.search(keywords, current_user)
     results = []
     user = current_user.personal_information

@@ -1,0 +1,25 @@
+= render 'shared/header'
+
+.container
+  .content-wrap
+    = form_with model: @spot, local: true do |f|
+      - if @spot.errors.present?
+        ul#errors_explanation
+          - @spot.errors.full_messages.each do |message|
+            li= message
+      .form-explanation
+        h2 あなたのよくいる場所を登録
+      .form-group-narrow
+        p 都道府県
+        = f.collection_select(:state_id, State.all, :id, :name, {}, {class:"form-select-box-m", id:"state"})
+      .form-group-split
+        .form-left
+          p 市区町村
+          = f.text_field(:city, id:"city", class:"input-default", placeholder: "例）大阪")
+        .city-class
+          p 市/区/町/村
+      .form-group-narrow
+        p 場所の特徴
+        = f.collection_select(:spot_type_id, SpotType.all, :id, :name, {}, {class:"form-select-box-l", id:"spot-type"})
+      .form-group-narrow
+        = f.submit '登録', class:"spot-submit-btn btn"

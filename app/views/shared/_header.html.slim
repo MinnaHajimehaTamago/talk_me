@@ -20,6 +20,8 @@ header.header-main
           li
             = link_to 'プロフィール', edit_user_path(current_user.id), class:'user-menu-list'
           li
+            = link_to 'My signs', user_path(current_user.id), class:'user-menu-list'
+          li
             = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "user-menu-list"
     - else user_signed_in?
       .sign

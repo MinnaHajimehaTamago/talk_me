@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one :personal_information
+  has_one :spot
   has_many :signs
   has_many :favorites
   has_one_attached :image

@@ -1,0 +1,42 @@
+= render 'shared/header'
+
+.container
+  .form-wrap-big
+    .form-title
+      h1 送信したサイン
+    .form-group
+      - if @signs.length != 0
+        - @signs.each do |sign|
+          .result-sign-wrap
+            .sign-user-nickname
+              - if sign.user.image.attached?
+                = image_tag(sign.user.image, class:"user-icon-image-small")
+              - else
+                = image_tag("header_icon_sample.png", class:"user-icon-small")
+              p= sign.user.nickname
+              - if sign.favorites.present?
+                i.fas.fa-flag.sign-favo-icon
+            .sign-send-time
+              p= sign.created_at.strftime("%Y/%m/%d %H:%M")
+            = link_to '', sign_path(sign.id), class: 'result-sign-wrap-link'
+      - else
+        .result-text
+          h1 該当するサインはありません
+    .form-title
+      h1 お気に入りしたサイン
+    .form-group
+      - if @favorite_signs.length != 0
+        - @favorite_signs.each do |sign|
+          .result-sign-wrap
+            .sign-user-nickname
+              - if sign.user.image.attached?
+                = image_tag(sign.user.image, class:"user-icon-image-small")
+              - else
+                = image_tag("header_icon_sample.png", class:"user-icon-small")
+              p= sign.user.nickname
+            .sign-send-time
+              p= sign.created_at.strftime("%Y/%m/%d %H:%M")
+            = link_to '', sign_path(sign.id), class: 'result-sign-wrap-link'
+      - else
+        .result-text
+          h1 該当するサインはありません

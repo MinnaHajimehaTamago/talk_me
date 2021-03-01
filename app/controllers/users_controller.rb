@@ -18,18 +18,6 @@ before_action :set_user_params
     end
   end
 
-  def edit_icon
-  end
-
-  def update_icon
-    unless params[:user] == nil
-      @user.update(user_params)
-      redirect_to user_path(current_user.id)
-    else
-      redirect_to user_path(current_user.id)
-    end
-  end
-
   private
 
   def set_user_params

@@ -4,9 +4,9 @@
   .content-wrap
     = form_with model: @sign, url: signs_path,local: true do |f|
       - if @sign.errors.present?
-      ul#erros_explanation
-        - @sign.errors.full_messages.each do |message|
-          li= message
+        ul#errors_explanation
+          - @sign.errors.full_messages.each do |message|
+            li= message
       .form-explanation
         h2 気づいてほしい人の名前をフルネームで入力
       .form-group-split

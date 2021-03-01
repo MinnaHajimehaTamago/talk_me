@@ -6,6 +6,12 @@ class SignsController < ApplicationController
 
   def index
     @signs_to_myselfs = Sign.to_myself(current_user)
+    @signs_to_myselfs_kana = Sign.to_myself_kana(current_user)
+    if current_user.spot.present?
+      @match_state_signs = Sign.match_state_signs(current_user)
+      @match_city_signs = Sign.match_city_signs(current_user)
+    end
+    @favorited_signs = Sign.favorited_signs(current_user)
   end
 
   def new

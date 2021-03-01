@@ -11,9 +11,11 @@
       .sign-show-send-time
         p= @sign.created_at.strftime("%Y/%m/%d %H:%M")
         - if @favorites.find { |f| f[:user_id] == current_user.id } == nil
-          = link_to image_tag('magnifying_glass_gray.png', class:"favo-icon"), sign_favorites_path(@sign, @favorite, @keywords), method: :post
+          i.fas.fa-flag.favo-icon
+          = link_to '', sign_favorites_path(@sign, @favorite, @keywords), class:"favo-icon", method: :post
         - else
-          = link_to image_tag('magnifying_glass_yellow.png', class:"favo-icon"), sign_favorite_path(@sign, @viewer_favorite, @keywords), method: :delete
+          i.fas.fa-flag.favo-icon
+          = link_to '', sign_favorite_path(@sign, @viewer_favorite, @keywords), class:"favo-icon", method: :delete
     .form-group
       .sign-spot-info
         .info-title

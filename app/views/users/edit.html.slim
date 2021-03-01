@@ -18,12 +18,33 @@
       .user-edit-btn
         = f.submit '変更する', class:"user-edit-link btn"
     .user-info
+      .user-info-title
+        h1 基本情報
       h2 名前
       p #{current_user.personal_information.last_name} #{current_user.personal_information.first_name}
       h2 フリガナ
       p #{current_user.personal_information.last_name_kana} #{current_user.personal_information.first_name_kana}
-    .user-info
       h2 生年月日
       p #{current_user.personal_information.birth_date.strftime("%Y年 %m月 %d日")}
+
+    - if current_user.spot.present?
+      .user-info
+        .user-info-title
+          h1 場所情報
+        h2 都道府県
+        p= State.data[@user.spot.state_id-1][:name]
+        h2 市区町村
+        p= @user.spot.city
+        h2 場所の特徴
+        p= SpotType.data[@user.spot.spot_type_id-1][:name]
+        .user-edit-btn
+          = link_to '編集する', edit_spot_path(current_user.spot.id), class:"user-edit-link btn"
+    - else
+      .user-info
+        .user-info-title
+          h1 場所情報
+          p 場所情報は登録されていません
+          .user-edit-btn
+            = link_to '登録する', new_spot_path, class:"user-edit-link btn"
 
 = render 'shared/footer'
