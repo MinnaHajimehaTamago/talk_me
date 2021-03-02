@@ -8,9 +8,10 @@
     TODO will need to remove settings on HTML since we can't namespace it.
     TODO with the prefix, should I group by selector or property for weight savings?
 */
-html{
+html, body {
   color:#000;
   background:#FFF;
+  font-family: Arial, Helvetica, sans-serif;
 }
 /*
   TODO remove settings on BODY since we can't namespace it.

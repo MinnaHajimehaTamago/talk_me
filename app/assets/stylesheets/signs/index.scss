@@ -83,13 +83,14 @@
 }
 
 .match-signs-title {
-  width: 15vw;
-  max-width: 200px;
+  width: 200px;
   text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
   margin: 0 auto;
 
   h1 {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
   }
 }
@@ -114,7 +115,7 @@
   width: 200px;
 
   h1 {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
   }
 }
