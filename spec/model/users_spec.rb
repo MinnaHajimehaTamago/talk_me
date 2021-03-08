@@ -5,7 +5,7 @@ describe User, type: :model do
     before do
       @user = FactoryBot.build(:user)
     end
-    
+
     context 'ユーザー新規登録ができる時' do
       it '全ての値が正しく入力されていれば登録できること' do
         expect(@user).to be_valid

@@ -12,24 +12,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     @user = User.new(sign_up_params)
-      unless @user.valid?
-        render :new and return
-      end
-    session["devise.regist_data"] = {user: @user.attributes}
-    session["devise.regist_data"][:user]["password"] = params[:user][:password]
+    render :new and return unless @user.valid?
+
+    session['devise.regist_data'] = { user: @user.attributes }
+    session['devise.regist_data'][:user]['password'] = params[:user][:password]
     @personal_information = @user.build_personal_information
     render :new_personal_information
   end
 
   def create_personal_information
-    @user = User.new(session["devise.regist_data"]["user"])
+    @user = User.new(session['devise.regist_data']['user'])
     @personal_information = PersonalInformation.new(personal_information_params)
-      unless @personal_information.valid?
-        render :new_personal_information and return
-      end
+    render :new_personal_information and return unless @personal_information.valid?
+
     @user.build_personal_information(@personal_information.attributes)
     @user.save
-    session["devise.regist_data"]["user"].clear
+    session['devise.regist_data']['user'].clear
     sign_in(:user, @user)
     redirect_to signs_path
   end

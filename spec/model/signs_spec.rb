@@ -5,7 +5,7 @@ describe Sign, type: :model do
     before do
       @sign = FactoryBot.build(:sign)
     end
-    
+
     context 'サインが登録できる時' do
       it '全ての値が正しく入力されていれば登録できること' do
         expect(@sign).to be_valid

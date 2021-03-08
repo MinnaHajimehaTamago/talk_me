@@ -15,11 +15,9 @@ class SpotsController < ApplicationController
       render action: :new
     end
   end
-  
+
   def edit
-    unless current_user.id == @spot.user_id
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user.id == @spot.user_id
   end
 
   def update
@@ -39,5 +37,4 @@ class SpotsController < ApplicationController
   def set_spot_params
     @spot = Spot.find(params[:id])
   end
-
 end

@@ -11,5 +11,4 @@ class User < ApplicationRecord
   has_one_attached :image
 
   validates :nickname, presence: true
-
 end

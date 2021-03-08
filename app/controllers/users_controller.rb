@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :set_user_params
+  before_action :set_user_params
 
   def show
     @signs = @user.signs
@@ -25,6 +25,7 @@ before_action :set_user_params
   end
 
   def user_params
-    params.require(:user).permit(:image, :nickname, email: current_user.email, password: current_user.password, password_confirmation: current_user.password_confirmation)
+    params.require(:user).permit(:image, :nickname, email: current_user.email, password: current_user.password,
+                                                    password_confirmation: current_user.password_confirmation)
   end
 end

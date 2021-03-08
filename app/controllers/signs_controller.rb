@@ -36,9 +36,7 @@ class SignsController < ApplicationController
   end
 
   def edit
-    unless current_user.id == @sign.user_id
-      redirect_to signs_path
-    end
+    redirect_to signs_path unless current_user.id == @sign.user_id
   end
 
   def update
@@ -67,7 +65,8 @@ class SignsController < ApplicationController
   private
 
   def sign_params
-    params.require(:sign).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :state_id, :city, :spot_type_id, :position_id, :characteristic_id, :content_id).merge(user_id: current_user.id)
+    params.require(:sign).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :state_id, :city, :spot_type_id,
+                                 :position_id, :characteristic_id, :content_id).merge(user_id: current_user.id)
   end
 
   def set_sign_params
@@ -75,16 +74,17 @@ class SignsController < ApplicationController
   end
 
   def set_keywords
-    @keywords = {first_name: params[:first_name], last_name: params[:last_name], first_name_kana: params[:first_name_kana], last_name_kana: params[:last_name_kana], state_id: params[:state_id], city: params[:city]}
-    if @keywords ==  {:first_name=>nil, :last_name=>nil, :first_name_kana=>nil, :last_name_kana=>nil, :state_id=>nil, :city=>nil}
+    @keywords = { first_name: params[:first_name], last_name: params[:last_name], first_name_kana: params[:first_name_kana],
+                  last_name_kana: params[:last_name_kana], state_id: params[:state_id], city: params[:city] }
+    if @keywords == { first_name: nil, last_name: nil, first_name_kana: nil, last_name_kana: nil, state_id: nil,
+                      city: nil }
       @keywords = {}
     end
   end
 
   def show_check_peep
-    if @sign.user.id == current_user.id
-      return
-    end
+    return if @sign.user.id == current_user.id
+
     unless (current_user.personal_information.first_name == @sign.first_name && current_user.personal_information.last_name == @sign.last_name) || (current_user.personal_information.first_name_kana == @sign.first_name_kana && current_user.personal_information.last_name_kana == @sign.last_name_kana)
       redirect_to search_index_signs_path
     end
@@ -92,5 +92,4 @@ class SignsController < ApplicationController
   # def search_sign
   #   @q = Sign.ransack(params[:q])
   # end
-
 end

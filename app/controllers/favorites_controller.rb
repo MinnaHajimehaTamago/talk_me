@@ -15,7 +15,7 @@ class FavoritesController < ApplicationController
   private
 
   def set_keywords
-    @keywords = {first_name: params[:first_name], last_name: params[:last_name], first_name_kana: params[:first_name_kana], last_name_kana: params[:last_name_kana], state_id: params[:state_id], city: params[:city]}
+    @keywords = { first_name: params[:first_name], last_name: params[:last_name], first_name_kana: params[:first_name_kana],
+                  last_name_kana: params[:last_name_kana], state_id: params[:state_id], city: params[:city] }
   end
-
 end

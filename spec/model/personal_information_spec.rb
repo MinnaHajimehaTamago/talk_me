@@ -5,7 +5,7 @@ describe PersonalInformation, type: :model do
     before do
       @personal_information = FactoryBot.build(:personal_information)
     end
-    
+
     context '本人情報新規登録ができる時' do
       it '全ての値が正しく入力されていれば登録できること' do
         expect(@personal_information).to be_valid
