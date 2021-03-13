@@ -30,6 +30,6 @@
         = f.password_field :password_confirmation, class:'input-default', id:'password-confirmation', placeholder: 'パスワード（確認用）'
       .form-group
         .devise-submit
-          = f.submit '次へ', class:'devise-submit-btn'
+          = f.submit 'サインアップ', class:'devise-submit-btn'
       .login-text
         = link_to 'ログイン', new_user_session_path, class:'login-link' 

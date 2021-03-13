@@ -7,7 +7,7 @@
         .signs-count
           p
             span.count-number
-              = @signs_to_myselfs.length
+              / = @signs_to_myselfs.length
             span
               | 通
         .match-signs-title
@@ -16,7 +16,7 @@
         .signs-count
           p 
             span.count-number
-              = @signs_to_myselfs_kana.length
+              / = @signs_to_myselfs_kana.length
             span
               | 通
         .match-signs-title
@@ -26,7 +26,7 @@
           .signs-count
             p 
               span.count-number
-                = @match_state_signs.length
+                / = @match_state_signs.length
               span
                 | 通
           .match-signs-title
@@ -35,7 +35,7 @@
           .signs-count
             p 
               span.count-number
-                = @match_city_signs.length
+                / = @match_city_signs.length
               span
                 | 通
           .match-signs-title
@@ -47,7 +47,7 @@
         .signs-count
           p 
             span.count-number
-              = current_user.signs.length
+              / = current_user.signs.length
             span
               | 通
           = link_to '', user_path(current_user.id), class:"send-signs-link"
@@ -57,7 +57,7 @@
         .signs-count
           p
             span.count-number
-              = @favorited_signs.length
+              / = @favorited_signs.length
             span
               | 通
           = link_to '', user_path(current_user.id), class:"send-signs-link"

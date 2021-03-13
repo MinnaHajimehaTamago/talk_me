@@ -5,32 +5,40 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  def new
-    @user = User.new
-  end
+  # def new
+  #   super
+  #   @user = User.new
+  # end
 
   # POST /resource
-  def create
-    @user = User.new(sign_up_params)
-    render :new and return unless @user.valid?
+  # def create
+  #   super
+  # end
 
-    session['devise.regist_data'] = { user: @user.attributes }
-    session['devise.regist_data'][:user]['password'] = params[:user][:password]
-    @personal_information = @user.build_personal_information
-    render :new_personal_information
-  end
+  # 基本情報登録用 --
+  # def create
+  #   @user = User.new(sign_up_params)
+  #   render :new and return unless @user.valid?
 
-  def create_personal_information
-    @user = User.new(session['devise.regist_data']['user'])
-    @personal_information = PersonalInformation.new(personal_information_params)
-    render :new_personal_information and return unless @personal_information.valid?
+  #   session['devise.regist_data'] = { user: @user.attributes }
+  #   session['devise.regist_data'][:user]['password'] = params[:user][:password]
+  #   @personal_information = @user.build_personal_information
+  #   render :new_personal_information
+  # end
 
-    @user.build_personal_information(@personal_information.attributes)
-    @user.save
-    session['devise.regist_data']['user'].clear
-    sign_in(:user, @user)
-    redirect_to signs_path
-  end
+  # def create_personal_information
+  #   @user = User.new(session['devise.regist_data']['user'])
+  #   @personal_information = PersonalInformation.new(personal_information_params)
+  #   render :new_personal_information and return unless @personal_information.valid?
+
+  #   @user.build_personal_information(@personal_information.attributes)
+  #   @user.save
+  #   session['devise.regist_data']['user'].clear
+  #   sign_in(:user, @user)
+  #   redirect_to signs_path
+  # end
+
+  # ここまで --
 
   # GET /resource/edit
   # def edit
