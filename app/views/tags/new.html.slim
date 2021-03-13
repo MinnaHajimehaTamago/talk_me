@@ -1,0 +1,17 @@
+= render "shared/header"
+
+.container
+  .content-wrap-mini
+    = form_with model: @tag, url: tags_path, local: true do |f|
+      .form-explanation
+        h2 キーワードを登録
+      .form-group-narrow
+        - if @tag.errors.present?
+          ul#errors_explanation
+            - @tag.errors.full_messages.each do |message|
+              li= message
+      .form-group-narrow
+        p　タグ名
+        = f.text_field(:name, class:"input-default", placeholder: "タグ名")
+      .form-group-narrow
+        = f.submit '登録', class:"tag-submit-btn btn"
