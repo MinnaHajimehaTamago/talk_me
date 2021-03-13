@@ -7,7 +7,7 @@ class TagsController < ApplicationController
     @tag = UsersTag.new(tag_params)
     if @tag.valid?
       @tag.save
-      return redirect_to signs_path
+      return redirect_to edit_user_path(current_user.id)
     else
       render :new
     end

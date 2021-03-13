@@ -27,6 +27,11 @@
         p #{current_user.personal_information.last_name_kana} #{current_user.personal_information.first_name_kana}
         h2 生年月日
         p #{current_user.personal_information.birth_date.strftime("%Y年 %m月 %d日")}
+    - else
+      .user-info
+        .user-info-title
+          h1 基本情報
+          p 基本情報は登録されていません
 
     - if current_user.spot.present?
       .user-info
@@ -47,5 +52,12 @@
           p 場所情報は登録されていません
           .user-edit-btn
             = link_to '登録する', new_spot_path, class:"user-edit-link btn"
+    .user-info
+      .user-info-title
+        h1　ユーザータグ
+      = link_to "登録", new_tag_path
+    -if current_user.user_tag_relations.present?
+      - @user_tags.each do |tag|
+        p= tag[:name]
 
 = render 'shared/footer'

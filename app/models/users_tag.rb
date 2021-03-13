@@ -8,8 +8,7 @@ class UsersTag
   def save
     tag = Tag.where(name: name).first_or_initialize
     tag.save
-
     UserTagRelation.create(user_id: user_id, tag_id: tag.id)
-
   end
+
 end
