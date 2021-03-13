@@ -18,5 +18,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   resources :tops, only: :index
   resources :spots, only: [:new, :create, :edit, :update]
-  resources :tags, only: [:new, :create, :edit, :update, :destroy]
+  resources :tags, only: [:new, :create, :edit, :update, :destroy] do
+    collection do
+      get 'search'
+    end
+  end
 end

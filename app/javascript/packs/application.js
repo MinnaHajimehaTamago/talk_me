@@ -13,6 +13,7 @@ require("./icon_preview")
 require("./icon_edit_effect")
 require("./match_signs_effect")
 require("./app_explanation")
+require("./tag")
 
 
 
