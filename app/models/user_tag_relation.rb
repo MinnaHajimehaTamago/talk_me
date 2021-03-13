@@ -1,0 +1,2 @@
+class UserTagRelation < ApplicationRecord
+end
