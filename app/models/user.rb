@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one :personal_information
   has_one :spot
+  has_one :appearance
   has_many :signs
   has_many :favorites
   has_many :user_tag_relations

@@ -59,5 +59,9 @@
       -if current_user.user_tag_relations.present?
         - current_user.user_tag_relations.each do |tag|
           p= tag.tag[:name]
+    .user-info
+      .user-info-title
+        h1 ユーザーの見た目
+      = link_to "登録", new_appearance_path
 
 = render 'shared/footer'
