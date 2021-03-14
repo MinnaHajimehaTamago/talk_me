@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user_tags = Tag.user_tags(current_user)
   end
 
   def update

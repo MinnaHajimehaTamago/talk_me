@@ -6,13 +6,20 @@
       .form-explanation
         h2 キーワードを登録
       .form-group-narrow
-        - if @tag.errors.present?
+        - if @errors.present?
           ul#errors_explanation
-            - @tag.errors.full_messages.each do |message|
-              li= message
+              li= @errors
+      .form-group-narrow
+        #tag-lists
+          -if current_user.user_tag_relations.present?
+            - current_user.user_tag_relations.each do |tag|
+              = link_to "#{tag.tag[:name]}", user_tag_relation_path(tag[:id]), method: :delete
       .form-group-narrow
         p　タグ名
         = f.text_field(:name, class:"input-default", placeholder: "タグ名")
         #search-result
       .form-group-narrow
-        = f.submit '登録', class:"tag-submit-btn btn"
+        = f.submit '追加', class:"tag-submit-btn btn" 
+      .form-group-narrow
+        = link_to '登録を終了する', edit_user_path(current_user.id), class:"btn"
+      

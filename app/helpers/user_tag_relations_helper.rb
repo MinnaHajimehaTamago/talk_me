@@ -1,0 +1,2 @@
+module UserTagRelationsHelper
+end

@@ -23,4 +23,5 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  resources :user_tag_relations, only: :destroy
 end
