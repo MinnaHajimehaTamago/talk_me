@@ -62,6 +62,12 @@
     .user-info
       .user-info-title
         h1 ユーザーの見た目
-      = link_to "登録", new_appearance_path
+      
+      - if current_user.appearance.present?
+        = image_tag("#{current_user.appearance.image}.png", class:"user-icon-image-large")
+        = link_to "編集する", edit_appearance_path
+      - else
+        = link_to "登録", new_appearance_path
+
 
 = render 'shared/footer'
