@@ -1,4 +1,5 @@
 class AppearancesController < ApplicationController
+  before_action :set_appearance, only: [:edit, :update]
   
   def new
     @appearance = Appearance.new
@@ -15,11 +16,9 @@ class AppearancesController < ApplicationController
   end
 
   def edit
-    @appearance = Appearance.find(current_user.appearance.id)
   end
 
   def update
-    @appearance = Appearance.find(current_user.appearance.id)
     @image = Appearance.appearance_image(appearance_params)
     if @appearance.update(appearance_params.merge(user_id: current_user.id, image: @image))
       redirect_to edit_user_path(current_user.id)
@@ -34,4 +33,7 @@ class AppearancesController < ApplicationController
     params.require(:appearance).permit(:hair_id, :eye_shape_id, :eye_size_id, :nose_shape_id, :nose_size_id, :mouth_shape_id, :mouth_size_id, :height_id, :body_shape_id, :gender_id)
   end
 
+  def set_appearance
+    @appearance = Appearance.find(current_user.appearance.id)
+  end
 end
