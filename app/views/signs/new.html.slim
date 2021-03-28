@@ -11,36 +11,6 @@
       .form-title
         h1 サインを送信
       .form-explanation
-        h2 気づいてほしい人の名前をフルネームで入力
-      .form-group-split
-        .form-left
-          p 姓
-          = f.text_field :last_name, id:"last-name", class:"input-default", placeholder: "例）田中"
-        .form-right
-          p 名
-          = f.text_field :first_name, id:"first-name", class:"input-default", placeholder: "例）一郎"
-      .form-group-split
-        .form-left
-          p セイ
-          = f.text_field :last_name_kana, id:"last-name-kana", class:"input-default", placeholder: "例）タナカ"
-        .form-right
-          p メイ
-          = f.text_field :first_name_kana, id:"first-name-kana", class:"input-default", placeholder: "例）イチロウ"
-      .form-explanation
-        h2 その人とよく会う場所を入力
-      .form-group-narrow
-        p 都道府県
-        = f.collection_select(:state_id, State.all, :id, :name, {}, {class:"form-select-box-m", id:"state"})
-      .form-group-split
-        .form-left
-          p 市区町村
-          = f.text_field(:city, id:"city", class:"input-default", placeholder: "例）大阪")
-        .city-class
-          p 市/区/町/村
-      .form-group-narrow
-        p 場所の特徴
-        = f.collection_select(:spot_type_id, SpotType.all, :id, :name, {}, {class:"form-select-box-l", id:"spot-type"})
-      .form-explanation
         h2 サインの特徴を選択
       .form-group-narrow
         p どこに
@@ -52,5 +22,17 @@
         h2 サインの内容を選択
       .form-group-narrow
         = f.collection_select(:content_id, Content.all, :id, :name, {}, {class:"form-select-box-l", id:"content"})
+      .form-explanation
+        h2 キーワードタグを入力
+      .form-group-narrow
+        p 入力候補
+        .search-result-lists#search-result
+      .form-group-split
+        = f.text_field(:input, class:"input-default", placeholder:"登録するタグを入力")
+        p.tag-add-btn#tag_add_btn タグを追加
+      .form-group-narrow
+        p 登録タグ一覧
+        .tag-lists#tag_lists
+
       .form-group-narrow
         = f.submit '送信', class:"sign-submit-btn"

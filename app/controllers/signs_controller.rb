@@ -15,11 +15,11 @@ class SignsController < ApplicationController
   end
 
   def new
-    @sign = Sign.new
+    @sign = SignsTag.new
   end
 
   def create
-    @sign = Sign.new(sign_params)
+    @sign = SignsTag.new(sign_params)
     if @sign.valid?
       @sign.save
       redirect_to signs_path
@@ -52,6 +52,12 @@ class SignsController < ApplicationController
     redirect_to user_path(current_user.id)
   end
 
+  def tag_search
+    return nil if params[:keyword] == ""
+    tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"] )
+    render json:{ keyword: tag }
+  end
+
   def search_index
     # @signs = Sign.to_myself(current_user)
   end
@@ -65,8 +71,7 @@ class SignsController < ApplicationController
   private
 
   def sign_params
-    params.require(:sign).permit(:first_name, :last_name, :first_name_kana, :last_name_kana, :state_id, :city, :spot_type_id,
-                                 :position_id, :characteristic_id, :content_id).merge(user_id: current_user.id)
+    params.require(:signs_tag).permit(:position_id, :characteristic_id, :content_id, names: []).merge(user_id: current_user.id)
   end
 
   def set_sign_params

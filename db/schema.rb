@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_14_143312) do
+ActiveRecord::Schema.define(version: 2021_03_19_015810) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -72,14 +72,16 @@ ActiveRecord::Schema.define(version: 2021_03_14_143312) do
     t.index ["user_id"], name: "index_personal_informations_on_user_id"
   end
 
+  create_table "sign_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "sign_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["sign_id"], name: "index_sign_tag_relations_on_sign_id"
+    t.index ["tag_id"], name: "index_sign_tag_relations_on_tag_id"
+  end
+
   create_table "signs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "first_name", null: false
-    t.string "last_name", null: false
-    t.string "first_name_kana", null: false
-    t.string "last_name_kana", null: false
-    t.integer "state_id", null: false
-    t.string "city", null: false
-    t.integer "spot_type_id", null: false
     t.integer "position_id", null: false
     t.integer "characteristic_id", null: false
     t.integer "content_id", null: false
@@ -128,6 +130,8 @@ ActiveRecord::Schema.define(version: 2021_03_14_143312) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "sign_tag_relations", "signs"
+  add_foreign_key "sign_tag_relations", "tags"
   add_foreign_key "user_tag_relations", "tags"
   add_foreign_key "user_tag_relations", "users"
 end

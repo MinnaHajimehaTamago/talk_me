@@ -13,7 +13,10 @@ require("./icon_preview")
 require("./icon_edit_effect")
 require("./match_signs_effect")
 require("./app_explanation")
-require("./tag")
+require("./user_tag")
+require("./user_tag_input")
+require("./sign_tag")
+require("./sign_tag_input")
 
 
 

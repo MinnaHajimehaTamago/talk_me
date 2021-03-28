@@ -16,3 +16,44 @@
   color: #fff;
   cursor: pointer;
 }
+
+.search-result-lists {
+  width: 100%;
+  min-height: 50px;
+  border: 1px dotted black;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.tag-candidate {
+  line-height: 20px;
+  padding: 5px;
+  margin: 5px 10px 5px 0;
+  border: 1px dotted black;
+  border-radius: 5px;
+}
+
+.tag-add-btn {
+  line-height: 25px;
+  width: 100px;
+  text-align: center;
+  margin-left: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.tag-lists {
+  width: 100%;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.tag-element {
+  line-height: 20px;
+  padding: 5px;
+  margin: 5px 10px 5px 0;
+  border: 1px solid black;
+  border-radius: 5px;
+}
