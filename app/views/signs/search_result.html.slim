@@ -3,15 +3,17 @@
   .content-wrap-mini
     .form-explanation
       h2 検索結果
-    - if @results.length != 0
+    - if @results.present?
       - @results.each do |sign|
         .result-sign-wrap
           .sign-user-nickname
-            - if sign.user.image.attached?
-              = image_tag(sign.user.image, class:"user-icon-image-small")
+            - if sign.user.appearance.present?
+              = image_tag("#{sign.user.appearance.image}.png", class:"user-icon-image-small")
             - else
               = image_tag("header_icon_sample.png", class:"user-icon-small")
             p= sign.user.nickname
+            - sign.tags.each do |tag|
+              p= tag.name
           .sign-send-time
             p= sign.created_at.strftime("%Y/%m/%d %H:%M")
           = link_to '', sign_path(sign.id, @keywords), class: 'result-sign-wrap-link'

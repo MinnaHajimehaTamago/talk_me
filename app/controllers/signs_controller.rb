@@ -52,7 +52,7 @@ class SignsController < ApplicationController
     redirect_to user_path(current_user.id)
   end
 
-  def tag_search
+  def search
     return nil if params[:keyword] == ""
     tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"] )
     render json:{ keyword: tag }
@@ -63,7 +63,11 @@ class SignsController < ApplicationController
   end
 
   def search_result
-    @results = Sign.search(@keywords, current_user)
+    if @keywords.present?
+      @results = Sign.search(@keywords)
+    else
+      @results = []
+    end
     # @results = @q.result.includes(:user)
     # @q = {q: params[:q].permit!}
   end
@@ -79,12 +83,7 @@ class SignsController < ApplicationController
   end
 
   def set_keywords
-    @keywords = { first_name: params[:first_name], last_name: params[:last_name], first_name_kana: params[:first_name_kana],
-                  last_name_kana: params[:last_name_kana], state_id: params[:state_id], city: params[:city] }
-    if @keywords == { first_name: nil, last_name: nil, first_name_kana: nil, last_name_kana: nil, state_id: nil,
-                      city: nil }
-      @keywords = {}
-    end
+    @keywords = params.require(:search_tag).permit(names: []) if params[:search_tag].present?
   end
 
   def show_check_peep

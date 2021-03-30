@@ -4,32 +4,14 @@
     = form_with(url: search_result_signs_path, local: true, method: :get) do |f|
       .form-title
         h1 サインを検索
-      .form-explanation
-        h2 気になる人の名前をフルネームで入力
-      .form-group-split
-        .form-left
-          p 姓
-          = f.text_field :last_name, class:"input-default", placeholder: "例）田中"
-        .form-right
-          p 名
-          = f.text_field :first_name, class:"input-default", placeholder: "例）一郎"
-      .form-group-split
-        .form-left
-          p セイ
-          = f.text_field :last_name_kana, class:"input-default", placeholder: "例）タナカ"
-        .form-right
-          p メイ
-          = f.text_field :first_name_kana, class:"input-default", placeholder: "例）イチロウ"
-      .form-explanation
-        h2 その人とよく会う場所を入力
       .form-group-narrow
-        p 都道府県
-        = f.collection_select(:state_id, State.all, :id, :name, {}, {class:"form-select-box-l", id:"state"})
+        p 入力候補
+        .search-result-lists#search-result
       .form-group-split
-        .form-left
-          p 市区町村
-          = f.text_field(:city, id:"city", class:"input-default", placeholder: "例）大阪")
-        .city-class
-          p 市/区/町/村
+        = f.text_field(:input, class:"input-default", placeholder:"検索するタグを入力")
+        p.tag-add-btn#tag_add_btn タグを追加
+      .form-group-narrow
+        p 登録タグ一覧
+        .tag-lists#tag_lists
       .form-group-narrow
         = f.submit '検索', class:"sign-search-btn btn"

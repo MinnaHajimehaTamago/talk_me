@@ -15,8 +15,8 @@ require("./match_signs_effect")
 require("./app_explanation")
 require("./user_tag")
 require("./user_tag_input")
-require("./sign_tag")
 require("./sign_tag_input")
+require("./sign_search_tag_input")
 
 
 

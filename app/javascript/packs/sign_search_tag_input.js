@@ -1,9 +1,9 @@
-if (location.pathname.match("signs")) {
+if (location.pathname.match("signs/search_index")) {
   document.addEventListener('DOMContentLoaded', function() {
     const TagLists = document.getElementById('tag_lists');
-    const inputElement = document.getElementById("signs_tag_input");
+    const inputElement = document.getElementById("input");
     let tagCount = 0;
-    
+
     document.getElementById('tag_add_btn').addEventListener('click', () => {
       if (inputElement.value != "") {
         const registrationTag = document.createElement('div');
@@ -11,14 +11,14 @@ if (location.pathname.match("signs")) {
         registrationTag.setAttribute('class', 'tag-element');
         let registrationTagNum = tagCount;
         const inputHTML = document.createElement('input');
-        inputHTML.setAttribute('id', `signs_tag_${registrationTagNum}`);
-        inputHTML.setAttribute('name', 'signs_tag[names][]');
+        inputHTML.setAttribute('id', `search_tag_${registrationTagNum}`);
+        inputHTML.setAttribute('name', 'search_tag[names][]');
         inputHTML.setAttribute('type', 'text');
         inputHTML.setAttribute('class', 'hide');
         registrationTag.innerHTML = inputElement.value;
         registrationTag.appendChild(inputHTML);
         TagLists.appendChild(registrationTag);
-        let registrationTagInput = document.getElementById(`signs_tag_${registrationTagNum}`);
+        let registrationTagInput = document.getElementById(`search_tag_${registrationTagNum}`);
         registrationTagInput.value = inputElement.value;
         inputElement.value = "";
         tagCount += 1;
@@ -26,7 +26,7 @@ if (location.pathname.match("signs")) {
     });
 
     inputElement.addEventListener("keyup", () => {
-      const keyword = document.getElementById("signs_tag_input").value;
+      const keyword = document.getElementById("input").value;
       const XHR = new XMLHttpRequest();
       XHR.open("GET", `../tags/search/?keyword=${keyword}`, true);
       XHR.responseType = "json";
@@ -72,7 +72,6 @@ if (location.pathname.match("signs")) {
         $(this).remove();
       });
     });
-
 
   });
 };

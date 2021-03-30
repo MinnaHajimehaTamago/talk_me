@@ -51,24 +51,37 @@ class Sign < ApplicationRecord
     favorited_signs
   end
 
-  def self.search(keywords, current_user)
-    results = []
-    user = current_user.personal_information
-    signs_to_myself = Sign.where(first_name: user.first_name,
-                                 last_name: user.last_name).or(Sign.where(first_name_kana: user.first_name_kana,
-                                                                          last_name_kana: user.last_name_kana))
-    senders = PersonalInformation.where(first_name: keywords[:first_name],
-                                        last_name: keywords[:last_name]).or(PersonalInformation.where(first_name_kana: keywords[:first_name_kana],
-                                                                                                      last_name_kana: keywords[:last_name_kana]))
-    signs_to_myself.each do |sign|
-      sign_user = sign.user.personal_information
-      if sign_user.first_name == keywords[:first_name] && sign_user.last_name == keywords[:last_name] && sign[:state_id] == keywords[:state_id].to_i && sign[:city] == keywords[:city]
-        results << sign
-      elsif sign_user.first_name_kana == keywords[:first_name_kana] && sign_user.last_name_kana == keywords[:last_name_kana] && sign[:state_id] == keywords[:state_id].to_i && sign[:city] == keywords[:city]
-        results << sign
+  def self.search(keywords)
+    names = keywords[:names].uniq
+    tag_ids = []
+    names.each do |name|
+      tag = Tag.find_by(name: name)
+      unless tag == nil
+        tag_ids << tag[:id]
       end
     end
-    results
+    sign_ids = []
+    tag_ids.each do |tag_id|
+      sign_ids << SignTagRelation.where(tag_id: tag_id)
+    end
+    signs = []
+    sign_ids.flatten.uniq.each do |sign|
+      signs << Sign.includes(:tags).find(sign.sign_id)
+    end
+    results = []
+    signs.each do |sign|
+      sign_tags = []
+      sign_tags_match_count = 0
+      sign.tags.each do |tag|
+        sign_tags_match_count += 1 if tag_ids.count(tag.id) >= 1
+        sign_tags << tag.id
+      end
+      # サインのマッチ率
+      match_rate = 0.7
+      results << sign if sign_tags_match_count / sign.tags.length >= match_rate
+      results << sign if sign_tags_match_count / tag_ids.length >= match_rate
+    end
+    return results.uniq.sort_by { |a| a[:created_at] }.reverse
   end
 
   def self.favorite_signs(favorites)
