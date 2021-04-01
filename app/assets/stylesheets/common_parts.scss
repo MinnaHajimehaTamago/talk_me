@@ -13,9 +13,9 @@
 }
 
 .user-icon-image {
-  height: 120px;
-  width: 120px;
-  border-radius: 60px;
+  height: 150px;
+  width: 150px;
+  border-radius: 40px;
   object-fit: cover;
   margin-right: 10px;
 }
@@ -35,6 +35,12 @@
   width: 200px;
   border-radius: 100px;
   object-fit: cover;
+}
+
+.user-icon {
+  height: 150px;
+  width: 150px;
+  border-radius: 40px;
 }
 
 .user-icon-small {
