@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_19_015810) do
+ActiveRecord::Schema.define(version: 2021_04_02_065018) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -82,12 +82,10 @@ ActiveRecord::Schema.define(version: 2021_03_19_015810) do
   end
 
   create_table "signs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "position_id", null: false
-    t.integer "characteristic_id", null: false
-    t.integer "content_id", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "text", null: false
     t.index ["user_id"], name: "index_signs_on_user_id"
   end
 

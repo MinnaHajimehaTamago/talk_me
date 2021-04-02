@@ -1,7 +1,7 @@
-if (location.pathname.match("signs/search_index")) {
+if (location.pathname.match("signs")) {
   document.addEventListener('DOMContentLoaded', function() {
     const TagLists = document.getElementById('tag_lists');
-    const inputElement = document.getElementById("input");
+    const inputElement = document.getElementById("sign_tag_input");
     const addBtn = document.getElementById('tag_add_btn');
     let tagCount = 0;
 
@@ -12,14 +12,14 @@ if (location.pathname.match("signs/search_index")) {
         registrationTag.setAttribute('class', 'tag-element');
         let registrationTagNum = tagCount;
         const inputHTML = document.createElement('input');
-        inputHTML.setAttribute('id', `search_tag_${registrationTagNum}`);
-        inputHTML.setAttribute('name', 'search_tag[names][]');
+        inputHTML.setAttribute('id', `signs_tag_${registrationTagNum}`);
+        inputHTML.setAttribute('name', 'tag[names][]');
         inputHTML.setAttribute('type', 'text');
         inputHTML.setAttribute('class', 'hide');
         registrationTag.innerHTML = inputElement.value;
         registrationTag.appendChild(inputHTML);
         TagLists.appendChild(registrationTag);
-        let registrationTagInput = document.getElementById(`search_tag_${registrationTagNum}`);
+        let registrationTagInput = document.getElementById(`signs_tag_${registrationTagNum}`);
         registrationTagInput.value = inputElement.value;
         addBtn.style.backgroundColor = 'lightgray';
         addBtn.style.cursor = 'default'
@@ -31,7 +31,7 @@ if (location.pathname.match("signs/search_index")) {
     });
 
     inputElement.addEventListener("keyup", () => {
-      const keyword = document.getElementById("input").value;
+      const keyword = document.getElementById("signs_tag_input").value;
       const XHR = new XMLHttpRequest();
       XHR.open("GET", `../tags/search/?keyword=${keyword}`, true);
       XHR.responseType = "json";
@@ -60,7 +60,7 @@ if (location.pathname.match("signs/search_index")) {
               let registrationTagNum = tagCount;
               const inputHTML = document.createElement('input');
               inputHTML.setAttribute('id', `signs_tag_${registrationTagNum}`);
-              inputHTML.setAttribute('name', 'search_tag[names][]');
+              inputHTML.setAttribute('name', 'signs_tag[names][]');
               inputHTML.setAttribute('type', 'text');
               inputHTML.setAttribute('class', 'hide');
               registrationTag.innerHTML = tag.name;

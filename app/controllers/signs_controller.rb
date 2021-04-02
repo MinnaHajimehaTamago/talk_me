@@ -75,7 +75,7 @@ class SignsController < ApplicationController
   private
 
   def sign_params
-    params.require(:signs_tag).permit(:position_id, :characteristic_id, :content_id, names: []).merge(user_id: current_user.id)
+    params.require(:signs_tag).permit(:text, names: []).merge(user_id: current_user.id)
   end
 
   def set_sign_params
@@ -86,13 +86,6 @@ class SignsController < ApplicationController
     @keywords = params.require(:search_tag).permit(names: []) if params[:search_tag].present?
   end
 
-  def show_check_peep
-    return if @sign.user.id == current_user.id
-
-    unless (current_user.personal_information.first_name == @sign.first_name && current_user.personal_information.last_name == @sign.last_name) || (current_user.personal_information.first_name_kana == @sign.first_name_kana && current_user.personal_information.last_name_kana == @sign.last_name_kana)
-      redirect_to search_index_signs_path
-    end
-  end
   # def search_sign
   #   @q = Sign.ransack(params[:q])
   # end

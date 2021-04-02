@@ -1,38 +1,37 @@
 = render 'shared/header'
 
 .container
-  .content-wrap
-    = form_with model: @sign, url: signs_path,local: true do |f|
-      .form-group-narrow
-        - if @sign.errors.present?
-          ul#errors_explanation
-            - @sign.errors.full_messages.each do |message|
-              li= message
-      .form-title
-        h1 サインを送信
-      .form-explanation
-        h2 サインの特徴を選択
-      .form-group-narrow
-        p どこに
-        = f.collection_select(:position_id, Position.all, :id, :name, {}, {class:"form-select-box-l", id:"position"})
-      .form-group-narrow
-        p 何を
-        = f.collection_select(:characteristic_id, Characteristic.all, :id, :name, {}, {class:"form-select-box-l", id:"characteristic"})
-      .form-explanation
-        h2 サインの内容を選択
-      .form-group-narrow
-        = f.collection_select(:content_id, Content.all, :id, :name, {}, {class:"form-select-box-l", id:"content"})
-      .form-explanation
-        h2 キーワードタグを入力
-      .form-group-narrow
-        p 入力候補
-        .search-result-lists#search-result
-      .form-group-split
-        = f.text_field(:input, class:"input-default", placeholder:"登録するタグを入力")
-        p.tag-add-btn#tag_add_btn タグを追加
-      .form-group-narrow
-        p 登録するタグ一覧
-        .tag-lists#tag_lists
-
-      .form-group-narrow
+  = form_with model: @sign, url: signs_path,local: true, class:"content-wrap" do |f|
+    .form-title
+      h1 サインを送信
+    .form-group-narrow
+      - if @sign.errors.present?
+        ul#errors_explanation
+          - @sign.errors.full_messages.each do |message|
+            li= message
+    .form-explanation
+      h2 サインのテキストを入力
+    .form-group-narrow
+      = f.text_area(:text, class:"input-default-text", placeholder:"テキストを入力")
+    .form-explanation
+      h2 キーワードタグを入力
+    .center-box
+      .content-split 
+        .content-left
+            .form-group
+              p タグを入力
+              = f.text_field(:input, class:"input-default", placeholder:"検索するタグを入力")
+            .form-group
+              p.tag-add-btn#tag_add_btn ⬇︎検索タグへ追加
+            .form-group
+              .tag-lists-title 
+                p 検索タグ一覧
+              .tag-lists#tag_lists
+        .content-right
+          .form-group
+            .tag-candidate-title
+              p 入力候補
+            .search-result-lists#search-result
+    .form-group
+      .form-group
         = f.submit '送信', class:"sign-submit-btn"

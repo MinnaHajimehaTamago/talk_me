@@ -31,6 +31,7 @@
 .content-wrap {
   width: 90%;
   max-width: 1200px;
+  margin: 0 auto;
   background-color: #fff;
 }
 
@@ -44,13 +45,13 @@
 }
 
 .content-wrap-mini {
-  width: 60%;
+  width: 70%;
   max-width: 1200px;
   background-color: #fff;
 }
 
 .content-split {
-  width: 100%;
+  width: 60%;
   background-color: #fff;
   display: flex;
 }
@@ -68,6 +69,12 @@
   justify-content: center;
   width: 100%;
   margin: 0 auto;
+}
+
+.center-box {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .form-flash-message {
@@ -215,6 +222,15 @@
   &:hover {
     border: 2px solid #4176e0;
   }
+}
+
+.input-default-text {
+  font-size: 16px;
+  height:  75px;
+  width: calc(100% - 5px);
+  padding-left: 5px;
+  border: 1px solid $black;
+  border-radius: 5px;
 }
 
 .birth-date-form {

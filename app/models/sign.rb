@@ -1,20 +1,10 @@
 class Sign < ApplicationRecord
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_many :sign_tag_relations
   has_many :tags, through: :sign_tag_relations
   belongs_to :user
-  belongs_to :state
-  belongs_to :spot_type
-  belongs_to :position
-  belongs_to :characteristic
-  belongs_to :content
 
-  with_options presence: true, numericality: { other_than: 1, message: 'を選択してください' } do
-    validates :position_id
-    validates :characteristic_id
-    validates :content_id
-  end
+  validates :text, presence: true
 
   def self.to_myself(current_user)
     user = current_user.personal_information
