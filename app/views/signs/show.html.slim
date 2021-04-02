@@ -1,10 +1,10 @@
 = render 'shared/header'
-.main-container
+.container
   .content-wrap-mini
     .sign-show-top
       .sign-show-user-nickname
-        - if @sign.user.image.attached?
-          = image_tag(@sign.user.image, class:"user-icon-image")
+        - if @sign.user.appearance.present?
+          = image_tag("#{@sign.user.appearance.image}.png", class:"user-icon-image")
         - else
           = image_tag("header_icon_sample.png", class:"user-icon-default")
         p= @sign.user.nickname
@@ -26,29 +26,10 @@
             - else
               i.fas.fa-heart.fa-2x
               = link_to '', sign_favorite_path(@sign, @viewer_favorite, @keywords), class:"favo-link", method: :delete
-    .form-group
-      .sign-spot-info
-        .info-title
-          h1 あなたと会う場所の住所：
-        .info-value
-          h1= "#{State.data[@sign.state_id-1][:name]}の#{@sign.city}"
-      .sign-spot-info
-        .info-title
-          h1 あなたと会う場所の種類：
-        .info-value
-          h1= SpotType.data[@sign.spot_type_id-1][:name]
-    .sign-title
-      h2 どこに
-    .sign-content
-      p= Position.data[@sign.position_id-1][:name]
-    .sign-title
-      h2 何を
-    .sign-content
-      p= Characteristic.data[@sign.characteristic_id-1][:name]
     .sign-title
       h2 サインの内容
     .sign-content
-      p= Content.data[@sign.content_id-1][:name]
+      p= @sign.text
     .form-group
       -if @sign.user.id == current_user.id || @keywords == {}
         = link_to '戻る', user_path(current_user.id), class:"sign-show-close-btn"

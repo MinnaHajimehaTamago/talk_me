@@ -29,7 +29,6 @@ class SignsController < ApplicationController
   end
 
   def show
-    show_check_peep
     @favorite = Favorite.new
     @favorites = @sign.favorites.includes(:user)
     @viewer_favorite = @favorites.find { |f| f[:user_id] == current_user.id }

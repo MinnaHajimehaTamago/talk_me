@@ -10,27 +10,27 @@
           - @sign.errors.full_messages.each do |message|
             li= message
     .form-explanation
-      h2 サインのテキストを入力
+      h2 メッセージを入力
     .form-group-narrow
-      = f.text_area(:text, class:"input-default-text", placeholder:"テキストを入力")
+      = f.text_area(:text, class:"input-default-text", placeholder:"見た人に伝えたいメッセージを入力してください。")
     .form-explanation
-      h2 キーワードタグを入力
+      h2 サインに付けるタグを入力
     .center-box
       .content-split 
         .content-left
             .form-group
-              p タグを入力
-              = f.text_field(:input, class:"input-default", placeholder:"検索するタグを入力")
+              p タグ付けするワードを入力
+              = f.text_field(:input, class:"input-default", placeholder:"ワードを入力")
             .form-group
-              p.tag-add-btn#tag_add_btn ⬇︎検索タグへ追加
+              p.tag-add-btn#tag_add_btn ⬇︎タグを追加
             .form-group
               .tag-lists-title 
-                p 検索タグ一覧
+                p 付けるタグ一覧
               .tag-lists#tag_lists
         .content-right
           .form-group
             .tag-candidate-title
-              p 入力候補
+              p タグ候補
             .search-result-lists#search-result
     .form-group
       .form-group

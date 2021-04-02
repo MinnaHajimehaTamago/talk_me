@@ -11,8 +11,8 @@ header.header-main
       li
           = link_to "#{current_user.nickname}さん", edit_user_path(current_user.id), class:"user-nickname-header"
       li.user-icon-btns
-        - if current_user.image.attached?
-          = image_tag(current_user.image, class:"user-icon-image-header")
+        - if current_user.presence.present?
+          = image_tag("#{current_user.appearance.image}.png", class:"user-icon-image-header")
         - else
           = image_tag("header_icon_sample.png", class:"user-icon-header")
         = image_tag("header_icon_btn.png", class:"user-icon-btn",)
