@@ -25,6 +25,8 @@
                       p= "#{tag.name[0..9]}…"
                     - else
                       p= tag.name
+                    - if tag.officiality_id == 1
+                      = image_tag("official_mark.png", :size => '14x14' )
             
             = link_to '', sign_path(sign.id, @keywords), class: 'result-sign-wrap-link'
     - else

@@ -1,17 +1,23 @@
 = render 'shared/header'
 .container
-  .content-wrap-mini
-    = form_with(url: search_result_signs_path, local: true, method: :get) do |f|
-      .form-title
-        h1 サインを検索
-      .form-group-narrow
-        p 入力候補
-        .search-result-lists#search-result
-      .form-group-split
-        = f.text_field(:input, class:"input-default", placeholder:"検索するタグを入力")
-        p.tag-add-btn#tag_add_btn タグを追加
-      .form-group-narrow
-        p 登録タグ一覧
-        .tag-lists#tag_lists
-      .form-group-narrow
-        = f.submit '検索', class:"sign-search-btn btn"
+  = form_with(url: search_result_signs_path, local: true, method: :get, class:"content-wrap") do |f|
+    .form-title
+      h1 サインを検索
+    .content-split 
+      .content-left
+          .form-group
+            p タグを入力
+            = f.text_field(:input, class:"input-default", placeholder:"検索するタグを入力")
+          .form-group
+            p.tag-add-btn#tag_add_btn ⬇︎検索タグへ追加
+          .form-group
+            .tag-lists-title 
+              p 検索タグ一覧
+            .tag-lists#tag_lists
+      .content-right
+        .form-group
+          .tag-candidate-title
+            p 入力候補
+          .search-result-lists#search-result
+    .form-group
+      = f.submit '検索する', class:"sign-search-btn btn"
