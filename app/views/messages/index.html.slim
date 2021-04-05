@@ -1,0 +1,20 @@
+= render 'shared/header'
+.messages-container
+  .room-title-wrap
+    = image_tag("header_icon_sample.png", class:"user-icon-image-header")
+    p= @room_title.nickname
+  .messages-content-wrap#messages
+      - @messages.each do |message|
+        - if message.user_id == current_user.id
+          .message-wrap
+            .message-wrap-right
+              p.message-time= message.created_at.strftime("%m.%d %H:%M")
+              p.message= message.text
+        - else
+          .message-wrap
+            .message-wrap-left
+              p.message= message.text
+              p.message-time = message.created_at.strftime("%m.%d %H:%M")
+  = form_with model: [@room, @message], class:"message-form", local: true do |f|
+    = f.text_area :text, class:"input-message", placeholder:"メッセージを入力"
+    = f.submit '送信', class:"submit-message"

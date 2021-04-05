@@ -1,0 +1,24 @@
+= render 'shared/header'
+= render 'shared/sign_show'
+.modal-bg
+.modal-main
+  .form-wrap
+    = form_with model: @room, url: rooms_path(@sign), local: true do |f|
+      .modal-close-btn
+        i.far.fa-window-close.modal-close-icon
+        = link_to '', sign_path(@sign.id), class:"modal-close-link"
+      .registration-title
+        h1  メッセージを入力
+      .form-group-narrow
+        - if @room.errors.present?
+          ul#errors_explanation
+            - @room.errors.full_messages.each do |message|
+              li= message
+      .form-group
+        = f.text_field :title, class:'input-default', placeholder:'最初のメッセージを入力してください。'
+        = f.hidden_field :user_ids, name: 'room[user_ids][]', :value => @sign.user.id
+        = f.hidden_field :user_ids, name: 'room[user_ids][]', :value => current_user.id
+      .form-group
+        .devise-submit
+          = f.submit '送信', class:'devise-submit-btn'
+= render 'shared/footer'

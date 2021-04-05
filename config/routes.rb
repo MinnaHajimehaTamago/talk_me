@@ -25,4 +25,7 @@ Rails.application.routes.draw do
   end
   resources :user_tag_relations, only: :destroy
   resources :appearances, only: [:new, :create, :edit, :update]
+  resources :rooms, only: [:new, :create] do
+    resources :messages, only: [:index, :create]
+  end
 end

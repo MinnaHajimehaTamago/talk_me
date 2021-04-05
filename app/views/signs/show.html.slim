@@ -1,38 +1,3 @@
 = render 'shared/header'
-.container
-  .content-wrap-mini
-    .sign-show-top
-      .sign-show-user-nickname
-        - if @sign.user.appearance.present?
-          = image_tag("#{@sign.user.appearance.image}.png", class:"user-icon-image")
-        - else
-          = image_tag("header_icon_sample.png", class:"user-icon-default")
-        p= @sign.user.nickname
-      .sign-show-send-time
-        p= @sign.created_at.strftime("%Y/%m/%d %H:%M")
-        - if @sign.user.id == current_user.id
-          .sign-edit-icons
-            .edit-icon-box
-              i.fas.fa-edit.fa-2x
-              = link_to '', edit_sign_path(@sign.id), class:"sign-edit-link"
-            .delete-icon-box
-              i.fas.fa-trash-alt.fa-2x
-              = link_to '', sign_path(@sign.id), method: :delete, class:"sign-delete-link"
-        - else
-          .favo-icon-box
-            - if @favorites.find { |f| f[:user_id] == current_user.id } == nil
-              i.far.fa-heart.fa-2x
-              = link_to '', sign_favorites_path(@sign, @favorite, @keywords), class:"favo-link", method: :post
-            - else
-              i.fas.fa-heart.fa-2x
-              = link_to '', sign_favorite_path(@sign, @viewer_favorite, @keywords), class:"favo-link", method: :delete
-    .sign-title
-      h2 サインの内容
-    .sign-content
-      p= @sign.text
-    .form-group
-      -if @sign.user.id == current_user.id || @keywords == {}
-        = link_to '戻る', user_path(current_user.id), class:"sign-show-close-btn"
-      -else
-        = link_to '閉じる', search_result_signs_path(@keywords), class:"sign-show-close-btn"
+= render 'shared/sign_show'
 = render 'shared/footer'

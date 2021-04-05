@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :user_tag_relations
   has_many :tags, through: :user_tag_relations
+  has_many :room_user_relations
+  has_many :rooms, through: :room_user_relations
   has_one_attached :image
 
   validates :nickname, presence: true
