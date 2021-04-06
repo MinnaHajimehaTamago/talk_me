@@ -2,7 +2,6 @@ class SignsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_sign_params, only: [:show, :edit, :update, :destroy]
   before_action :set_keywords, only: [:search_result, :show]
-  # before_action :search_sign, only: [:search_index ,:search_result]
 
   def index
     # @signs_to_myselfs = Sign.to_myself(current_user)
@@ -33,6 +32,7 @@ class SignsController < ApplicationController
     @favorite = Favorite.new
     @favorites = @sign.favorites.includes(:user)
     @viewer_favorite = @favorites.find { |f| f[:user_id] == current_user.id }
+    @talk_room = RoomUserRelation.room?(@sign, current_user)
   end
 
   def edit
@@ -59,7 +59,6 @@ class SignsController < ApplicationController
   end
 
   def search_index
-    # @signs = Sign.to_myself(current_user)
   end
 
   def search_result
@@ -68,8 +67,6 @@ class SignsController < ApplicationController
     else
       @results = []
     end
-    # @results = @q.result.includes(:user)
-    # @q = {q: params[:q].permit!}
   end
 
   private
@@ -83,10 +80,10 @@ class SignsController < ApplicationController
   end
 
   def set_keywords
-    @keywords = params.require(:search_tag).permit(names: []) if params[:search_tag].present?
+    if params[:search_tag].present?
+      @keywords = params.require(:search_tag).permit(names: [])
+    elsif params[:names].present?
+      @keywords = params.permit(names: [])
+    end
   end
-
-  # def search_sign
-  #   @q = Sign.ransack(params[:q])
-  # end
 end

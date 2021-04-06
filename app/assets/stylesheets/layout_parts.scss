@@ -1,7 +1,7 @@
 @import "./variables.scss";
 
 .bg {
-  height: calc(100vh - 60px);
+  height: calc(100vh - 50px);
   width: 100vw;
   background-image: image-url("kumao1.jpg");
   background-size: cover;
@@ -12,7 +12,7 @@
 }
 
 .main-container {
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 50px);
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -21,7 +21,7 @@
 }
 
 .container {
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 50px);
   width: 100vw;
   display: flex;
   justify-content: center;

@@ -2,29 +2,41 @@
   .content-wrap-mini
     .sign-show-top
       .sign-show-user-nickname
-        - if @sign.user.appearance.present?
-          = image_tag("#{@sign.user.appearance.image}.png", class:"user-icon-image")
+        - if @sign.user.image.attached?
+          = image_tag(@sign.user.image, class:"user-icon-image")
         - else
           = image_tag("header_icon_sample.png", class:"user-icon-default")
         p= @sign.user.nickname
-      .sign-show-send-time
-        p= @sign.created_at.strftime("%Y/%m/%d %H:%M")
+      .sign-show-time
+        p= @sign.created_at.strftime("%Y.%m.%d %H:%M")
         - if @sign.user.id == current_user.id
           .sign-edit-icons
             .edit-icon-box
-              i.fas.fa-edit.fa-2x
+              i.fas.fa-edit.fa-lg
               = link_to '', edit_sign_path(@sign.id), class:"sign-edit-link"
             .delete-icon-box
-              i.fas.fa-trash-alt.fa-2x
+              i.fas.fa-trash-alt.fa-lg
               = link_to '', sign_path(@sign.id), method: :delete, class:"sign-delete-link"
     .sign-title
-      h2 サインの内容
+      h2 タグ一覧
+    .sign-show-tags
+      - @sign.tags.each do |tag|
+        .sign-tag
+          p= tag.name
+          - if tag.officiality_id == 1
+            = image_tag("official_mark.png", :size => '14x14' )
+    .sign-title
+      h2 メッセージ
     .sign-content
       p= @sign.text
-    .form-group
-      = link_to '話しかける', new_room_path(@sign), class:"sign-show-close-btn"
+    - unless @sign.user == current_user
+      .form-group
+        - if @talk_room == []
+          = link_to '話しかける', rooms_path(@sign), method: :post, class:"sign-show-talk-btn"
+        - else
+          = link_to 'トークルームへ', room_messages_path(@talk_room), class:"sign-show-talk-btn"
     .form-group
       -if @sign.user.id == current_user.id || @keywords == {}
-        = link_to '戻る', user_path(current_user.id), class:"sign-show-close-btn"
+        = link_to '戻る', search_result_signs_path(@keywords), class:"sign-show-close-btn"
       -else
         = link_to '閉じる', search_result_signs_path(@keywords), class:"sign-show-close-btn"
