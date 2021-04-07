@@ -1,52 +1,105 @@
 @import "./variables";
 
-.match-signs-main {
-  width: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid $black;
-  border-radius: 20px;
-  background-color: rgba(255,255,255,0.8);
-  margin: 30px auto 0;
+
+.match-signs-wrap {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.match-signs-title {
+  border-top: 1px solid gray;
+  padding-top: 10px;
+  margin-top: 20px;
+  
+  h2 {
+    padding: 5px 10px;
+    color: gray;
+    font-weight: bold;
+  }
 }
 
 .match-signs {
-  width: 200px;
-  margin: 20px 5px;
+  height: 192px;
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid gray;
+  background-color: rgba(255,255,255,0.8);
+  margin-bottom: 20px;
+  overflow: scroll;
 }
 
-.match-signs-main .signs-count {
-  line-height: 70px;
-  width: 70px;
-  border: 4px solid $black;
-  border-radius: 40px;
+.match-signs-none {
+  height: 122px;
+  width: 100%;
+  padding-top: 60px;
   text-align: center;
-  margin: 0 auto 8px;
-  background-color: #fff;
+  font-size: 16px;
 
-  span:nth-child(1) {
-    font-size: 22px;
-    font-weight: bold;
+  p {
+    margin-bottom: 10px;
   }
 
-  span:nth-child(2) {
+  .user-edit-link {
+    padding: 5px;
+    display: inline;
     font-size: 14px;
-    font-weight: bold;
   }
 }
 
-.send-signs-link {
-  height: 73px;
-  width: 70px;
-  border-radius: 40px;
+
+.match-sign {
+  height: 156px;
+  width: 220px;
+  margin: 10px 5px;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: #fff;
+  position: relative;
+}
+
+.match-sign-header {
+  width: 220px;
+  display: flex;
+  align-items: center;
+
+  p {
+    font-size: 12px;
+    color: gray;
+  }
+}
+
+.match-sign-tags {
+  max-height: 250px;
+  margin: 5px 0 0 5px;
+  border-top: 1px solid gray;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
+}
+
+.match-sign-tag {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 1px 3px;
+  margin:5px 5px 0 0;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.match-sign-link {
   position: absolute;
   top: 0;
   left: 0;
+  height: 168px;
+  width: 232px;
+  cursor: pointer;
+  border-radius: 10px;
 
   &:hover {
-    background-color: lightgray;
-    opacity: 0.5;
+    background-color: gray;
+    opacity: 0.3;
   }
 }
 
@@ -61,62 +114,51 @@
   margin: 20px auto 0;
 }
 
-.match-signs-sub .signs-count {
-  line-height: 70px;
-  width: 70px;
-  border: 4px solid $black;
-  border-radius: 40px;
-  text-align: center;
-  margin: 0 auto 8px;
-  background-color: #fff;
-  position: relative;
-
-  span:nth-child(1) {
-    font-size: 22px;
-    font-weight: bold;
-  }
-
-  span:nth-child(2) {
-    font-size: 14px;
-    font-weight: bold;
-  }
-}
-
-.match-signs-title {
-  width: 200px;
-  text-align: center;
-  background-color: #fff;
-  border-radius: 10px;
-  margin: 0 auto;
-
-  h1 {
-    font-size: 14px;
-    font-weight: bold;
-  }
-}
-
 .sign-action-btn {
-  line-height: 80px;
-  width: 120px;
-  color: $black;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  display: block;
-  color: #fff;
-  background-color: #177ee6;
-  border-radius: 20px;
-  border: 3px solid $black;
-  margin: 0 auto;
-}
-
-@media (min-width: 1500px) {
-  .match-signs-title {
+  height: 30px;
   width: 200px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 0;
 
-  h1 {
-    font-size: 14px;
-    font-weight: bold;
+  i {
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    color: gray;
   }
 }
+
+
+.sign-action-link {
+  line-height: 30px;
+  width: 180px;
+  font-size: 16px;
+  text-align: start;
+  display: block;
+  color: gray;
+  padding: 0 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.match-user-tags {
+  max-height: 67px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid gray;
+}
+
+.user-room-link {
+  margin-top: 3px;
+  padding: 1px 5px;
+  font-size: 13px;
+  color: dimgray;
+  border: 1px solid dimgray;
+  border-radius: 5px;
 }

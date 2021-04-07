@@ -81,11 +81,11 @@
 }
 
 .user-menu {
-  
   border: 1px solid lightgray;
   position: absolute;
   top: 60px;
   left: -75px;
+  z-index: 1;
   font-size: 15px;
   background-color: #fff;
 

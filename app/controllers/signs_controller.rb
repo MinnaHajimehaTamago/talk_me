@@ -4,6 +4,8 @@ class SignsController < ApplicationController
   before_action :set_keywords, only: [:search_result, :show]
 
   def index
+    @signs = Sign.match_signs(current_user)
+    @users = RoomUserRelation.talked_to_me(current_user)
     # @signs_to_myselfs = Sign.to_myself(current_user)
     # @signs_to_myselfs_kana = Sign.to_myself_kana(current_user)
     # if current_user.spot.present?

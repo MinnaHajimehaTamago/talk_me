@@ -54,7 +54,7 @@
             = link_to '登録する', new_spot_path, class:"user-edit-link btn"
     .user-info
       .user-info-title
-        h1　ユーザータグ
+        h1 ユーザータグ
       = link_to "登録", new_tag_path
       -if current_user.user_tag_relations.present?
         - current_user.user_tag_relations.each do |tag|

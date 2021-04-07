@@ -9,10 +9,10 @@
           .result-sign-wrap
             .result-sign-wrap-left
               .sign-user-icon
-                - if sign.user.appearance.present?
-                  = image_tag("#{sign.user.appearance.image}.png", class:"user-icon-image")
+                - if sign.user.image.attached?
+                  = image_tag(sign.user.image, class:"user-icon-image")
                 - else
-                  = image_tag("header_icon_sample.png", class:"user-icon")
+                  = image_tag("header_icon_sample.png", class:"user-icon-default")
             .result-sign-wrap-right
               .sign-user-nickname
                 p= sign.user.nickname
@@ -32,4 +32,4 @@
     - else
       .result-text
         h1 該当するサインはありません
-    = link_to '戻る', search_index_signs_path, class:"back-btn" 
+    = link_to '戻る', search_index_signs_path, class:"back-btn"

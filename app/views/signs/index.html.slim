@@ -1,70 +1,56 @@
 = render 'shared/header'
 
 .container
-  .content-wrap-bgi.signs
-    .match-signs-main
+  .content-wrap
+    .match-signs-wrap
+      .match-signs-title.center-box
+        h2 あなたのキーワードタグにマッチしたサイン
       .match-signs
-        .signs-count
-          p
-            span.count-number
-              / = @signs_to_myselfs.length
-            span
-              | 通
-        .match-signs-title
-          h1 あなたの名前宛のサイン
+        - if @signs.length == 0
+          .match-signs-none
+            p マッチしたサインはありません
+            = link_to "キーワードタグを編集する", new_tag_path, class:"user-edit-link btn"
+        - else
+          - @signs.each do |sign|
+            .match-sign
+              .match-sign-header
+                - if sign.user.image.attached?
+                  = image_tag(sign.user.image, class:"user-icon-image-small")
+                - else
+                  = image_tag("header_icon_sample.png", class:"user-icon-default-small")
+                .match-sign-header-right
+                  h3= sign.user.nickname
+                  p= sign.created_at.strftime("%m/%d %H:%M")
+              .match-sign-tags
+                - sign.tags.each do |tag|
+                  .match-sign-tag
+                    p= tag.name
+              = link_to "", sign_path(sign.id), class:"match-sign-link"
+    .sign-action-btn
+      = link_to "サインを検索する", search_index_signs_path, class:"sign-action-link btn"
+      i.fas.fa-search
+    .match-signs-wrap
+      .match-signs-title.center-box
+        h2 サインを見て話しかけて来た人たち
       .match-signs
-        .signs-count
-          p 
-            span.count-number
-              / = @signs_to_myselfs_kana.length
-            span
-              | 通
-        .match-signs-title
-          h1 フリガナと一致したサイン
-      - if current_user.spot.present?
-        .match-signs
-          .signs-count
-            p 
-              span.count-number
-                / = @match_state_signs.length
-              span
-                | 通
-          .match-signs-title
-            h1 都道府県も一致したサイン
-        .match-signs
-          .signs-count
-            p 
-              span.count-number
-                / = @match_city_signs.length
-              span
-                | 通
-          .match-signs-title
-            h1 市区町村も一致したサイン
-      .match-signs
-        = link_to "検索する", search_index_signs_path, class:"sign-action-btn btn"
-    .match-signs-sub
-      .match-signs
-        .signs-count
-          p 
-            span.count-number
-              / = current_user.signs.length
-            span
-              | 通
-          = link_to '', user_path(current_user.id), class:"send-signs-link"
-        .match-signs-title
-          h1 送信したサイン
-      .match-signs
-        .signs-count
-          p
-            span.count-number
-              / = @favorited_signs.length
-            span
-              | 通
-          = link_to '', user_path(current_user.id), class:"send-signs-link"
-        .match-signs-title
-          h1 お気に入りされたサイン
+        - @users.each do |user|
+          .match-sign
+            .match-sign-header
+              - if user.image.attached?
+                = image_tag(user.image, class:"user-icon-image-small")
+              - else
+                = image_tag("header_icon_sample.png", class:"user-icon-default-small")
+              .match-sign-header-right
+                h3= user.nickname
+            .match-sign-tags.match-user-tags
+              - user.tags.each do |tag|
+                .match-sign-tag
+                  p= tag.name
+            .center-box
+              = link_to "トークルームへ", room_messages_path(RoomUserRelation.talked_room_id(user, current_user)), class:"user-room-link btn"
 
-      .match-signs 
-        = link_to "送信する", new_sign_path, class:"sign-action-btn btn"
+    .sign-action-btn
+      = link_to "サインを送信する", new_sign_path, class:"sign-action-link btn"
+      i.far.fa-paper-plane
 
 = render 'shared/footer'
