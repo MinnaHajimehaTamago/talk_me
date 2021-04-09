@@ -14,9 +14,31 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   p {
     font-size: 25px;
+  }
+}
+
+.room-back-btn {
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  color: gray;
+}
+
+.room-back-link {
+  position: absolute;
+  top: 10px;
+  left: 11px;
+  height: 31px;
+  width: 30px;
+  border-radius: 16px;
+
+  &:hover {
+    background-color: gray;
+    opacity: 0.3;
   }
 }
 

@@ -1,6 +1,9 @@
 = render 'shared/header'
 .messages-container
   .room-title-wrap
+    .room-back-btn
+      i.far.fa-arrow-alt-circle-left.fa-2x
+    = link_to '', rooms_path, class:"room-back-link"
     = image_tag("header_icon_sample.png", class:"user-icon-image-header")
     p= @room_title.nickname
   .messages-content-wrap#messages
