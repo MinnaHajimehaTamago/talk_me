@@ -10,13 +10,19 @@ if (location.pathname.match("signs/search_index")) {
         const registrationTag = document.createElement('div');
         registrationTag.setAttribute('id', "tag_element");
         registrationTag.setAttribute('class', 'tag-element');
+        const deleteBtn = document.createElement('i');
+        deleteBtn.setAttribute('class', "far fa-times-circle tag-delete-btn");
+        deleteBtn.setAttribute('id', "tag_delete_btn");
+        registrationTag.appendChild(deleteBtn);
+        tagText = document.createElement('div');
+        tagText.innerHTML = inputElement.value;
+        registrationTag.appendChild(tagText);
         let registrationTagNum = tagCount;
         const inputHTML = document.createElement('input');
         inputHTML.setAttribute('id', `search_tag_${registrationTagNum}`);
         inputHTML.setAttribute('name', 'search_tag[names][]');
         inputHTML.setAttribute('type', 'text');
         inputHTML.setAttribute('class', 'hide');
-        registrationTag.innerHTML = inputElement.value;
         registrationTag.appendChild(inputHTML);
         TagLists.appendChild(registrationTag);
         let registrationTagInput = document.getElementById(`search_tag_${registrationTagNum}`);
@@ -63,7 +69,13 @@ if (location.pathname.match("signs/search_index")) {
               inputHTML.setAttribute('name', 'search_tag[names][]');
               inputHTML.setAttribute('type', 'text');
               inputHTML.setAttribute('class', 'hide');
-              registrationTag.innerHTML = tag.name;
+              const deleteBtn = document.createElement('i');
+              deleteBtn.setAttribute('class', "far fa-times-circle tag-delete-btn");
+              deleteBtn.setAttribute('id', "tag_delete_btn");
+              registrationTag.appendChild(deleteBtn);
+              tagText = document.createElement('div');
+              tagText.innerHTML = tag.name;
+              registrationTag.appendChild(tagText);
               if (tag.officiality_id == 1) {
                 const officialMark = document.createElement("img");
                 officialMark.src = "/assets/official_mark.png";
@@ -93,8 +105,8 @@ if (location.pathname.match("signs/search_index")) {
     });
 
     $('#tag_lists').on('mouseover', function (){
-      $('#tag_element').on('click', function () {
-        $(this).remove();
+      $('#tag_lists #tag_delete_btn').on('click', function () {
+        $(this).parent().remove();
       });
     });
 

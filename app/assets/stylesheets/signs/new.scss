@@ -66,6 +66,11 @@
 
 .tag-delete-btn {
   margin-right: 2px;
+
+  &:hover {
+    border-radius: 10px;
+    background-color: rgba(180, 180, 180, 0.6);
+  }
 }
 
 .tag-delete-link {
