@@ -65,7 +65,7 @@ class SignsController < ApplicationController
 
   def search_result
     if @keywords.present?
-      @results = Sign.search(@keywords)
+      @results = Sign.search(@keywords, current_user)
     else
       @results = []
     end

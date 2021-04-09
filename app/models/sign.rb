@@ -47,7 +47,7 @@ class Sign < ApplicationRecord
     favorite_signs = Sign.where(id: ids)
   end
 
-  def self.search(keywords)
+  def self.search(keywords, current_user)
     names = keywords[:names].uniq
     tag_ids = []
     names.each do |name|
@@ -62,6 +62,7 @@ class Sign < ApplicationRecord
     sign_ids.flatten.uniq.each do |sign|
       signs << Sign.includes(:tags).find(sign.sign_id)
     end
+    signs -= current_user.signs
     results = []
     signs.each do |sign|
       sign_tags = []
@@ -91,6 +92,7 @@ class Sign < ApplicationRecord
     sign_ids.flatten.uniq.each do |sign|
       signs << Sign.includes(:tags, :user).find(sign.sign_id)
     end
+    signs -= current_user.signs
     results = []
     signs.each do |sign|
       sign_tags = []
