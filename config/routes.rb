@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     collection do
       get 'search_index'
       get 'search_result'
+      get 'my_signs'
     end
   end
   resources :users, only: [:show, :edit, :update]

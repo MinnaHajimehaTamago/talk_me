@@ -71,6 +71,10 @@ class SignsController < ApplicationController
     end
   end
 
+  def my_signs
+    @signs = Sign.where(user_id: current_user.id).includes(:user)
+  end
+
   private
 
   def sign_params

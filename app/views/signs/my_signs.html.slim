@@ -1,11 +1,12 @@
 = render 'shared/header'
+
 .container
   .content-wrap
     .form-explanation
-      h2 検索結果
-    - if @results.present?
+      h2 マイサイン一覧
+    - if @signs.present?
       .search-content-wrap
-        - @results.each do |sign|
+        - @signs.each do |sign|
           .result-sign-wrap
             .result-sign-wrap-left
               .sign-user-icon
@@ -27,8 +28,7 @@
                       p= tag.name
                     - if tag.officiality_id == 1
                       = image_tag("official_mark.png", :size => '14x14' )
-            = link_to '', sign_path(sign.id, @keywords), class: 'result-sign-wrap-link'
+              = link_to '', sign_path(sign.id), class: 'result-sign-wrap-link'
     - else
       .result-text
-        h1 該当するサインはありません
-    = link_to '戻る', search_index_signs_path, class:"back-btn"
+        h1 送信したサインはありません
