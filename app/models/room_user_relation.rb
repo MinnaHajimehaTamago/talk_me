@@ -27,4 +27,22 @@ class RoomUserRelation < ApplicationRecord
   def self.talked_room_id(another_user, current_user)
     return another_user.room_ids & current_user.room_ids
   end
+
+  def self.talked_users(current_user)
+    elements = []
+    users = []
+    current_user.rooms.each do |room|
+      index = room.users.index(current_user)
+      if index == 0
+        elements << { user: room.users[1], created_at: room.messages.reverse[0].created_at }
+      elsif index == 1
+        elments << { user: room.users[0], created_at: room.messages.reverse[0].created_at }
+      end
+    end
+    
+    elements.sort_by { |e| e[:created_at] }.reverse.each do |element|
+      users << element[:user]
+    end
+    return users
+  end
 end
