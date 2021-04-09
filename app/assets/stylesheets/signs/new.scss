@@ -54,17 +54,32 @@
   margin: 5px 5px 0 0;
   border: 1px solid black;
   border-radius: 5px;
-  cursor: pointer;
   display: flex;
-
-  &:hover {
-    background-color: lightgray;
-  }
+  align-items: center;
+  position: relative;
 }
 
 .tag-element img {
   height: 16px;
   width: 16px;
+}
+
+.tag-delete-btn {
+  margin-right: 2px;
+}
+
+.tag-delete-link {
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  top: 7px;
+  left: 5px;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: gray;
+    opacity: 0.3;
+  }
 }
 
 .search-result-lists {

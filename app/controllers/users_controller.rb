@@ -2,9 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user_params
 
   def show
-    @signs = @user.signs
-    favorites = @user.favorites
-    @favorite_signs = Sign.favorite_signs(favorites)
+    
   end
 
   def edit
@@ -12,7 +10,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to edit_user_path(current_user.id)
+      redirect_to user_path(current_user.id)
     else
       render action: :edit
     end

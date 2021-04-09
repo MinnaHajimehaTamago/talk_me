@@ -1,4 +1,4 @@
-if (document.URL.match(/users/)) {
+if (document.URL.match(/users/) && document.URL.match(/edit/)) {
   document.addEventListener('DOMContentLoaded', function(){
     if (document.getElementById('user-icon-image') != null) {
       document.getElementById('user-icon-file').addEventListener('change', function(e){

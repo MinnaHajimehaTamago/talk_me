@@ -12,9 +12,9 @@
 }
 
 .user-icon-default-large {
-  height: 200px;
-  width: 200px;
-  border-radius: 100px;
+  height: 150px;
+  width: 150px;
+  border-radius: 75px;
 }
 
 .user-icon-image {
@@ -36,9 +36,9 @@
 }
 
 .user-icon-image-large {
-  height: 200px;
-  width: 200px;
-  border-radius: 100px;
+  height: 150px;
+  width: 150px;
+  border-radius: 75px;
   object-fit: cover;
 }
 
@@ -46,6 +46,7 @@
   height: 150px;
   width: 150px;
   border-radius: 40px;
+  margin: 0 auto;
 }
 
 .user-icon-small {

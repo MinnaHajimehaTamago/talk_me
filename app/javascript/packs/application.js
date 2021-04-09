@@ -18,6 +18,8 @@ require("./user_tag_input")
 require("./sign_tag_input")
 require("./sign_search_tag_input")
 require("./message_scroll")
+// require("./signs_slide")
+require("./tag_registration_input")
 
 
 

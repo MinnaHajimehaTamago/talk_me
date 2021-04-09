@@ -1,0 +1,25 @@
+.container
+  .user-info-wrap
+    .wrap-title
+      h1 プロフィール
+    .user-icon
+      - if current_user.image.attached?
+        = image_tag current_user.image, class:"user-icon-image-large"
+      - else
+        = image_tag("header_icon_sample.png", class:"user-icon-default-large")
+    .user-nickname
+      p= @user.nickname
+    .user-edit-btn
+      = link_to 'プロフィールを変更', edit_user_path(current_user.id), class:"user-edit-link btn"
+
+    .user-info
+      .user-info-title
+        h1 キーワードタグ一覧
+    .user-show-tags
+      - current_user.tags.each do |tag|
+        .sign-tag
+          p= tag.name
+          - if tag.officiality_id == 1
+            = image_tag("official_mark.png", :size => '14x14')
+    .user-edit-btn
+      = link_to "キーワードタグを変更", new_tag_path, class: "user-edit-link btn"

@@ -12,8 +12,7 @@ class TagsController < ApplicationController
       @tag.save
       redirect_to action: :new
     else
-      errors = @tag.errors.full_messages
-      redirect_to new_tag_path(errors)
+      render :new
     end
   end
 

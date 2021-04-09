@@ -1,32 +1,122 @@
-.users-signs-box {
-  max-height: 200px;
-  width: 90%;
-  border: 2px solid black;
-  border-radius: 5px;
-  margin: 0 auto;
-  overflow: scroll;
-}
-
-.users-sign-wrap {
-  height: 50px;
-  width: 100%;
-  border-bottom: 1px solid gray;
-  margin: 0 auto;
+.user-show-container {
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
+  background-color: lightgray;
 }
 
-.sign-favo-icon {
-  height: 20px;
-  width: 20px;
-  color: #e6bf00;
-  margin-left: 10px;
+.user-info-wrap {
+  width: 60%;
+  background-color: #fff;
 }
 
-.favo-message {
-  font-size: 12px;
-  color: #e6bf00;
+.wrap-title {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 0;
+  font-size: 20px;
+  text-align: center;
+
+  h1 {
+    font-weight: bold;
+  }
 }
 
+.user-icon {
+  display:flex;
+  justify-content: center;
+}
+
+.user-nickname {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+
+  p {
+    font-size: 25px;
+
+  }
+}
+
+.user-edit-btn {
+  width: 200px;
+  margin: 20px auto 0;
+}
+
+.user-edit-link {
+  width: 100%;
+  font-size: 15px;
+  color: #fff;
+  display: block;
+  text-align: center;
+  background-color: #177ee6;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+// #edit-effect{
+//   height: 150px;
+//   width: 150px;
+//   border-radius: 75px;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   opacity: 0.2;
+// }
+
+.user-info-title {
+  text-align: center;
+
+  h1 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 16px;
+    color: gray;
+  }
+}
+
+.user-info {
+  width: 90%;
+  font-size: 18px;
+  margin: 20px auto 0;
+  padding-top: 10px;
+  border-top: 1px solid lightgray;
+
+  h2 {
+    color: gray;
+    margin-left: 15px;
+  }
+
+  p {
+    margin:0 0  10px 15px;
+  }
+
+  &:last-child {
+    margin-bottom: 40px;
+  }
+}
+
+// .signs-wrap {
+//   max-height: 480px;
+//   width: 90%;
+//   margin: 0 auto;
+//   border: 1px solid gray;
+//   overflow: scroll;
+// }
+
+.user-show-tags {
+  width: 80%;
+  padding: 5px 5px 10px 5px;
+  margin: 10px auto 20px;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px dotted gray;
+  border-radius: 10px;
+}

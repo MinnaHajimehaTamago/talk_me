@@ -20,7 +20,7 @@ header.header-main
           li
             = link_to 'トップページ', signs_path, class:'user-menu-list'
           li
-            = link_to 'マイプロフィール', edit_user_path(current_user.id), class:'user-menu-list'
+            = link_to 'マイプロフィール', user_path(current_user.id), class:'user-menu-list'
           li
             = link_to 'マイサイン一覧', user_path(current_user.id), class:'user-menu-list'
           li

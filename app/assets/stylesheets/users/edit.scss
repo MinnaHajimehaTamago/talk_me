@@ -1,55 +1,55 @@
-.user-show-container {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  background-color: lightgray;
-}
-
-.user-info-wrap {
-  width: 60%;
-  background-color: #fff;
-}
-
-.wrap-title {
-  width: 80%;
+.users-signs-box {
+  max-height: 200px;
+  width: 90%;
+  border: 2px solid black;
+  border-radius: 5px;
   margin: 0 auto;
-  padding: 20px 0;
-  font-size: 20px;
-  text-align: center;
-
-  h1 {
-    font-weight: bold;
-  }
+  overflow: scroll;
 }
 
-.user-icon {
-  display:flex;
-  justify-content: center;
-}
-
-.icon-box {
+.users-sign-wrap {
+  height: 50px;
+  width: 100%;
+  border-bottom: 1px solid gray;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
 }
 
-.user-nickname {
-  width: 50%;
-  margin: 0 auto 10px;
-  padding-top: 10px;
+// .sign-favo-icon {
+//   height: 20px;
+//   width: 20px;
+//   color: #e6bf00;
+//   margin-left: 10px;
+// }
+
+// .favo-message {
+//   font-size: 12px;
+//   color: #e6bf00;
+// }
+
+.image-input-btn {
+  line-height: 25px;
+  width: 140px;
   text-align: center;
+  margin: 10px auto 0;
+  font-size: 14px;
+  color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: block;
+  cursor: pointer;
 
-  p {
-    font-size: 25px;
-
+  &:hover {
+    background-color: lightgray;
   }
 }
 
-.user-edit-btn {
-  width: 100px;
-  margin: 0 auto;
-}
-
-.user-edit-link {
-  width: 100%;
+.user-edit-submit {
+  line-height: 40px;
+  width: 110px;
   font-size: 15px;
   color: #fff;
   display: block;
@@ -58,70 +58,5 @@
   border-radius: 10px;
   border: none;
   cursor: pointer;
+  margin: 40px auto 30px;
 }
-
-.user-icon-file {
-  height: 200px;
-  width: 200px;
-  border-radius: 9vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  cursor: pointer;
-  opacity: 0;
-  z-index: 2;
-}
-
-#edit-effect{
-  height: 200px;
-  width: 200px;
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.2;
-}
-
-.user-info-title {
-  text-align: center;
-
-  h1 {
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-  p {
-    font-size: 16px;
-    color: gray;
-  }
-}
-
-.user-info {
-  width: 90%;
-  font-size: 18px;
-  margin: 20px auto 0;
-  padding-top: 10px;
-  border-top: 1px solid lightgray;
-
-  h2 {
-    color: gray;
-    margin-left: 15px;
-  }
-
-  p {
-    margin:0 0  10px 15px;
-  }
-
-  &:last-child {
-    margin-bottom: 40px;
-  }
-}
-
-.signs-wrap {
-  max-height: 480px;
-  width: 90%;
-  margin: 0 auto;
-  border: 1px solid gray;
-  overflow: scroll;
-}
-
