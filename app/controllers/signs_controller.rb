@@ -37,21 +37,9 @@ class SignsController < ApplicationController
     @talk_room = RoomUserRelation.room?(@sign, current_user)
   end
 
-  def edit
-    redirect_to signs_path unless current_user.id == @sign.user_id
-  end
-
-  def update
-    if @sign.update(sign_params)
-      redirect_to sign_path(@sign.id)
-    else
-      render :edit
-    end
-  end
-
   def destroy
     @sign.destroy if current_user.id == @sign.user_id
-    redirect_to user_path(current_user.id)
+    redirect_to my_signs_signs_path
   end
 
   def search
@@ -72,13 +60,17 @@ class SignsController < ApplicationController
   end
 
   def my_signs
-    @signs = Sign.where(user_id: current_user.id).includes(:user)
+    @signs = Sign.where(user_id: current_user.id).includes(:user).reverse
   end
 
   private
 
   def sign_params
     params.require(:signs_tag).permit(:text, names: []).merge(user_id: current_user.id)
+  end
+
+  def sign_update_params
+    params.require(:sign).permit(:text, names: []).merge(user_id: current_user.id)
   end
 
   def set_sign_params

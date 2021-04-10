@@ -1,6 +1,6 @@
 class Sign < ApplicationRecord
   has_many :favorites, dependent: :destroy
-  has_many :sign_tag_relations
+  has_many :sign_tag_relations, dependent: :destroy
   has_many :tags, through: :sign_tag_relations
   belongs_to :user
 

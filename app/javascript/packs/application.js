@@ -20,6 +20,7 @@ require("./sign_search_tag_input")
 require("./message_scroll")
 // require("./signs_slide")
 require("./tag_registration_input")
+require("./message_ajax")
 
 
 

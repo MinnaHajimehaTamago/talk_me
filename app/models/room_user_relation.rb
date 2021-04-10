@@ -36,7 +36,7 @@ class RoomUserRelation < ApplicationRecord
       if index == 0
         elements << { user: room.users[1], created_at: room.messages.reverse[0].created_at }
       elsif index == 1
-        elments << { user: room.users[0], created_at: room.messages.reverse[0].created_at }
+        elements << { user: room.users[0], created_at: room.messages.reverse[0].created_at }
       end
     end
     

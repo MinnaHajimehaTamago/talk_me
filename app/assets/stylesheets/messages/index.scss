@@ -42,6 +42,8 @@
   }
 }
 
+
+
 .messages-content-wrap {
   height: calc(100vh - 60px - 40px - 120px);
   width: 60%;
@@ -50,6 +52,10 @@
   padding-bottom: 10px;
   background-color: #fff;
   overflow: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .message-wrap {

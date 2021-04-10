@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     post 'personal_information', to: 'users/registrations#create_personal_information'
   end
 
-  resources :signs do
+  resources :signs, only: [:index, :new, :create, :show, :destroy] do
     resources :favorites, only: [:create, :destroy]
     collection do
       get 'search_index'
@@ -27,6 +27,10 @@ Rails.application.routes.draw do
   resources :user_tag_relations, only: :destroy
   resources :appearances, only: [:new, :create, :edit, :update]
   resources :rooms, only: [:index, :new, :create] do
-    resources :messages, only: [:index, :create]
+    resources :messages, only: [:index, :create] do
+      collection do
+        get 'reload'
+      end
+    end
   end
 end

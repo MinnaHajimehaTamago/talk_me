@@ -6,12 +6,13 @@
     = link_to '', rooms_path, class:"room-back-link"
     = image_tag("header_icon_sample.png", class:"user-icon-image-header")
     p= @room_title.nickname
+  input.user-id type= "hidden" value= current_user.id
   .messages-content-wrap#messages
       - @messages.each do |message|
         - if message.user_id == current_user.id
           .message-wrap
             .message-wrap-right
-              p.message-time= message.created_at.strftime("%m.%d %H:%M")
+              p.message-time= message.created_at.strftime("%m/%d %H:%M")
               p.message= message.text
         - else
           .message-wrap

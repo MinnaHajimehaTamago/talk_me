@@ -18,7 +18,7 @@
               .sign-user-nickname
                 p= sign.user.nickname
               .sign-send-time
-                p= sign.created_at.strftime("%H:%M")
+                p= sign.created_at.strftime("%m/%d %H:%M")
               .sign-tags
                 - sign.tags.each do |tag|
                   .sign-tag

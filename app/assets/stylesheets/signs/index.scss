@@ -152,11 +152,16 @@
   text-align: start;
   display: block;
   color: gray;
+  border-radius: 10px;
   padding: 0 10px;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
+
+  &:hover {
+    background-color: rgba(180, 180, 180, 0.3);
+  }
 }
 
 .match-user-tags {
@@ -172,4 +177,8 @@
   color: dimgray;
   border: 1px solid dimgray;
   border-radius: 5px;
+
+  &:hover {
+    background-color: rgba(180, 180, 180, 0.3);
+  }
 }
