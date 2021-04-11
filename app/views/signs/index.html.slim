@@ -46,8 +46,7 @@
               - user.tags.each do |tag|
                 .match-sign-tag
                   p= tag.name
-            .center-box
-              = link_to "トークルームへ", room_messages_path(RoomUserRelation.talked_room_id(user, current_user)), class:"user-room-link btn"
+            = link_to "トークルームへ", room_messages_path(RoomUserRelation.talked_room_id(user, current_user)), class:"user-room-link btn"
 
       .sign-action-btn
         = link_to "サインを送信する", new_sign_path, class:"sign-action-link btn"

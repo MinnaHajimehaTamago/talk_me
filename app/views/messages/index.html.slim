@@ -18,7 +18,7 @@
           .message-wrap
             .message-wrap-left
               p.message= message.text
-              p.message-time = message.created_at.strftime("%m.%d %H:%M")
+              p.message-time = message.created_at.strftime("%m/%d %H:%M")
   = form_with model: [@room, @message], class:"message-form", local: true do |f|
     = f.text_area :text, class:"input-message", placeholder:"メッセージを入力"
     = f.submit '送信', class:"submit-message"

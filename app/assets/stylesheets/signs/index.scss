@@ -170,8 +170,14 @@
   border-bottom: 1px solid gray;
 }
 
+.match-user-room {
+  position: relative;
+}
+
 .user-room-link {
-  margin-top: 3px;
+  position: absolute;
+  left: 65px;
+  bottom: 4px;
   padding: 1px 5px;
   font-size: 13px;
   color: dimgray;
