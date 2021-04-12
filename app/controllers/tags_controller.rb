@@ -1,9 +1,6 @@
 class TagsController < ApplicationController
   def new
     @tag = UsersTag.new
-    if params[:format] != nil
-      @errors = params[:format]
-    end
   end
 
   def create
@@ -20,6 +17,22 @@ class TagsController < ApplicationController
     return nil if params[:keyword] == ""
     tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"])
     render json:{ keyword: tag}
+  end
+
+  def after_sign_up_new
+    @tag = UsersTag.new
+    @path = request.fullpath
+  end
+
+  def after_sign_up_create
+    @tag = UsersTag.new(tag_params)
+    @path = request.fullpath
+    if @tag.valid?
+      @tag.save
+      redirect_to action: :after_sign_up_new
+    else
+      render :after_sign_up_new
+    end
   end
 
   private

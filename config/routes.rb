@@ -16,12 +16,18 @@ Rails.application.routes.draw do
       get 'my_signs'
     end
   end
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update] do
+    collection do
+      post 'guest_sign_in'
+    end
+  end
   resources :tops, only: :index
   resources :spots, only: [:new, :create, :edit, :update]
-  resources :tags, only: [:new, :create, :edit, :update, :destroy] do
+  resources :tags, only: [:new, :create] do
     collection do
       get 'search'
+      get 'after_sign_up_new'
+      post 'after_sign_up_create'
     end
   end
   resources :user_tag_relations, only: :destroy

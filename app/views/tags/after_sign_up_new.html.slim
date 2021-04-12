@@ -1,0 +1,42 @@
+= render "shared/header"
+
+.container
+  = form_with model: @tag, url:  after_sign_up_create_tags_path,local: true, class:"content-wrap" do |f|
+    .form-title
+      h1 キーワードタグを登録
+    .form-explanation
+      h2 登録するタグを入力
+    .form-group-narrow
+      - if @tag.errors.present?
+        ul#errors_explanation
+          - @tag.errors.full_messages.each do |message|
+            li= message
+    .center-box
+      .content-split 
+        .content-left
+            .form-group
+              p キーワードを入力
+              = f.text_field(:name, class:"input-default", placeholder:"キーワードを入力してください。")
+            .tag-add-btn-group
+              p.tag-add-btn#tag_add_btn ⬇︎タグを追加
+              = f.submit '', class:"user-tag-submit-link", id:"user_tag_submit"
+            .form-group
+              .tag-lists-title 
+                p キーワードタグ一覧
+              .tag-lists#tag_lists
+                - current_user.tags.each do |tag|
+                  .tag-element#tag_element
+                    i.far.fa-times-circle.tag-delete-btn
+                    = link_to '', user_tag_relation_path(UserTagRelation.id?(current_user, tag.id), path: @path), method: :delete, class:"tag-delete-link"
+                    = tag.name
+                    - if tag.officiality_id == 1
+                      = image_tag("official_mark.png")
+                    
+        .content-right
+          .form-group
+            .tag-candidate-title
+              p タグ候補
+            .search-result-lists#search-result
+    .form-group
+      .form-group
+        = link_to '終了する', user_path(current_user), class:"sign-show-close-btn btn"

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user_params
+  before_action :set_user_params, except: :guest_sign_in
 
   def show
     
@@ -14,6 +14,16 @@ class UsersController < ApplicationController
     else
       render action: :edit
     end
+  end
+
+  def guest_sign_in
+    user = User.find_or_create_by!(email: 'guest@example.com') do |user|
+      user.nickname = 'GUEST'
+      user.password = 'guest2021'
+      user.password_confirmation = 'guest2021'
+    end
+    sign_in user
+    redirect_to signs_path
   end
 
   private

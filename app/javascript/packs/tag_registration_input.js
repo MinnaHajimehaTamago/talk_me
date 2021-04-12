@@ -1,4 +1,4 @@
-if (location.pathname.match("tags")) {
+if (location.pathname.match("tags") || (location.pathname.match("after_sign_up"))) {
   document.addEventListener('DOMContentLoaded', function() {
     const TagLists = document.getElementById('tag_lists');
     const inputElement = document.getElementById("users_tag_name");
@@ -57,30 +57,6 @@ if (location.pathname.match("tags")) {
             clickElement.addEventListener("click", () => {
               inputElement.value = tag.name;
               submitBtn.click();
-              // const registrationTag = document.createElement('div');
-              // registrationTag.setAttribute('id', "tag_element");
-              // registrationTag.setAttribute('class', 'tag-element');
-              // let registrationTagNum = tagCount;
-              // const inputHTML = document.createElement('input');
-              // inputHTML.setAttribute('id', `users_tag_${registrationTagNum}`);
-              // inputHTML.setAttribute('name', 'users_tag[names][]');
-              // inputHTML.setAttribute('type', 'text');
-              // inputHTML.setAttribute('class', 'hide');
-              // registrationTag.innerHTML = tag.name;
-              // if (tag.officiality_id == 1) {
-              //   const officialMark = document.createElement("img");
-              //   officialMark.src = "/assets/official_mark.png";
-              //   registrationTag.appendChild(officialMark);
-              // };
-              // registrationTag.appendChild(inputHTML);
-              // TagLists.appendChild(registrationTag);
-              // let registrationTagInput = document.getElementById(`users_tag_${registrationTagNum}`);
-              // registrationTagInput.value = tag.name          
-              // inputElement.value = "";
-              // searchResult.innerHTML = "";
-              // addBtn.style.backgroundColor = 'lightgray';
-              // addBtn.style.cursor = 'default'
-              // tagCount += 1;
             });
           });
         };

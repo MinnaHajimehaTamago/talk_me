@@ -15,31 +15,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # 基本情報登録用 --
-  # def create
-  #   @user = User.new(sign_up_params)
-  #   render :new and return unless @user.valid?
-
-  #   session['devise.regist_data'] = { user: @user.attributes }
-  #   session['devise.regist_data'][:user]['password'] = params[:user][:password]
-  #   @personal_information = @user.build_personal_information
-  #   render :new_personal_information
-  # end
-
-  # def create_personal_information
-  #   @user = User.new(session['devise.regist_data']['user'])
-  #   @personal_information = PersonalInformation.new(personal_information_params)
-  #   render :new_personal_information and return unless @personal_information.valid?
-
-  #   @user.build_personal_information(@personal_information.attributes)
-  #   @user.save
-  #   session['devise.regist_data']['user'].clear
-  #   sign_in(:user, @user)
-  #   redirect_to signs_path
-  # end
-
-  # ここまで --
-
   # GET /resource/edit
   # def edit
   #   super
@@ -77,9 +52,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_sign_up_path_for(resource)
+    new_tag_path(resource)
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
