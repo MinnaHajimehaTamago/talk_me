@@ -30,7 +30,5 @@ header.header-main
     - else user_signed_in?
       .guest
         = link_to 'ゲストログイン', guest_sign_in_users_path, method: :post, class:"guest-login-btn btn"
-      .sign
-        = link_to '新規登録', new_user_registration_path, class: "sign-up-btn btn"
-      .login
-        = link_to 'ログイン', new_user_session_path, class: "login-btn btn"
+      = link_to '新規登録', new_user_registration_path, class: "sign-up-btn btn"
+      = link_to 'ログイン', new_user_session_path, class: "login-btn btn"
