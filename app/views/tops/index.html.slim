@@ -1,3 +1,28 @@
 = render 'shared/header'
 = render 'shared/top_main'
-/ = link_to "", tops_path, class:"modal-bg"
+
+.app-explanation-container
+  .app-explanation-wrap
+    .app-explanation-wrap-title
+      h1 ABOUT
+      p Talk meについて
+    .app-explanation-title
+      p 1.身近にいる話しかけてほしい人に、サインを送るためのアプリです！
+    .app-explanation-image
+      = image_tag('app_explanation_image_1.png', class:"app-explanation-image-1")
+    .app-explanation-title
+      p 2.気づいてほしい人の特徴をタグ付けして、サインを送りましょう！
+    .app-explanation-image
+      = image_tag('app_explanation_image_2.png', class:"app-explanation-image-2")
+    .app-explanation-title
+      p 3.サインを通して会話が始まります！
+    .app-explanation-image
+      = image_tag('app_explanation_image_3.png', class:"app-explanation-image-3")
+    .app-explanation-title
+      p たくさんサインを送りましょう！
+    .app-explanation-btns
+      = link_to '新規登録する', new_user_registration_path, class:"explanation-sign-up btn"
+      = link_to 'ログインする', new_user_session_path, class:"explanation-login btn"
+      
+
+= render 'shared/footer'
