@@ -19,6 +19,11 @@
         span アイコン画像を選択
         = f.file_field :image, class:"hide", id:"user-icon-file"
       .user-nickname
+        - if @user.errors.present?
+          ul#errors_explanation
+            - @user.errors.full_messages.each do |message|
+              li= "・#{message}"
+      .user-nickname
         = f.text_field :nickname, class:"input-default"
       = f.submit '変更する', class:"user-edit-submit btn"
 

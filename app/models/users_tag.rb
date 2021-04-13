@@ -15,7 +15,7 @@ class UsersTag
   def user_tag_relation_uniqueness
     tag = Tag.where(name: name)
     if tag != [] && UserTagRelation.where(user_id: user_id, tag_id: tag[0][:id]).present?
-      errors.add(:tag, "は既に登録済みです")
+      errors.add(:tag, "キーワードです")
     end
   end
 

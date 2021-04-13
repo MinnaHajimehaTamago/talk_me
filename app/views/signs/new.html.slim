@@ -8,7 +8,7 @@
       - if @sign.errors.present?
         ul#errors_explanation
           - @sign.errors.full_messages.each do |message|
-            li= message
+            li= "・#{message}"
     .form-explanation
       h2 メッセージを入力
     .form-group-narrow

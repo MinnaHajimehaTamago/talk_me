@@ -33,10 +33,15 @@ class RoomUserRelation < ApplicationRecord
     users = []
     current_user.rooms.each do |room|
       index = room.users.index(current_user)
+      if room.messages.present?
+        created_at = room.messages.reverse[0].created_at
+      else
+        created_at = room.created_at
+      end
       if index == 0
-        elements << { user: room.users[1], created_at: room.messages.reverse[0].created_at }
+        elements << { user: room.users[1], created_at: created_at }
       elsif index == 1
-        elements << { user: room.users[0], created_at: room.messages.reverse[0].created_at }
+        elements << { user: room.users[0], created_at: created_at }
       end
     end
     

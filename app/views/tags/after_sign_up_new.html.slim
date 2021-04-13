@@ -10,7 +10,7 @@
       - if @tag.errors.present?
         ul#errors_explanation
           - @tag.errors.full_messages.each do |message|
-            li= message
+            li="・#{message}"
     .center-box
       .content-split 
         .content-left

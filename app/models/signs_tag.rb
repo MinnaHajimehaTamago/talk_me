@@ -4,7 +4,7 @@ class SignsTag
 
   with_options presence: true do
     validates :text
-    validates :names
+    validates :names, presence: { message: 'は１つ以上追加してください' }
   end
 
   def save

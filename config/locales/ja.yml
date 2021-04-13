@@ -45,6 +45,14 @@ ja:
         content_id: サインの内容
     models:
       user: ユーザー
+  activemodel:
+    attributes:
+      signs_tag:
+        text: メッセージ
+        names: タグ
+      users_tag:
+        name: キーワード
+        tag:   登録済みの
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
