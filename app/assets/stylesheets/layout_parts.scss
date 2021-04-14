@@ -32,13 +32,13 @@
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #fdfcf7;
 }
 
 .content-wrap-bgi {
   width: 95%;
   max-width: 1500px;
-  background-color: #fff;
+  background-color: #fffaf0;
   background-image: image-url("backgroundimage2.jpg");
   background: image-url("backgroundimage2.jpg");
   background-size: cover;
@@ -47,12 +47,12 @@
 .content-wrap-mini {
   width: 70%;
   max-width: 1200px;
-  background-color: #fff;
+  background-color: #fdfcf7;
 }
 
 .content-split {
   width: 80%;
-  background-color: #fff;
+  background-color: #fdfcf7;
   display: flex;
 }
 
@@ -96,7 +96,6 @@
 .form-title {
   font-size: 25px;
   text-align: center;
-  background-color: #fff;
   margin: 40px 0 20px;
 
   h1 {
@@ -130,7 +129,7 @@
   h2 {
     padding: 1px 30px;
     border-radius: 20px;
-    border: 2px solid $black;
+    border: 2px solid black;
     text-align: center;
     font-size: 15px;
     font-weight: bold;
@@ -142,7 +141,7 @@
   max-height: calc(100vh - 60px - 100px);
   width: 40%;
   border-radius: 15px;
-  background-color: #fff;
+  background-color: #fdfcf7;
   overflow: scroll;
 }
 
@@ -196,7 +195,7 @@
   height: 27px;
   width: 50%;
   color: black;
-  border: 1px solid $black;
+  border: 1px solid black;
   border-radius: 5px;
 }
 
@@ -205,7 +204,7 @@
   width: 100%;
   color:  $black;
   color: black;
-  border: 1px solid $black;
+  border: 1px solid black;
   border-radius: 5px;
 }
 
@@ -214,7 +213,7 @@
   height: 25px;
   width: calc(100% - 5px);
   padding-left: 5px;
-  border: 1px solid $black;
+  border: 1px solid black;
   border-radius: 5px;
 }
 
@@ -223,7 +222,7 @@
   height: 35px;
   width: calc(50% - 5px);
   padding-left: 5px;
-  border: 2px solid $black;
+  border: 2px solid black;
   border-radius: 5px;
 
   &:hover {
@@ -236,7 +235,7 @@
   height:  100px;
   width: calc(100% - 5px);
   padding-left: 5px;
-  border: 1px solid $black;
+  border: 1px solid black;
   border-radius: 5px;
 }
 

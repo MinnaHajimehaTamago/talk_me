@@ -23,6 +23,8 @@
     .app-explanation-btns
       = link_to '新規登録する', new_user_registration_path, class:"explanation-sign-up btn"
       = link_to 'ログインする', new_user_session_path, class:"explanation-login btn"
-      
+    .guest.app-explanation-guest
+      = link_to 'ゲストログイン', guest_sign_in_users_path, method: :post, class:"guest-login-btn btn"
+    .app-explanation-extra
 
 = render 'shared/footer'

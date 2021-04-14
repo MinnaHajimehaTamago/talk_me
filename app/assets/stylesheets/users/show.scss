@@ -7,7 +7,7 @@
 
 .user-info-wrap {
   width: 60%;
-  background-color: #fff;
+  background-color: #fdfcf7;
 }
 
 .wrap-title {
@@ -50,10 +50,14 @@
   color: #fff;
   display: block;
   text-align: center;
-  background-color: #177ee6;
+  background-color: #4f99e4;
   border-radius: 10px;
   border: none;
   cursor: pointer;
+
+  &:hover {
+    background-color: #3a7bbd;
+  }
 }
 
 
@@ -119,4 +123,9 @@
   flex-wrap: wrap;
   border: 1px dotted gray;
   border-radius: 10px;
+  background-color: #fff;
+}
+
+.profile-tag-none {
+  color: gray;
 }

@@ -10,7 +10,7 @@
   text-align: center;
   margin: 0 auto;
   border-bottom: 1px solid lightgray;
-  background-color: #fff;
+  background-color: #fdfcf7;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,7 +94,7 @@
   width: 60%;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #fdfcf7;
   border-top: 1px solid lightgray;
   font-size: 14px;
   display: flex;
@@ -118,15 +118,14 @@
 }
 
 .submit-message {
-  height: 70px;
+  height: 90px;
   width: 70px;
   cursor: pointer;
-  border: 1px solid gray;
+  border: none;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #b7daf0;
   font-size: 16px;
-  font-weight: bold;
-  color: gray;
+  color: darkgray;
 
   &:hover {
     background-color: lightgray;

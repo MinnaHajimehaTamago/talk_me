@@ -23,7 +23,7 @@
   height: 192px;
   width: 100%;
   display: flex;
-  background-color: rgba(255,255,255,0.8);
+  background-color: #fdfcf7;
   margin-bottom: 10px;
   overflow: scroll;
 }
@@ -31,12 +31,13 @@
 .match-signs-none {
   height: 122px;
   width: 100%;
-  padding-top: 60px;
+  padding: 60px 0 10px;
   text-align: center;
   font-size: 16px;
+  background-color: #fdfcf7;
 
   p {
-    margin-bottom: 10px;
+    font-weight: bold;
   }
 
   .user-edit-link {
@@ -119,7 +120,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid $black;
+  border: 3px solid black;
   border-radius: 20px;
   background-color: rgba(255,255,255,0.8);
   margin: 20px auto 0;
@@ -135,6 +136,7 @@
   align-items: center;
   position: relative;
   z-index: 0;
+  background-color: #fff8e9;
 
   i {
     position: absolute;

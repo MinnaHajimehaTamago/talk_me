@@ -147,6 +147,7 @@
   margin: 0 auto;
   border: 1px solid lightgray;
   border-radius: 10px;
+  background-color: #fff;
 }
 
 .sign-content p{
@@ -161,12 +162,12 @@
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  border: 2px solid black;
   border-radius: 10px;
-  color: black;
+  background-color: #177ee6;
+  color: #fff;
   
   &:hover {
-    background-color: lightgray;
+    background-color: #166dc4;
   }
 }
 
@@ -174,11 +175,10 @@
   line-height: 30px;
   width: 140px;
   display: block;
-  margin: 30px auto 0;
-  font-weight: bold;
+  margin: 30px auto 20px;
   text-align: center;
   text-decoration: none;
-  border: 2px solid gray;
+  border: 1px solid gray;
   border-radius: 10px;
   color: gray;
   

@@ -14,12 +14,16 @@
 
     .user-info
       .user-info-title
-        h1 キーワードタグ一覧
+        h1 プロフィールタグ一覧
     .user-show-tags
-      - current_user.tags.each do |tag|
-        .sign-tag
-          p= tag.name
-          - if tag.officiality_id == 1
-            = image_tag("official_mark.png", :size => '14x14')
+      - if current_user.tags.length == 0
+        .center-box
+          p.profile-tag-none プロフィールタグは未登録です
+      - else
+        - current_user.tags.each do |tag|
+          .sign-tag
+            p= tag.name
+            - if tag.officiality_id == 1
+              = image_tag("official_mark.png", :size => '14x14')
     .user-edit-btn
-      = link_to "キーワードタグを変更", new_tag_path, class: "user-edit-link btn"
+      = link_to "プロフィールタグを変更", new_tag_path, class: "user-edit-link btn"

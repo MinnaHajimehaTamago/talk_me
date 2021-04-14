@@ -9,7 +9,7 @@ header.header-main
   ul.header-right
     - if user_signed_in?
       li
-          = link_to current_user.nickname, edit_user_path(current_user.id), class:"user-nickname-header"
+          = link_to current_user.nickname, user_path(current_user.id), class:"user-nickname-header"
       li.user-icon-btns
         - if current_user.image.attached?
           = image_tag(current_user.image, class:"user-icon-image-header")

@@ -60,6 +60,10 @@
   background-color: #4169e1;
   cursor: pointer;
   margin: 10px auto 0;
+
+  &:hover {
+    background-color: #3757b9;
+  }
 }
 
 .sign-up-text {
@@ -72,4 +76,8 @@
   font-size: 16px;
   color: gray;
   text-align: center;
+
+  &:hover {
+    color: darkgray;
+  }
 }

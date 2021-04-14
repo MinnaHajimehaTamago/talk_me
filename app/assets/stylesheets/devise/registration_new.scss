@@ -45,4 +45,8 @@ select {
   color: gray;
   text-align: center;
   margin-bottom: 20px;
+
+  &:hover {
+    color: darkgray;
+  }
 }

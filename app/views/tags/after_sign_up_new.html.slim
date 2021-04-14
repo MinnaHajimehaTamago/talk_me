@@ -2,10 +2,10 @@
 
 .container
   = form_with model: @tag, url:  after_sign_up_create_tags_path,local: true, class:"content-wrap" do |f|
-    .form-title
-      h1 キーワードタグを登録
-    .form-explanation
-      h2 登録するタグを入力
+    .form-title.atter-sign-up-new-title
+      h1 まずはプロフィールタグの登録を！
+    .center-box
+      p.after-sign-up-new-text ・あなたの特徴をタグ付けしましょう。<br>・・タグが多いほどあなた宛のサインを見つけやすくなります。
     .form-group-narrow
       - if @tag.errors.present?
         ul#errors_explanation
@@ -15,14 +15,14 @@
       .content-split 
         .content-left
             .form-group
-              p キーワードを入力
+              p ①キーワードを入力
               = f.text_field(:name, class:"input-default", placeholder:"キーワードを入力してください。")
             .tag-add-btn-group
-              p.tag-add-btn#tag_add_btn ⬇︎タグを追加
+              p.tag-add-btn#tag_add_btn ⬇︎②タグを追加
               = f.submit '', class:"user-tag-submit-link", id:"user_tag_submit"
             .form-group
               .tag-lists-title 
-                p キーワードタグ一覧
+                p あなたのタグ一覧
               .tag-lists#tag_lists
                 - current_user.tags.each do |tag|
                   .tag-element#tag_element
