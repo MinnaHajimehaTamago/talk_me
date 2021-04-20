@@ -5,7 +5,7 @@
     .form-title.atter-sign-up-new-title
       h1 まずはプロフィールタグの登録を！
     .center-box
-      p.after-sign-up-new-text ・あなたの特徴をタグ付けしましょう。<br>・・タグが多いほどあなた宛のサインを見つけやすくなります。
+      p.after-sign-up-new-text ・あなたの特徴をタグ付けしましょう。<br>・タグが多いほどあなた宛のサインを見つけやすくなります。
     .form-group-narrow
       - if @tag.errors.present?
         ul#errors_explanation
@@ -39,4 +39,4 @@
             .search-result-lists#search-result
     .form-group
       .form-group
-        = link_to '終了する', user_path(current_user), class:"sign-show-close-btn btn"
+        = link_to '終了する', signs_path, class:"sign-show-close-btn btn"
