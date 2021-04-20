@@ -11,14 +11,14 @@
   left: 0;
 }
 
-.main-container {
-  min-height: calc(100vh - 50px);
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f5f5f5;
-}
+// .main-container {
+//   min-height: calc(100vh - 50px);
+//   width: 100vw;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: #f5f5f5;
+// }
 
 .container {
   min-height: calc(100vh - 50px);
@@ -29,30 +29,29 @@
 }
 
 .content-wrap {
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #fdfcf7;
+  background-color: #fde1c0;
 }
 
-.content-wrap-bgi {
-  width: 95%;
-  max-width: 1500px;
-  background-color: #fffaf0;
-  background-image: image-url("backgroundimage2.jpg");
-  background: image-url("backgroundimage2.jpg");
-  background-size: cover;
-}
+// .content-wrap-bgi {
+//   width: 95%;
+//   max-width: 1500px;
+//   background-color: #fffaf0;
+//   background-image: image-url("backgroundimage2.jpg");
+//   background: image-url("backgroundimage2.jpg");
+//   background-size: cover;
+// }
 
 .content-wrap-mini {
   width: 70%;
   max-width: 1200px;
-  background-color: #fdfcf7;
+  background-color: #f7e6d3;
 }
 
 .content-split {
   width: 80%;
-  background-color: #fdfcf7;
   display: flex;
 }
 
@@ -64,12 +63,12 @@
   width: 50%;
 }
 
-.content-group {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 0 auto;
-}
+// .content-group {
+//   display: flex;
+//   justify-content: center;
+//   width: 100%;
+//   margin: 0 auto;
+// }
 
 .center-box {
   display: flex;
@@ -215,18 +214,22 @@
   padding-left: 5px;
   border: 1px solid black;
   border-radius: 5px;
+
+  &:hover {
+    border: 1px solid #4176e0;
+  }
 }
 
 .input-default-mini { 
   font-size: 16px;
-  height: 35px;
+  height: 25px;
   width: calc(50% - 5px);
   padding-left: 5px;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 5px;
 
   &:hover {
-    border: 2px solid #4176e0;
+    border: 1px solid #4176e0;
   }
 }
 
@@ -261,4 +264,12 @@
 
 input:focus {
   outline: none;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
 }

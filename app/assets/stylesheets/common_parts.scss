@@ -101,3 +101,60 @@
   margin-right: 10px;
   font-size: 14px;
 }
+
+.submit-btn {
+  padding: 10px 30px;
+  margin-top: 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #177ee6;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.submit-btn-mini {
+  padding: 10px 30px;
+  margin-top: 30px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #177ee6;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link-btn {
+  width: 200px;
+  margin: 10px auto 0;
+  font-size: 15px;
+  color: #fff;
+  display: block;
+  text-align: center;
+  background-color: #4f99e4;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #3a7bbd;
+  }
+}
+
+.back-btn {
+  min-width: 80px;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+  color: gray;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 5px 20px;
+  margin-top: 20px;
+  display: block;
+}

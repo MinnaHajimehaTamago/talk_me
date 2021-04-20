@@ -21,6 +21,7 @@ require("./message_scroll")
 // require("./signs_slide")
 require("./tag_registration_input")
 require("./message_ajax")
+require("./signs_index_bar_btn")
 
 
 

@@ -4,27 +4,27 @@
 .match-signs-wrap {
   width: 100%;
   margin: 0 auto;
-  border-bottom: 1px solid gray;
+  position: relative;
 }
 
 .match-signs-title {
-  border-top: 1px solid gray;
-  padding-top: 10px;
+  padding: 30px 0 10px;
   margin-top: 20px;
-  
+  display: flex;
+  align-items: center;
+  color: gray;
+
   h2 {
-    padding: 5px 10px;
-    color: gray;
     font-weight: bold;
+    margin-left: 5px;
   }
 }
 
-.match-signs {
+.match-signs, .talk-rooms {
   height: 192px;
-  width: 100%;
+  width: calc(100% - 50px - 50px);
   display: flex;
-  background-color: #fdfcf7;
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
   overflow: scroll;
 }
 
@@ -34,16 +34,9 @@
   padding: 60px 0 10px;
   text-align: center;
   font-size: 16px;
-  background-color: #fdfcf7;
 
   p {
     font-weight: bold;
-  }
-
-  .user-edit-link {
-    padding: 5px;
-    display: inline;
-    font-size: 14px;
   }
 }
 
@@ -51,9 +44,8 @@
 .match-sign {
   height: 156px;
   width: 220px;
-  margin: 10px 5px;
+  margin: 10px 10px 10px 0;
   padding: 5px;
-  border: 1px solid gray;
   border-radius: 10px;
   background-color: #fff;
   position: relative;
@@ -64,7 +56,6 @@
   width: 220px;
   margin: 10px 5px;
   padding: 5px;
-  border: 1px solid gray;
   border-radius: 10px;
   background-color: #fff;
   position: relative;
@@ -104,8 +95,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 168px;
-  width: 232px;
+  height: 166px;
+  width: 230px;
   cursor: pointer;
   border-radius: 10px;
 
@@ -113,6 +104,44 @@
     background-color: gray;
     opacity: 0.3;
   }
+}
+
+.more-signs-link {
+  line-height: 156px;
+  width: 220px;
+  margin: 10px 10px 10px 0;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  background-color: #fff;
+  color: gray;
+  display: block;
+
+  &:hover {
+    background-color: gray;
+    color: black;
+    opacity: 0.4;
+  }
+}
+
+.match-signs-back, .talk-rooms-back {
+  position: absolute;
+  top: 125px;
+  left: 10px;
+  color: rgb(214, 214, 214);
+}
+
+.match-signs-next, .talk-rooms-next {
+  position: absolute;
+  top: 125px;
+  right: 10px;
+  color: rgb(214, 214, 214);
+}
+
+.signs-bar-btn-active {
+  color: gray;
+  cursor: pointer;
 }
 
 .match-signs-sub {
@@ -130,8 +159,7 @@
   height: 30px;
   width: 200px;
   border-radius: 10px;
-  border: 1px solid gray;
-  margin: 0 auto 20px;
+  margin: 0 auto 30px;
   display: flex;
   align-items: center;
   position: relative;

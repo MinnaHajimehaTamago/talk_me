@@ -34,17 +34,17 @@
       h2 メッセージ
     .sign-content
       p= @sign.text
-    - unless @sign.user == current_user
-      .form-group
+    .center-box
+      - unless @sign.user == current_user
         - if @talk_room == []
-          = link_to '話しかける', rooms_path(@sign), method: :post, class:"sign-show-talk-btn"
+          = link_to '話しかける', rooms_path(@sign), method: :post, class:"submit-btn"
         - else
-          = link_to 'トークルームへ', room_messages_path(@talk_room), class:"sign-show-talk-btn"
-    .form-group
+          = link_to 'トークルームへ', room_messages_path(@talk_room), class:"submit-btn"
+    .center-box
       -if @sign.user.id == current_user.id || @keywords == {}
-        = link_to '戻る', my_signs_signs_path, class:"sign-show-close-btn"
+        = link_to '戻る', my_signs_signs_path, class:"back-btn"
       -else
         - if @keywords != nil
-          = link_to '戻る', search_result_signs_path(@keywords), class:"sign-show-close-btn"
+          = link_to '戻る', search_result_signs_path(@keywords), class:"back-btn"
         - else
-          = link_to '戻る',  signs_path, class:"sign-show-close-btn"
+          = link_to '戻る',  signs_path, class:"back-btn"
