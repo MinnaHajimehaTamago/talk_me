@@ -8,9 +8,10 @@ $(function () {
     $signs.scrollLeft(20000);
     var signsScrollMax = $signs.scrollLeft();
     $signs.scrollLeft(0);
-    
-    if (signsScrollMax != signsCurrentScrollLeft) {
-      $signsNextBtn.addClass('signs-bar-btn-active')
+
+    if (signsScrollMax != 0) {
+      $signsNextBtn.removeClass('hide');
+      $signsBackBtn.removeClass('hide');
     };
 
     $signsNextBtn.on('click', function() {
@@ -27,15 +28,15 @@ $(function () {
       signsCurrentScrollLeft = $signs.scrollLeft();
 
       if (signsCurrentScrollLeft >= signsScrollMax) {
-        $signsNextBtn.removeClass('signs-bar-btn-active');
-      } else if (!$signsNextBtn.hasClass('signs-bar-btn-active')) {
-        $signsNextBtn.addClass('signs-bar-btn-active')
+        $signsNextBtn.addClass('hide');
+      } else if ($signsNextBtn.hasClass('hide')) {
+        $signsNextBtn.removeClass('hide')
       };
 
-      if (signsCurrentScrollLeft == 0 && $signsBackBtn.hasClass('signs-bar-btn-active')) {
-        $signsBackBtn.removeClass('signs-bar-btn-active');
-      } else if (signsCurrentScrollLeft > 0 && !$signsBackBtn.hasClass('signs-bar-btn-active')) {
-        $signsBackBtn.addClass('signs-bar-btn-active');
+      if (signsCurrentScrollLeft == 0 ) {
+        $signsBackBtn.addClass('hide');
+      } else if (signsCurrentScrollLeft > 0 && $signsBackBtn.hasClass('hide')) {
+        $signsBackBtn.removeClass('hide');
       };
     });
   });
@@ -50,8 +51,9 @@ $(function () {
     var roomsScrollMax = $rooms.scrollLeft();
     $rooms.scrollLeft(0);
     
-    if (roomsScrollMax != roomsCurrentScrollLeft) {
-      $roomsNextBtn.addClass('signs-bar-btn-active')
+    if (roomsScrollMax != 0) {
+      $roomsNextBtn.removeClass('hide');
+      $roomsBackBtn.removeClass('hide');
     };
 
     $roomsNextBtn.on('click', function() {
@@ -68,15 +70,15 @@ $(function () {
       roomsCurrentScrollLeft = $rooms.scrollLeft();
 
       if (roomsCurrentScrollLeft >= roomsScrollMax) {
-        $roomsNextBtn.removeClass('signs-bar-btn-active');
-      } else if (!$roomsNextBtn.hasClass('signs-bar-btn-active')) {
-        $roomsNextBtn.addClass('signs-bar-btn-active')
+        $roomsNextBtn.addClass('hide');
+      } else if ($roomsNextBtn.hasClass('hide')) {
+        $roomsNextBtn.removeClass('hide');
       };
 
-      if (roomsCurrentScrollLeft == 0 && $roomsBackBtn.hasClass('signs-bar-btn-active')) {
-        $roomsBackBtn.removeClass('signs-bar-btn-active');
-      } else if (roomsCurrentScrollLeft > 0 && !$roomsBackBtn.hasClass('signs-bar-btn-active')) {
-        $roomsBackBtn.addClass('signs-bar-btn-active');
+      if (roomsCurrentScrollLeft == 0) {
+        $roomsBackBtn.addClass('hide');
+      } else if ($roomsBackBtn.hasClass('hide')) {
+        $roomsBackBtn.removeClass('hide');
       };
     });
   });

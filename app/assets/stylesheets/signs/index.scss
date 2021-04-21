@@ -127,16 +127,18 @@
 
 .match-signs-back, .talk-rooms-back {
   position: absolute;
-  top: 125px;
+  top: 140px;
   left: 10px;
-  color: rgb(214, 214, 214);
+  color: gray;
+  cursor: pointer;
 }
 
 .match-signs-next, .talk-rooms-next {
   position: absolute;
-  top: 125px;
+  top: 140px;
   right: 10px;
-  color: rgb(214, 214, 214);
+  color: gray;
+  cursor: pointer;
 }
 
 .signs-bar-btn-active {

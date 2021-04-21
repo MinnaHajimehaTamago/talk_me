@@ -31,9 +31,9 @@
           .more-signs
             = link_to "一覧を見る", "#", class:"more-signs-link"
       - if @signs.length != 0
-        .match-signs-back
+        .match-signs-back.hide
           i.fas.fa-arrow-circle-left.fa-2x
-        .match-signs-next
+        .match-signs-next.hide
           i.fas.fa-arrow-circle-right.fa-2x
       .sign-action-btn
         = link_to "サインを検索する", search_index_signs_path, class:"sign-action-link btn"
@@ -68,9 +68,9 @@
         = link_to "サインを送信する", new_sign_path, class:"sign-action-link btn"
         i.far.fa-paper-plane
       - if @users.length != 0
-        .talk-rooms-back
+        .talk-rooms-back.hide
           i.fas.fa-arrow-circle-left.fa-2x
-        .talk-rooms-next
+        .talk-rooms-next.hide
           i.fas.fa-arrow-circle-right.fa-2x
 
 = render 'shared/footer'
