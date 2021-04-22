@@ -1,5 +1,4 @@
 class RoomsController < ApplicationController
-
   def index
     @users = RoomUserRelation.talked_users(current_user)
   end
@@ -13,5 +12,4 @@ class RoomsController < ApplicationController
   def talk_rooms
     @users = RoomUserRelation.talked_to_me(current_user)
   end
-
 end

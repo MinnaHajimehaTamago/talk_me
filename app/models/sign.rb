@@ -11,7 +11,7 @@ class Sign < ApplicationRecord
     tag_ids = []
     names.each do |name|
       tag = Tag.find_by(name: name)
-      tag_ids << tag[:id] unless tag == nil
+      tag_ids << tag[:id] unless tag.nil?
     end
     sign_ids = []
     tag_ids.each do |tag_id|
@@ -35,7 +35,7 @@ class Sign < ApplicationRecord
       results << sign if sign_tags_match_count / sign.tags.length >= match_rate
       results << sign if sign_tags_match_count / tag_ids.length >= match_rate
     end
-    return results.uniq.sort_by { |a| a[:created_at] }.reverse
+    results.uniq.sort_by { |a| a[:created_at] }.reverse
   end
 
   def self.match_signs(current_user)
@@ -64,6 +64,6 @@ class Sign < ApplicationRecord
       results << sign if sign_tags_match_count / sign.tags.length >= match_rate
       results << sign if sign_tags_match_count / tag_ids.length >= match_rate
     end
-    return results.uniq.sort_by { |a| a[:created_at] }.reverse
+    results.uniq.sort_by { |a| a[:created_at] }.reverse
   end
 end

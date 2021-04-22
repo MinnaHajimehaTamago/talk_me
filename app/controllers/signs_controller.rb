@@ -43,20 +43,21 @@ class SignsController < ApplicationController
   end
 
   def search
-    return nil if params[:keyword] == ""
-    tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"] )
-    render json:{ keyword: tag }
+    return nil if params[:keyword] == ''
+
+    tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"])
+    render json: { keyword: tag }
   end
 
   def search_index
   end
 
   def search_result
-    if @keywords.present?
-      @results = Sign.search(@keywords, current_user)
-    else
-      @results = []
-    end
+    @results = if @keywords.present?
+                 Sign.search(@keywords, current_user)
+               else
+                 []
+               end
   end
 
   def my_signs

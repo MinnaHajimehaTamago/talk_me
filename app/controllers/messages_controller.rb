@@ -19,12 +19,12 @@ class MessagesController < ApplicationController
   def reload
     @room = Room.find(params[:room_id])
     messages = @room.messages.includes(:user)
-    render json:{ messages: messages }
+    render json: { messages: messages }
   end
 
   private
+
   def message_params
     params.require(:message).permit(:text).merge(user_id: current_user.id)
   end
-
 end

@@ -1,5 +1,4 @@
 class UsersTag
-
   include ActiveModel::Model
   attr_accessor :name, :user_id
 
@@ -14,9 +13,6 @@ class UsersTag
 
   def user_tag_relation_uniqueness
     tag = Tag.where(name: name)
-    if tag != [] && UserTagRelation.where(user_id: user_id, tag_id: tag[0][:id]).present?
-      errors.add(:tag, "キーワードです")
-    end
+    errors.add(:tag, 'キーワードです') if tag != [] && UserTagRelation.where(user_id: user_id, tag_id: tag[0][:id]).present?
   end
-
 end

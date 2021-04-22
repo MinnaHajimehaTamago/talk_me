@@ -14,9 +14,10 @@ class TagsController < ApplicationController
   end
 
   def search
-    return nil if params[:keyword] == ""
+    return nil if params[:keyword] == ''
+
     tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"])
-    render json:{ keyword: tag}
+    render json: { keyword: tag }
   end
 
   def after_sign_up_new
@@ -40,5 +41,4 @@ class TagsController < ApplicationController
   def tag_params
     params.require(:users_tag).permit(:name).merge(user_id: current_user.id)
   end
-
 end
