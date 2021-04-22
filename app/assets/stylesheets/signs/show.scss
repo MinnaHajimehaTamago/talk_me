@@ -27,25 +27,6 @@
   margin: 0 0 0 auto;
 }
 
-.edit-icon-box {
-  margin-right: 10px;
-  position: relative;
-
-  .fas.fa-edit {
-    color: gray;
-  }
-}
-
-.sign-edit-link {
-  height: 20px;
-  width: 24px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-
-
 .delete-icon-box {
   position: relative;
 
@@ -61,64 +42,6 @@
   top: 0;
   left: 0;
 }
-
-.favo-icon-box {
-  height: 2em;
-  width: 100%;
-  position: relative;
-
-  .far.fa-heart {
-    height: 32px;
-    width: 36px;
-    color: gray;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-
-  .fas.fa-heart {
-    height: 32px;
-    width: 36px;
-    color: #e6bf00;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-
-  .favo-link {
-    height: 32px;
-    width: 36px;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-}
-
-.sign-spot-info {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-
-  h1 {
-    font-size: 18px;
-  }
-}
-
-.info-title {
-  margin-right: 10px;
-
-  h1 {
-    font-size: 14px;
-    font-weight: bold;
-  }
-}
-
-.info-value h1{
-  font-weight: bold;
-}
-
-
 
 .sign-title {
   display: flex;
@@ -167,21 +90,5 @@
   
   &:hover {
     background-color: #166dc4;
-  }
-}
-
-.sign-show-close-btn {
-  line-height: 30px;
-  width: 140px;
-  display: block;
-  margin: 30px auto 20px;
-  text-align: center;
-  text-decoration: none;
-  border: 1px solid gray;
-  border-radius: 10px;
-  color: gray;
-  
-  &:hover {
-    background-color: lightgray;
   }
 }
