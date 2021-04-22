@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get 'search_index'
       get 'search_result'
       get 'my_signs'
+      get 'match_signs'
     end
   end
   resources :users, only: [:show, :edit, :update] do
@@ -33,6 +34,9 @@ Rails.application.routes.draw do
   resources :user_tag_relations, only: :destroy
   resources :appearances, only: [:new, :create, :edit, :update]
   resources :rooms, only: [:index, :new, :create] do
+    collection do
+      get 'talk_rooms'
+    end
     resources :messages, only: [:index, :create] do
       collection do
         get 'reload'

@@ -10,4 +10,8 @@ class RoomsController < ApplicationController
     redirect_to room_messages_path(room_id: @room.id)
   end
 
+  def talk_rooms
+    @users = RoomUserRelation.talked_to_me(current_user)
+  end
+
 end

@@ -29,7 +29,7 @@
               = link_to "", sign_path(sign.id), class:"match-sign-link"
         - if @signs.length > 10
           .more-signs
-            = link_to "一覧を見る", "#", class:"more-signs-link"
+            = link_to "一覧を見る", match_signs_signs_path, class:"more-signs-link"
       - if @signs.length != 0
         .match-signs-back.hide
           i.fas.fa-arrow-circle-left.fa-2x
@@ -63,7 +63,7 @@
               = link_to "トークルームへ", room_messages_path(RoomUserRelation.talked_room_id(user, current_user)), class:"user-room-link btn"
         - if @users.length > 10
           .more-signs
-            = link_to "一覧を見る", "#", class:"more-signs-link"
+            = link_to "一覧を見る", talk_rooms_rooms_path, class:"more-signs-link"
       .sign-action-btn
         = link_to "サインを送信する", new_sign_path, class:"sign-action-link btn"
         i.far.fa-paper-plane

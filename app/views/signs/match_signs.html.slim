@@ -1,0 +1,30 @@
+= render ('shared/header')
+
+.container
+  .content-wrap
+    .form-explanation
+      h2　マッチしたサイン一覧
+    .search-content-wrap
+      - @signs.each do |sign|
+        .result-sign-wrap
+          .result-sign-wrap-left
+            .sign-user-icon
+              - if sign.user.image.attached?
+                = image_tag(sign.user.image, class:"user-icon-image")
+              - else
+                = image_tag("header_icon_sample.png", class:"user-icon-default")
+          .result-sign-wrap-right
+            .sign-user-nickname
+              p= sign.user.nickname
+            .sign-send-time
+              p= sign.created_at.strftime("%m/%d %H:%M")
+            .sign-tags
+              - sign.tags.each do |tag|
+                .sign-tag
+                  - if tag.name.length > 10
+                    p= "#{tag.name[0..9]}…"
+                  - else
+                    p= tag.name
+                  - if tag.officiality_id == 1
+                    = image_tag("official_mark.png", :size => '14x14' )
+            = link_to '', sign_path(sign.id), class: 'result-sign-wrap-link'

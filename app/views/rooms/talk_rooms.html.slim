@@ -1,0 +1,21 @@
+= render 'shared/header'
+.container
+  .content-wrap
+    .form-explanation
+      h2 話しかけてきた人たち一覧
+    .search-content-wrap
+      - @users.each do |user|
+        .match-talk-room
+          .match-sign-header
+            - if user.image.attached?
+              = image_tag(user.image, class:"user-icon-image-small")
+            - else
+              = image_tag("header_icon_sample.png", class:"user-icon-default-small")
+            .match-sign-header-right
+              h3= user.nickname
+          .match-sign-tags.match-user-tags
+            - user.tags.each do |tag|
+              .match-sign-tag
+                p= tag.name
+          = link_to "トークルームへ", room_messages_path(RoomUserRelation.talked_room_id(user, current_user)), class:"user-room-link btn"
+

@@ -63,7 +63,7 @@ if (location.pathname.match("tags") || (location.pathname.match("after_sign_up")
       };
 
       if (inputElement.value != "") {
-        addBtn.style.backgroundColor = '#80a8ff';
+        addBtn.style.backgroundColor = '#4f99e4';
         submitBtn.style.cursor = 'pointer';
       } else {
         addBtn.style.backgroundColor = 'lightgray';

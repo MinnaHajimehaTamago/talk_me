@@ -96,7 +96,7 @@ if (location.pathname.match("signs/search_index")) {
       };
 
       if (inputElement.value != "") {
-        addBtn.style.backgroundColor = '#80a8ff';
+        addBtn.style.backgroundColor = '#4f99e4';
         addBtn.style.cursor = 'pointer'
       } else {
         addBtn.style.backgroundColor = 'lightgray';

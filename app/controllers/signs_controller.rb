@@ -63,6 +63,10 @@ class SignsController < ApplicationController
     @signs = Sign.where(user_id: current_user.id).includes(:user).reverse
   end
 
+  def match_signs
+    @signs = Sign.match_signs(current_user)
+  end
+
   private
 
   def sign_params
