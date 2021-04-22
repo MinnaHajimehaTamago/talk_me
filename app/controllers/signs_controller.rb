@@ -6,13 +6,6 @@ class SignsController < ApplicationController
   def index
     @signs = Sign.match_signs(current_user)
     @users = RoomUserRelation.talked_to_me(current_user)
-    # @signs_to_myselfs = Sign.to_myself(current_user)
-    # @signs_to_myselfs_kana = Sign.to_myself_kana(current_user)
-    # if current_user.spot.present?
-    #   @match_state_signs = Sign.match_state_signs(current_user)
-    #   @match_city_signs = Sign.match_city_signs(current_user)
-    # end
-    # @favorited_signs = Sign.favorited_signs(current_user)
   end
 
   def new
@@ -31,9 +24,6 @@ class SignsController < ApplicationController
 
   def show
     @room = Room.new
-    # @favorite = Favorite.new
-    # @favorites = @sign.favorites.includes(:user)
-    # @viewer_favorite = @favorites.find { |f| f[:user_id] == current_user.id }
     @talk_room = RoomUserRelation.room?(@sign, current_user)
   end
 
