@@ -34,6 +34,11 @@ ja:
         birth_date: 生年月日
       sign:
         text: メッセージ
+      tag:
+        name: タグ
+        officiality_id: 公式判定
+      message:
+        text: メッセージ
     models:
       user: ユーザー
   activemodel:
