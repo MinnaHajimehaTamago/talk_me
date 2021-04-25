@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   end
 
   resources :signs, only: [:index, :new, :create, :show, :destroy] do
-    resources :favorites, only: [:create, :destroy]
     collection do
       get 'search_index'
       get 'search_result'
@@ -23,7 +22,6 @@ Rails.application.routes.draw do
     end
   end
   resources :tops, only: :index
-  resources :spots, only: [:new, :create, :edit, :update]
   resources :tags, only: [:new, :create] do
     collection do
       get 'search'
@@ -32,7 +30,6 @@ Rails.application.routes.draw do
     end
   end
   resources :user_tag_relations, only: :destroy
-  resources :appearances, only: [:new, :create, :edit, :update]
   resources :rooms, only: [:index, :new, :create] do
     collection do
       get 'talk_rooms'
