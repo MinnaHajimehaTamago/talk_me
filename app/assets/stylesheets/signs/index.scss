@@ -10,8 +10,9 @@
   display: flex;
   align-items: center;
   color: rgb(49, 49, 49);
-  border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  background-color: rgb(255, 245, 233);
 
   h2 {
     font-weight: bold;
@@ -28,9 +29,8 @@
 }
 
 .match-signs-none {
-  height: 122px;
+  line-height: 192px;
   width: 100%;
-  padding: 90px 0 10px;
   text-align: center;
   font-size: 16px;
 
@@ -72,7 +72,7 @@
 }
 
 .match-sign-tags {
-  max-height: 250px;
+  max-height: 95px;
   margin: 5px 0 0 5px;
   border-top: 1px solid gray;
   display: flex;
