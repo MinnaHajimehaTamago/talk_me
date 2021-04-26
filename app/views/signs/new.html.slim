@@ -5,9 +5,9 @@
     .form-title
       h1 サインを送信
     .form-group-narrow
-      - if @sign.errors.present?
+      - if @errors.present?
         ul#errors_explanation
-          - @sign.errors.full_messages.each do |message|
+          - @errors.each do |message|
             li= "・#{message}"
     .form-explanation
       h2 メッセージを入力

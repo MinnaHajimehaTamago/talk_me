@@ -9,6 +9,10 @@ class SignsController < ApplicationController
   end
 
   def new
+    if session["sign_create_errors"].present?
+      @errors = session["sign_create_errors"].dup
+      session["sign_create_errors"].clear
+    end
     @sign = SignsTag.new
   end
 
@@ -18,7 +22,8 @@ class SignsController < ApplicationController
       @sign.save
       redirect_to signs_path
     else
-      render :new
+      session["sign_create_errors"] = @sign.errors.full_messages
+      redirect_to new_sign_path
     end
   end
 
@@ -79,4 +84,5 @@ class SignsController < ApplicationController
       @keywords = params.permit(names: [])
     end
   end
+
 end
