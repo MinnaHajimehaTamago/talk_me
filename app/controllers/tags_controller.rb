@@ -1,5 +1,11 @@
 class TagsController < ApplicationController
+  before_action :authenticate_user!
+  
   def new
+    if session["tag_create_errors"].present?
+      @errors = session["tag_create_errors"].dup
+      session["tag_create_errors"].clear
+    end
     @tag = UsersTag.new
   end
 
@@ -9,7 +15,8 @@ class TagsController < ApplicationController
       @tag.save
       redirect_to action: :new
     else
-      render :new
+      session["tag_create_errors"] = @tag.errors.full_messages
+      redirect_to new_tag_path
     end
   end
 
@@ -21,6 +28,10 @@ class TagsController < ApplicationController
   end
 
   def after_sign_up_new
+    if session["tag_create_errors"].present?
+      @errors = session["tag_create_errors"].dup
+      session["tag_create_errors"].clear
+    end
     @tag = UsersTag.new
     @path = request.fullpath
   end
@@ -32,7 +43,8 @@ class TagsController < ApplicationController
       @tag.save
       redirect_to action: :after_sign_up_new
     else
-      render :after_sign_up_new
+      session["tag_create_errors"] = @tag.errors.full_messages
+      redirect_to  after_sign_up_new_tags_path
     end
   end
 

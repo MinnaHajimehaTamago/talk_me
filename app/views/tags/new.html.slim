@@ -7,9 +7,9 @@
     .form-explanation
       h2 登録するタグを入力
     .form-group-narrow
-      - if @tag.errors.present?
+      - if @errors.present?
         ul#errors_explanation
-          - @tag.errors.full_messages.each do |message|
+          - @errors.each do |message|
             li= "・#{message}"
     .center-box
       .content-split 
