@@ -26,7 +26,7 @@ header.header-main
           li
             = link_to 'トークルーム一覧', rooms_path, class:'user-menu-list'
           li
-            = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "user-menu-list"
+            = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "user-menu-list sign_out"
     - else user_signed_in?
       .guest
         = link_to 'ゲストログイン', guest_sign_in_users_path, method: :post, class:"guest-login-btn btn"

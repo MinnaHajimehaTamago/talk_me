@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, except: :guest_sign_in
   before_action :set_user_params, except: :guest_sign_in
+  
 
   def show
   end
