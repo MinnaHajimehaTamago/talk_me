@@ -18,4 +18,5 @@
               .match-sign-tag
                 p= tag.name
           = link_to "トークルームへ", room_messages_path(RoomUserRelation.talked_room_id(user, current_user)), class:"user-room-link btn"
+= render 'shared/footer'
 
