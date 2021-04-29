@@ -1,0 +1,17 @@
+= render 'shared/header'
+
+.container
+  .content-wrap-mini
+    .form-title
+      h1 タグ管理ページ
+    .tags-wrap
+      - @tags.each do |tag|
+        .tag-wrap
+          .tag-name
+            = tag.name
+          .tag-officiality
+            = tag.officiality_id
+          = link_to 'officialityを変更', tag_path(tag.id), class:'update-btn', method: :PATCH
+    .center-box.mt-10
+      p 0: 非公式  1: 公式
+= render 'shared/footer'

@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     end
   end
   resources :tops, only: :index
-  resources :tags, only: [:new, :create] do
+  resources :tags, only: [:index, :new, :create, :edit, :update] do
     collection do
       get 'search'
       get 'after_sign_up_new'

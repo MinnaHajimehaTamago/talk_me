@@ -1,5 +1,10 @@
 class TagsController < ApplicationController
   before_action :authenticate_user!
+  before_action :only_administrator, only: [:index, :update]
+  
+  def index
+    @tags = Tag.all
+  end
   
   def new
     if session["tag_create_errors"].present?
@@ -18,6 +23,20 @@ class TagsController < ApplicationController
       session["tag_create_errors"] = @tag.errors.full_messages
       redirect_to new_tag_path
     end
+  end
+
+  def edit
+  end
+
+  def update
+    tag = Tag.find(params[:id])
+    id  = if tag.officiality_id == 0
+            1
+          else
+            0
+          end
+    tag.update(officiality_id: id)
+    redirect_to tags_path
   end
 
   def search
@@ -52,5 +71,9 @@ class TagsController < ApplicationController
 
   def tag_params
     params.require(:users_tag).permit(:name).merge(user_id: current_user.id)
+  end
+
+  def only_administrator
+    redirect_to signs_path unless current_user.id == 1
   end
 end
