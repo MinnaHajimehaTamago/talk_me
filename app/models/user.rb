@@ -4,11 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :personal_information
-  has_one :spot
   has_one :appearance
   has_many :signs, dependent: :destroy
-  has_many :favorites
   has_many :user_tag_relations
   has_many :tags, through: :user_tag_relations
   has_many :room_user_relations

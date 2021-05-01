@@ -9,18 +9,13 @@
 | nickname           | string | null: false               |
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false               |
-| first_name         | string | null: false               |
-| last_name          | string | null: false               |
-| first_name_kana    | string | null: false               |
-| last_nama_kana     | string | null: false               |
-| birth_data         | data   | null: false               |
 
 
 ### Association
 
 - has_many :signs
-- hsa_many :favorites
-- has_many :spots
+- hsa_many :rooms
+- has_many :tags
 - has_one_attached :image
 
 
@@ -28,46 +23,47 @@
 
 | Column            | Type       | Options                        |
 | ----------------- | ---------- | ------------------------------ |
-| first_name        | string     | null: false                    |
-| last_name         | string     | null: false                    |
-| first_name_kana   | string     | null: false                    |
-| last_name_kana    | string     | null: false                    |
-| state_id          | integer    | null: false                    |
-| city              | string     | null: false                    |
-| spot_type_id      | integer    | null: false                    |
-| position_id       | integer    | null: false                    |
-| characteristic_id | integer    | null: false                    |
-| content_id        | integer    | null: false                    |
+| text              | text       | null: false                    |
 | user              | references | null: false, foreign_key: true |
 
 
 ### Association
 
-- belongs_to :uer
-- has_many :favorites
+- belongs_to :user
+- has_many :tags
 
-## favorites テーブル
+## tags テーブル
 
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| sign   | references | null: false, foreign_key: true |
+| Column           | Type    | Options     |
+| ---------------- | ------- | ----------- |
+| name             | string  | null: false |
+| officiality_id   | integer | null: false |
 
 
 ### Association
 
-- belongs_to :user
-- belongs_to :sign
+- has_many :users
+- has_many :signs
 
-## spots テーブル
+## room テーブル
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
-| state_id     | integer    | null: false                    |
-| city         | integer    | null: false                    |
-| spot_type_id | integer    | null: false                    |
-| user         | references | null: false, foreign_key: true |
+| none         |            |                                |
 
 ### Association
 
-- belongs_to :user
+- has_many: users
+- has_many: messages
+
+## messages テーブル
+
+| Column | Type | Options                        |
+| ------ | ---- | ------------------------------ |
+| text   | text | null: false                    |
+| room   | text | null: false, foreign_key: true |
+| user   | text | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :room
