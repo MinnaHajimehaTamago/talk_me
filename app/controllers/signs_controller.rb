@@ -20,7 +20,7 @@ class SignsController < ApplicationController
     @sign = SignsTag.new(sign_params)
     if @sign.valid?
       @sign.save
-      redirect_to signs_path
+      redirect_to my_signs_signs_path
     else
       session["sign_create_errors"] = @sign.errors.full_messages
       redirect_to new_sign_path
@@ -56,7 +56,7 @@ class SignsController < ApplicationController
   end
 
   def my_signs
-    @signs = Sign.where(user_id: current_user.id).includes(:user).reverse
+    @signs = Sign.where(user_id: current_user.id).includes(:user, :sign_tag_relations, :tags).reverse
   end
 
   def match_signs

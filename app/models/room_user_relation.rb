@@ -7,7 +7,7 @@ class RoomUserRelation < ApplicationRecord
   end
 
   def self.room_title(user_ids, current_user)
-    index = user_ids.index(user_ids.find_by(user_id: current_user.id))
+    index = user_ids.includes(:user).index(user_ids.find_by(user_id: current_user.id))
     if index == 0
       user_ids[1].user
     else
@@ -16,7 +16,7 @@ class RoomUserRelation < ApplicationRecord
   end
 
   def self.talked_to_me(current_user)
-    rooms = Room.where(id: current_user.room_ids).includes(:users)
+    rooms = Room.where(id: current_user.room_ids).includes(:room_user_relations)
     users = []
     rooms.each do |room|
       users << User.find(room.room_user_relations[1].user_id) if room.room_user_relations[0].user_id == current_user.id
@@ -31,7 +31,7 @@ class RoomUserRelation < ApplicationRecord
   def self.talked_users(current_user)
     elements = []
     users = []
-    current_user.rooms.each do |room|
+    current_user.rooms.includes(:room_user_relations, { users: { image_attachment: :blob } }, :messages).each do |room|
       index = room.users.index(current_user)
       created_at = if room.messages.present?
                      room.messages.reverse[0].created_at

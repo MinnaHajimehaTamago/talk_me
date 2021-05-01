@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
   def index
     @room = Room.find(params[:room_id])
     @message = Message.new
-    @messages = @room.messages.includes(:user)
+    @messages = @room.messages
     @room_title = RoomUserRelation.room_title(@room.room_user_relations, current_user)
   end
 

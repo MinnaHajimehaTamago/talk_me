@@ -18,7 +18,7 @@ class Sign < ApplicationRecord
     end
     signs = []
     sign_ids.flatten.uniq.each do |sign|
-      signs << Sign.includes(:tags).find(sign.sign_id)
+      signs << Sign.find(sign.sign_id)
     end
     signs -= current_user.signs
     results = []
@@ -48,7 +48,7 @@ class Sign < ApplicationRecord
     end
     signs = []
     sign_ids.flatten.uniq.each do |sign|
-      signs << Sign.includes(:tags, :user).find(sign.sign_id)
+      signs << Sign.find(sign.sign_id)
     end
     signs -= current_user.signs
     results = []
