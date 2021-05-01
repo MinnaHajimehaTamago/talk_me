@@ -1,4 +1,6 @@
-# README
+![read_me_image](https://user-images.githubusercontent.com/74609389/116797468-dffaf080-ab20-11eb-9d9c-0ca91cafd564.jpeg)
+
+# Talk me
 
 # テーブル設計
 
