@@ -6,6 +6,7 @@
 
 Talk meは「話したい人」から「話しかけてもらう」ためのアプリです。話したい人へサイン（目印）を送り、気づいてもらうことで会話が始まります。
 
+# 本番環境
 https://talk-me-by-minnahajimehatamago.herokuapp.com/
 
 # 制作背景
