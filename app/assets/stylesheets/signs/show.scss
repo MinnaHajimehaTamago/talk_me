@@ -49,6 +49,7 @@
   margin: 20px 0 20px;
 
   h2 {
+    font-size: 14px;
     padding: 0 20px;
     background-color: gray;
     border-radius: 10px;
@@ -56,24 +57,29 @@
     font-weight: bold;
   }
 }
-
 .sign-show-tags {
   width: 60%;
-  margin: 0 auto;
+  padding: 5px 10px 10px;
+  margin: 0 auto 30px;
   display: flex;
   flex-wrap: wrap;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid gray;
 }
 
 .sign-content {
+  min-height: 50px;
   width: 60%;
-  padding: 20px;
+  padding: 5px 10px;
   margin: 0 auto;
   border-radius: 10px;
+  border: 2px solid gray;
   background-color: #fff;
 }
 
 .sign-content p{
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .sign-show-talk-btn {
@@ -91,4 +97,10 @@
   &:hover {
     background-color: #166dc4;
   }
+}
+
+.sign-show-line {
+  width: 95%;
+  border-top: 1px dashed gray;
+  margin: 30px auto;
 }
