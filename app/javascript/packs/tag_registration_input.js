@@ -70,12 +70,5 @@ if (location.pathname.match("tags") || (location.pathname.match("after_sign_up")
         submitBtn.style.cursor = 'default';
       };
     });
-
-    $('#tag_lists').on('mouseover', function (){
-      $('#tag_element').on('click', function () {
-        $(this).remove();
-      });
-    });
-
   });
 };
