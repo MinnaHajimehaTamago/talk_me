@@ -10,7 +10,7 @@
 
 20.times do |i|
   user = User.find_by(email: "sample#{i+1}@example.com")
-  user.image.attach(io: File.open("public/sample_icons/#{i+1}.jpeg"), filename: "#{i+1}.jpeg") if user.present?
+  user.image.attach(io: File.open(File.expand_path("../../public/sample_icons/#{i+1}.jpeg", __FILE__)), filename: "#{i+1}.jpeg") if user.present?
 end
 
 # # users
