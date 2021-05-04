@@ -37,9 +37,14 @@ https://talk-me-by-minnahajimehatamago.herokuapp.com/
 ## トークルーム画面
 [![Image from Gyazo](https://i.gyazo.com/c4d43365a0072127135a1e7fa57c9fd0.png)](https://gyazo.com/c4d43365a0072127135a1e7fa57c9fd0)
 
+## トークルーム一覧画面
+[![Image from Gyazo](https://i.gyazo.com/822f12b47cac17c5e49efe8681d966f3.png)](https://gyazo.com/822f12b47cac17c5e49efe8681d966f3)
+
 ## ユーザー詳細画面
 [![Image from Gyazo](https://i.gyazo.com/86f5a24b9c6a659e8b17584a54cbfeec.png)](https://gyazo.com/86f5a24b9c6a659e8b17584a54cbfeec)
 
+## プロフィール編集画面
+[![Image from Gyazo](https://i.gyazo.com/d4643f30bd247941a07779ee6c128daf.png)](https://gyazo.com/d4643f30bd247941a07779ee6c128daf)
 
 
 
