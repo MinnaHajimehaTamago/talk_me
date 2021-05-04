@@ -2,6 +2,8 @@
   height: 120px;
   width: 120px;
   margin-right: 20px;
+  border-radius: 60px;
+  background-color: #fff;
 }
 
 .user-icon-default-small {
@@ -9,12 +11,15 @@
   width: 50px;
   margin: 0 10px;
   font-size: 18px;
+  border-radius: 25px;
+  background-color: #fff;
 }
 
 .user-icon-default-large {
   height: 150px;
   width: 150px;
   border-radius: 75px;
+  background-color: #fff;
 }
 
 .user-icon-image {
