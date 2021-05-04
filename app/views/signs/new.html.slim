@@ -12,7 +12,7 @@
     .form-explanation
       h2 メッセージを入力
     .form-group-narrow
-      = f.text_area(:text, class:"input-default-text", placeholder:"話しかけてほしい人に伝えたいメッセージを入力してください。")
+      = f.text_area(:text, class:"input-default-text", placeholder:"話したい人に伝えたいメッセージを入力してください。")
     .form-explanation
       h2 サインに付けるタグを入力
     .center-box
@@ -20,7 +20,7 @@
         .content-left
             .form-group
               p ①タグ付けするワードを入力
-              = f.text_field(:input, class:"input-default", placeholder:"ワードを入力")
+              = f.text_field(:input, class:"input-default", placeholder:"話したい人に関連するワードを入力してください。")
             .form-group
               p.tag-add-btn#tag_add_btn ⬇︎②タグを追加
             .form-group

@@ -15,22 +15,30 @@ https://talk-me-by-minnahajimehatamago.herokuapp.com/
 
 # DEMO
 ## プロフィールタグ登録画面
-[![Image from Gyazo](https://i.gyazo.com/4b705dd55d35543feb420a9144a0faef.png)](https://gyazo.com/4b705dd55d35543feb420a9144a0faef)
+[![Image from Gyazo](https://i.gyazo.com/c1bfdeab8289354fa2614dd51694a011.png)](https://gyazo.com/c1bfdeab8289354fa2614dd51694a011)
+
+[![Image from Gyazo](https://i.gyazo.com/0f9f309abb0e8c1ab8b9cadea229e17a.gif)](https://gyazo.com/0f9f309abb0e8c1ab8b9cadea229e17a)
 
 ## トップページ
+[![Image from Gyazo](https://i.gyazo.com/15283e75772af25b49cb33d58b4be57f.png)](https://gyazo.com/15283e75772af25b49cb33d58b4be57f)
 
 ## サイン送信画面
+[![Image from Gyazo](https://i.gyazo.com/00c66af17a0f640f97e37e57bc3d88ab.png)](https://gyazo.com/00c66af17a0f640f97e37e57bc3d88ab)
 
 ## サイン検索画面
+[![Image from Gyazo](https://i.gyazo.com/567325fe0e17d223742d0cb468cc4b5d.png)](https://gyazo.com/567325fe0e17d223742d0cb468cc4b5d)
 
 ## サイン検索結果画面
+[![Image from Gyazo](https://i.gyazo.com/4ad9b694e53ac3d745d8a28256a958b2.png)](https://gyazo.com/4ad9b694e53ac3d745d8a28256a958b2)
 
 ## サイン詳細画面
+[![Image from Gyazo](https://i.gyazo.com/c6c86950c733c512808a8a764247cae9.png)](https://gyazo.com/c6c86950c733c512808a8a764247cae9)
 
 ## トークルーム画面
+[![Image from Gyazo](https://i.gyazo.com/c4d43365a0072127135a1e7fa57c9fd0.png)](https://gyazo.com/c4d43365a0072127135a1e7fa57c9fd0)
 
 ## ユーザー詳細画面
-
+[![Image from Gyazo](https://i.gyazo.com/86f5a24b9c6a659e8b17584a54cbfeec.png)](https://gyazo.com/86f5a24b9c6a659e8b17584a54cbfeec)
 
 
 
