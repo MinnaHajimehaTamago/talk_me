@@ -15,6 +15,7 @@ https://talk-me-by-minnahajimehatamago.herokuapp.com/
 
 # DEMO
 ## プロフィールタグ登録画面
+[![Image from Gyazo](https://i.gyazo.com/4b705dd55d35543feb420a9144a0faef.png)](https://gyazo.com/4b705dd55d35543feb420a9144a0faef)
 
 ## トップページ
 
