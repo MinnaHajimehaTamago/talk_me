@@ -106,7 +106,7 @@ RSpec.describe 'ユーザー管理機能', type: :system do
         visit user_path(@user)
         beforeImg = find('.user-icon-image-large')[:src]
         visit edit_user_path(@user)
-        image_path = Rails.root.join('public/kumao00.png')
+        image_path = Rails.root.join('public/kumao0.png')
         attach_file('user[image]', image_path, make_visible: true)
         click_button '変更する'
         expect(current_path).to eq user_path(@user)

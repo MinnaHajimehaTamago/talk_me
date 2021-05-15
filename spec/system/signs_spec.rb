@@ -16,7 +16,7 @@ RSpec.describe 'サインに関する機能', type: :system do
         expect {
           find('input[name="commit"]').click
         }.to change { Sign.count }.by(1)
-        expect(current_path).to eq signs_path
+        expect(current_path).to eq my_signs_signs_path
       end
       it '送信したサインがマイサイン一覧に表示されること' do
         sign_in(@user)
